@@ -1,0 +1,26 @@
+Metadata-Version: 1.0
+Name: infnine.data
+Version: 0.1dev
+Summary: Infnine Data Types
+Home-page: http://www9.cs.tum.edu
+Author: Andrija Prčić
+Author-email: andrija.prcic@gmail.com
+License: GPL
+Description: Introduction
+        ============
+        
+        
+        
+        Changelog
+        =========
+        
+        0.1 - Unreleased
+        ----------------
+        
+        * Initial release
+        
+        
+Platform: UNKNOWN
+Classifier: Framework :: Plone
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
