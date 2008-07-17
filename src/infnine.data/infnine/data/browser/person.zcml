@@ -1,0 +1,39 @@
+<configure 
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="infnine.data">
+    
+    <browser:page
+        for="..interfaces.IPerson"
+        name="view"
+        template="person.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="zope.app.container.interfaces.IAdding"
+        name="infnine.data.Person"
+        class=".person.AddForm"
+        permission="infnine.data.AddPerson"
+        />
+        
+    <browser:page
+        for="..interfaces.IPerson"
+        name="edit"
+        class=".person.EditForm"
+        permission="cmf.ModifyPortalContent"
+        />
+        
+    <browser:addMenuItem
+        title="Person"
+        factory="infnine.data.person.factory"
+        view="infnine.data.Person"
+        permission="infnine.data.AddPerson"
+        />
+        
+    <browser:resource
+        name="infnine_data_person.png"
+        image="person.png"
+        />
+
+</configure>

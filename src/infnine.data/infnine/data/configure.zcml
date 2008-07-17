@@ -1,8 +1,24 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="infnine.data">
 
+    <!-- Make this package a Zope 2 product so that it calls the
+         initialize() function on startup
+      -->
     <five:registerPackage package="." initialize=".initialize" />
+
+    <include package=".content" />
+    <include package=".browser" />
+
+    <!-- Register the installation GenericSetup extension profile -->
+    <genericsetup:registerProfile
+        name="default"
+        title="Infnine Content Types"
+        directory="profiles/default"
+        description="Content types for Infnine"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
 
 </configure>

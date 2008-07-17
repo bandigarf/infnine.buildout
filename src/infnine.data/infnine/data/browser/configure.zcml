@@ -1,0 +1,8 @@
+<configure 
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="infnine.data">
+    
+    <include file="person.zcml" />
+
+</configure>

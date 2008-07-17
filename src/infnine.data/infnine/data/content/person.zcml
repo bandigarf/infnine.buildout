@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddPerson"
+        title="Infnine Data: Add Person"
+        />
+
+    <utility
+        component=".person.factory"
+        name="infnine.data.Person"
+        />
+
+    <class class=".person.PersonContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.IPerson"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.IPerson"
+          />
+    </class>
+
+    <five:registerClass
+        class=".person.PersonContent"
+        meta_type="Person"
+        permission="infnine.data.AddPerson"
+        addview="infnine.data.Person"
+        icon="infnine_data_person.png"
+        />
+
+</configure>
