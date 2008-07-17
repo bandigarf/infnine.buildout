@@ -17,6 +17,7 @@ class AddForm(base.AddForm):
 
     label = _(u"Add Person")
     form_name = _(u"Person Details")
+    form_fields['misc'].custom_widget = WYSIWYGWidget
 
     def setUpWidgets(self, ignore_request=False):
         self.widgets = form.setUpWidgets(
