@@ -1,4 +1,6 @@
 <object name="portal_types" meta_type="Plone Types Tool">
- <object name="Person"
+  <object name="Person"
+    meta_type="Factory-based Type Information"/>
+  <object name="Publication"
     meta_type="Factory-based Type Information"/>
 </object>

@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddPublication"
+        title="Infnine Data: Add Publication"
+        />
+
+    <utility
+        component=".publication.factory"
+        name="infnine.data.Publication"
+        />
+
+    <class class=".publication.PublicationContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.IPublication"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.IPublication"
+          />
+    </class>
+
+    <five:registerClass
+        class=".publication.PublicationContent"
+        meta_type="Publication"
+        permission="infnine.data.AddPublication"
+        addview="infnine.data.Publication"
+        icon="++resource++infnine_data_publication.png"
+        />
+
+</configure>

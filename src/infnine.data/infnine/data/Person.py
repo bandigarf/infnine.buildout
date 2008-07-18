@@ -1,5 +1,5 @@
 from zope.interface import Interface
-from zope.schema import TextLine, URI, Int, Text, Choice
+from zope.schema import TextLine, Text
 
 class IPerson(Interface):
     """A person
