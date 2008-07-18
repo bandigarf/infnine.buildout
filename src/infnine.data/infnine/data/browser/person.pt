@@ -9,22 +9,32 @@
 
 <body>
 <div metal:fill-slot="main">
-    
+
     <div tal:replace="structure provider:plone.abovecontenttitle" />
-    
+
     <h1 class="documentFirstHeading" tal:replace="context/title" />
-    
+
     <div class="documentDescription" tal:content="context/description" />
-    
+
+    <div tal:content="context/position" />
+
+    <div>E-Mail: <span tal:content="context/email" /></div>
+
+    <div>Telephone: <span tal:content="context/telephone" /></div>
+
+    <div>Fax: <span tal:content="context/fax" /></div>
+
+    <div>Office: <span tal:content="context/office" /></div>
+
     <h2>Misc</h2>
     <div tal:content="structure context/misc">Misc</div>
-    
+
     <div tal:replace="structure provider:plone.abovecontentbody" />
-    
+
     <div metal:use-macro="context/folder_listing/macros/listing" />
-    
+
     <div tal:replace="structure provider:plone.belowcontentbody" />
-    
+
 </div>
 </body>
 </html>
