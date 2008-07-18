@@ -12,22 +12,46 @@
 
     <div tal:replace="structure provider:plone.abovecontenttitle" />
 
-    <h1 class="documentFirstHeading" tal:replace="context/title" />
+    <table clas="invisible">
+        <tbody>
+        <tr>
+            <td>
+                <img src="./photo">
+            </td>
+            <td>
 
-    <div class="documentDescription" tal:content="context/description" />
+                <h1 class="documentFirstHeading" tal:replace="context/title" />
 
-    <div tal:content="context/position" />
+                <div tal:content="context/position" />
 
-    <div>E-Mail: <span tal:content="context/email" /></div>
+                <div>E-Mail: <span tal:content="context/email" /></div>
 
-    <div>Telephone: <span tal:content="context/telephone" /></div>
+                <div>Telephone: <span tal:content="context/telephone" /></div>
 
-    <div>Fax: <span tal:content="context/fax" /></div>
+                <div>Fax: <span tal:content="context/fax" /></div>
 
-    <div>Office: <span tal:content="context/office" /></div>
+                <div>Office: <span tal:content="context/office" /></div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Research Topics</h2>
+    <div>TODO: TAL code to display this field, in person.pt</div>
+
+    <h2>Current Research Projects</h2>
+    <div>TODO: TAL code to display this field, in person.pt</div>
+
+    <h2>Teaching</h2>
+    <div>TODO: TAL code to display this field, in person.pt</div>
+
+    <h2>Publications</h2>
+    <div>TODO: TAL code to display this field, in person.pt</div>
 
     <h2>Misc</h2>
     <div tal:content="structure context/misc">Misc</div>
+
+    <hr />
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
