@@ -2,3 +2,8 @@
 .*.swo
 *.pyc
 *.*~
+.installed.cfg
+var/*
+develop-eggs/*
+bin/*
+parts/*
