@@ -17,6 +17,12 @@ class IPerson(Interface):
             required=False,
             )
 
+    department = TextLine(
+            title=u"Department",
+            description=u"Department of the person",
+            required=False,
+            )
+
     email = TextLine(
             title=u"E-Mail",
             description=u"Electronic mail address",

@@ -31,7 +31,7 @@
         meta_type="Person"
         permission="infnine.data.AddPerson"
         addview="infnine.data.Person"
-        icon="infnine_data_person.png"
+        icon="++resource++infnine_data_person.png"
         />
 
 </configure>

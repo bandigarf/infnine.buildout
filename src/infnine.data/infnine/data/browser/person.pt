@@ -16,13 +16,15 @@
         <tbody>
         <tr>
             <td>
-                <img src="./photo">
+                <img src="photo">
             </td>
             <td>
 
                 <h1 class="documentFirstHeading" tal:replace="context/title" />
 
                 <div tal:content="context/position" />
+
+                <div tal:content="context/department" />
 
                 <div>E-Mail: <span tal:content="context/email" /></div>
 
