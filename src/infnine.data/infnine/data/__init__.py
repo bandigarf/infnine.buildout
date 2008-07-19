@@ -9,6 +9,7 @@ _ = MessageFactory('infnine.data')
 
 setDefaultRoles('Infnine Data: Add Person', ('Manager',))
 setDefaultRoles('Infnine Data: Add Publication', ('Manager',))
+setDefaultRoles('Infnine Data: Add Research Project', ('Manager',))
 
 def initialize(context):
     """Initializer called when used as a Zope 2 product."""

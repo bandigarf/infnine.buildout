@@ -13,6 +13,7 @@ infnine.data.egg-info/requires.txt
 infnine.data.egg-info/top_level.txt
 infnine/data/Person.py
 infnine/data/Publication.py
+infnine/data/ResearchProject.py
 infnine/data/__init__.py
 infnine/data/interfaces.py
 infnine/data/setuphandlers.py
@@ -20,6 +21,8 @@ infnine/data/tests.py
 infnine/data/browser/__init__.py
 infnine/data/browser/person.py
 infnine/data/browser/publication.py
+infnine/data/browser/researchproject.py
 infnine/data/content/__init__.py
 infnine/data/content/person.py
 infnine/data/content/publication.py
+infnine/data/content/researchproject.py

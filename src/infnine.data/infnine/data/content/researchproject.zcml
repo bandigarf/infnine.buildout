@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddResearchProject"
+        title="Infnine Data: Add Research Project"
+        />
+
+    <utility
+        component=".researchproject.factory"
+        name="infnine.data.ResearchProject"
+        />
+
+    <class class=".researchproject.ResearchProjectContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.IResearchProject"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.IResearchProject"
+          />
+    </class>
+
+    <five:registerClass
+        class=".researchproject.ResearchProjectContent"
+        meta_type="Research Project"
+        permission="infnine.data.AddResearchProject"
+        addview="infnine.data.ResearchProject"
+        icon="++resource++infnine_data_researchproject.png"
+        />
+
+</configure>

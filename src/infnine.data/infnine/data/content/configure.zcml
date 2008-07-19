@@ -7,5 +7,6 @@
 
     <include file="person.zcml" />
     <include file="publication.zcml" />
+    <include file="researchproject.zcml" />
 
 </configure>
