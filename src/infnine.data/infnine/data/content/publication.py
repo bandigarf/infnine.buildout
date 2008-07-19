@@ -17,7 +17,17 @@ class PublicationContent(Container):
 
     portal_type = "Publication"
 
-#    title = FieldProperty(IPublication['title'])
+    pubtype = FieldProperty(IPublication['pubtype'])
+    author = FieldProperty(IPublication['author'])
+    journal = FieldProperty(IPublication['journal'])
+    booktitle = FieldProperty(IPublication['booktitle'])
+    year = FieldProperty(IPublication['year'])
+    note = FieldProperty(IPublication['note'])
+    abstract = FieldProperty(IPublication['abstract'])
+    bib2html_groups = FieldProperty(IPublication['bib2html_groups'])
+    bib2html_pubtype = FieldProperty(IPublication['bib2html_pubtype'])
+    bib2html_rescat = FieldProperty(IPublication['bib2html_rescat'])
+    bib2html_funding = FieldProperty(IPublication['bib2html_funding'])
 
 factory = Factory(
         PublicationContent,
