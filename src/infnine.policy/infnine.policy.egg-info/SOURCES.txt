@@ -1,0 +1,15 @@
+README.txt
+setup.cfg
+setup.py
+infnine/__init__.py
+infnine.policy.egg-info/PKG-INFO
+infnine.policy.egg-info/SOURCES.txt
+infnine.policy.egg-info/dependency_links.txt
+infnine.policy.egg-info/entry_points.txt
+infnine.policy.egg-info/namespace_packages.txt
+infnine.policy.egg-info/not-zip-safe
+infnine.policy.egg-info/paster_plugins.txt
+infnine.policy.egg-info/requires.txt
+infnine.policy.egg-info/top_level.txt
+infnine/policy/__init__.py
+infnine/policy/tests.py
