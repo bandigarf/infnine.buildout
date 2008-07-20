@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
 <import-steps>
-  <import-step id="infnine_data_various" version="20080717-01"
+  <import-step id="infnine-data-various" version="20080720-01"
                handler="infnine.data.setuphandlers.importVarious"
                title="Various Settings for Infnine Data">
-    <dependency step="typeinfo"/>
-    <!--    <dependency step="skins"/> -->
+   <dependency step="typeinfo"/>
  </import-step>
 </import-steps>

@@ -12,4 +12,8 @@ infnine.policy.egg-info/paster_plugins.txt
 infnine.policy.egg-info/requires.txt
 infnine.policy.egg-info/top_level.txt
 infnine/policy/__init__.py
+infnine/policy/setuphandlers.py
 infnine/policy/tests.py
+infnine/policy/tests/__init__.py
+infnine/policy/tests/base.py
+infnine/policy/tests/test_setup.py
