@@ -15,11 +15,23 @@ body {
 /* Logo */
 #portal-logo img {
     margin: 0px;
+    margin-top: 7px;
+    margin-bottom: -7px;
 }
 
 /* Line below the logo */
 #portal-header1 {
     background: #7696c1 url(++resource++infnine.theme.images/header1_bg.png) repeat-x;
+}
+
+#portal-siteactions {
+    margin-right: 35px;
+    margin-bottom: -1px;
+}
+
+#portal-siteactions li a {
+    border-color: black;
+    color: white;
 }
 
 /* Random picture in the top right corner */
