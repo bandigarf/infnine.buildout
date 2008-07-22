@@ -7,5 +7,5 @@ var/*
 develop-eggs/*
 bin/*
 parts/*
-download/*
+downloads/*
 eggs/*
