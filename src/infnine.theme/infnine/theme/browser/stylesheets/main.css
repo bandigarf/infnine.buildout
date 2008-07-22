@@ -1,0 +1,156 @@
+/* Stylesheet for the 'Infnine Theme' Plone theme */
+/*COLORS*/
+/*#7696c1 - dark blue (body background)*/
+/*#d7dbe4 - lite blue (body)*/
+
+body {
+    background-color: #7696c1;
+}
+
+/* Header background */
+#portal-header {
+    background: #7696c1 url(++resource++infnine.theme.images/header.jpg) repeat-x;
+}
+
+/* Logo */
+#portal-logo img {
+    margin: 0px;
+}
+
+/* Line below the logo */
+#portal-header1 {
+    background: #7696c1 url(++resource++infnine.theme.images/header1_bg.png) repeat-x;
+}
+
+/* Random picture in the top right corner */
+#portal-header-pic {
+    float: right;
+    margin-top: -5px;
+}
+
+/* Centering */
+#portal-columns-table-wrapper {
+    width: 90% !important;
+    margin: 0 auto;
+    border: 1px solid black;
+    background-color: #d7dbe4;
+}
+
+/* Rounded corners */
+#contentTopLeft {
+  background: transparent url(++resource++infnine.theme.images/body_top_left.png) top left no-repeat;
+  border: none;
+  height: 13px;
+  width: 13px;
+  float: left;
+  margin-top: -1px;
+  margin-left: -1px;
+}
+
+#contentBottomRight {
+  background: transparent url(++resource++infnine.theme.images/body_bottom_right.png) top left no-repeat;
+  border: none;
+  height: 14px;
+  width: 14px;
+  float: right;
+  margin-top: -13px;
+  margin-right: -1px;
+}
+
+/* Portlets */
+.portlet {
+    width: 146px!important;
+    border-bottom: 0px;
+}
+
+/* Navigation portlet */
+.navTreeItem a, dd.portletItem .navTreeItem a {
+	border:none;
+    color: #fff;
+}
+
+.portletNavigationTree .portletItem {
+    background-color: #7696c1;
+    border-top: 1px solid #d7dbe4;
+    border-bottom: 1px solid #d7dbe4;
+}
+
+.portletNavigationTree .portletHeader {
+    background: transparent url(++resource++infnine.theme.images/portlet_header.png) no-repeat;
+    border: 0px;
+    height: 48px!important;
+}
+
+.portletNavigationTree .portletHeader a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 10pt;
+    padding-top: 28px;
+}
+
+.portletNavigationTree .portletBottomLeft {
+    background: transparent url(++resource++infnine.theme.images/portlet_footer.png) top left no-repeat;
+    position: absolute; 
+    border: 0px;
+    height: 48px;
+    width: 146px;
+    margin-top: 12px;
+    margin-left: -11px;
+}
+
+.navTreeItem a, dd.portletItem .navTreeItem a {
+	border:none;
+    font-weight: bold;
+}
+
+.navTreeCurrentItem {
+	border:none!important;
+	background-color:transparent;
+	color:#fff!important;
+}
+
+.navTreeItem a:hover, dd.portletItem .navTreeItem a:hover {
+	background-color:transparent;
+	border:none;
+    color: #fff;
+}
+
+/* Other portlets */
+.portletHeader {
+    border-bottom: 1px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: transparent;
+}
+
+.portletHeader a {
+    color: #7696c1;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+.portletItem {
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+}
+
+.portletFooter {
+    background-color: transparent;
+    border: none;
+}
+
+/* Footer */
+#portal-footer1 {
+    background: transparent url(++resource++infnine.theme.images/footer_bg.png) top left repeat-x;
+}
+
+#portal-footer {
+    background-color: transparent;
+    border: 0px;
+    text-align: right;
+    padding-right: 10px;
+    margin: 0px;
+}

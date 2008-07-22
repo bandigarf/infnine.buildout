@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    i18n_domain="infnine.theme">
+
+   <!-- File System Directory Views registration -->
+   <cmf:registerDirectory
+       name="infnine_theme_custom_images"/>
+   <cmf:registerDirectory
+       name="infnine_theme_custom_templates"/>
+   <cmf:registerDirectory
+       name="infnine_theme_styles"/>
+
+</configure>

@@ -1,0 +1,64 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="infnine.theme">
+
+    <!-- 'Infnine Theme' Zope 3 browser layer -->
+    <interface
+        interface=".interfaces.IThemeSpecific"
+        type="zope.publisher.interfaces.browser.IBrowserSkinType"
+        name="Infnine Theme"
+        />
+
+    <!-- Viewlets registration -->
+
+    <browser:viewlet
+        name="infnine.header1"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        layer=".interfaces.IThemeSpecific"
+        template="templates/header1.pt"
+        permission="zope2.View"
+    />
+
+    <browser:viewlet
+        name="infnine.headerpic"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        layer=".interfaces.IThemeSpecific"
+        template="templates/headerpic.pt"
+        permission="zope2.View"
+    />
+
+    <browser:viewlet
+        name="infnine.footer1"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        layer=".interfaces.IThemeSpecific"
+        template="templates/footer1.pt"
+        permission="zope2.View"
+    />
+
+    <browser:viewlet
+        name="infnine.footer"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        layer=".interfaces.IThemeSpecific"
+        template="templates/footer.pt"
+        permission="zope2.View"
+    />
+
+
+    <!-- Zope 3 browser resources -->
+
+    <!-- Resource directory for images -->
+    <browser:resourceDirectory
+        name="infnine.theme.images"
+        directory="images"
+        layer=".interfaces.IThemeSpecific"
+        />
+
+    <!-- Resource directory for stylesheets -->
+    <browser:resourceDirectory
+        name="infnine.theme.stylesheets"
+        directory="stylesheets"
+        layer=".interfaces.IThemeSpecific"
+        />
+
+</configure>

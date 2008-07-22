@@ -1,0 +1,27 @@
+Metadata-Version: 1.0
+Name: infnine.theme
+Version: 0.1dev
+Summary: An installable theme for Plone 3.0
+Home-page: http://svn.plone.org/svn/collective/
+Author: Vilmos Somogyi
+Author-email: vsomogyi@gmail.com
+License: GPL
+Description: Introduction
+        ============
+        
+        
+        
+        Changelog
+        =========
+        
+        0.1 - Unreleased
+        ----------------
+        
+        * Initial release
+        
+        
+Keywords: web zope plone theme
+Platform: UNKNOWN
+Classifier: Framework :: Plone
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
