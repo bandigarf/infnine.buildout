@@ -5,6 +5,7 @@
 
 body {
     background-color: #7696c1;
+    min-width: 1020px;
 }
 
 /* Header background */
@@ -19,30 +20,27 @@ body {
     margin-bottom: -7px;
 }
 
+#portal-columns-wrapper {
+    margin-top: 14px;
+}
+
 /* Line below the logo */
 #portal-header1 {
     background: #7696c1 url(++resource++infnine.theme.images/header1_bg.png) repeat-x;
-}
-
-#portal-siteactions {
-    margin-right: 35px;
-    margin-bottom: -1px;
-}
-
-#portal-siteactions li a {
-    border-color: black;
-    color: white;
+    width: 100%;
 }
 
 /* Random picture in the top right corner */
 #portal-header-pic {
-    float: right;
+    /*float:right;*/
+    position:absolute;
+    right:0px;
     margin-top: -5px;
 }
 
 /* Centering */
 #portal-columns-table-wrapper {
-    width: 90% !important;
+    width: 1020px !important;
     margin: 0 auto;
     border: 1px solid black;
     background-color: #d7dbe4;
@@ -71,8 +69,13 @@ body {
 
 /* Portlets */
 .portlet {
-    width: 146px!important;
+    width: 182px!important;
     border-bottom: 0px;
+    margin-left:-5px;
+}
+
+.portletNavigationTree{
+    width: 146px!important;
 }
 
 /* Navigation portlet */
@@ -152,6 +155,35 @@ body {
 .portletFooter {
     background-color: transparent;
     border: none;
+}
+
+/* News portlet */
+.portletItemDetails {
+    color:#8CACBB;
+    margin-top: -16px;
+}
+
+.portletNews .portletItem a {
+    margin-top: -11px;
+    font-weight: bold;
+}
+
+.portletItemDescription {
+    text-align: justify;
+}
+
+.portletNews .portletHeader a {
+    margin-left: -9px;
+}
+
+.portletNews .portletItem {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.readmore {
+    font-weight: normal !important;
+    text-align: right;
 }
 
 /* Footer */

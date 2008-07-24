@@ -42,6 +42,6 @@ notifyBackgroundColor:string=#ffce7b
 discreetColor:string=#76797c
 helpBackgroundColor:string=#ffffe1
 
-portalMinWidth:string=70em
+portalMinWidth:string=1020px
 columnOneWidth:string=16em
 columnTwoWidth:string=16em

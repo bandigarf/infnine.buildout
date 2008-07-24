@@ -1,13 +1,22 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="infnine.theme">
+
+    <include package="plone.app.portlets" />
 
     <!-- 'Infnine Theme' Zope 3 browser layer -->
     <interface
         interface=".interfaces.IThemeSpecific"
         type="zope.publisher.interfaces.browser.IBrowserSkinType"
         name="Infnine Theme"
+        />
+
+    <plone:portletRenderer
+        portlet="plone.app.portlets.portlets.news.INewsPortlet"
+        template="templates/news.pt"
+        layer=".interfaces.IThemeSpecific"
         />
 
     <!-- Viewlets registration -->

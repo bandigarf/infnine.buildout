@@ -5,13 +5,13 @@
         <viewlet name="infnine.headerpic" />
         <viewlet name="plone.logo" />
         <viewlet name="infnine.header1" />
-        <viewlet name="plone.site_actions" />
     </order>
     
     <hidden manager="plone.portalheader" skinname="Infnine Theme">
         <viewlet name="plone.skip_links" />
         <viewlet name="plone.searchbox" />
         <viewlet name="plone.global_sections" />
+        <viewlet name="plone.site_actions" />
     </hidden>
     
     <!-- portaltop -->
