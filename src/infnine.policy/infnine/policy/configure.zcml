@@ -4,8 +4,11 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="infnine.policy">
 
-    <five:registerPackage package="." initialize=".initialize" />
+    <!-- Include direct package dependencies -->
+    <include package="infnine.theme" />
+    <include package="infnine.data" />
 
+    <five:registerPackage package="." initialize=".initialize" />
     <genericsetup:registerProfile
       name="default"
       title="Infnine Site Policy"
@@ -13,5 +16,4 @@
       description="Turn a Plone site into the Infnine site."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-
 </configure>
