@@ -17,7 +17,10 @@ class ResearchProjectContent(Container):
 
     portal_type = "Research Project"
 
-    staff = FieldProperty(IResearchProject['staff'])
+    description = FieldProperty(IResearchProject['description'])
+    team = FieldProperty(IResearchProject['team'])
+    project_details = FieldProperty(IResearchProject['project_details'])
+    publications = FieldProperty(IResearchProject['publications'])
 
 factory = Factory(
         ResearchProjectContent,

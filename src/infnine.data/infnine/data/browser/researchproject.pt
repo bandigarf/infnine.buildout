@@ -16,6 +16,20 @@
 
     <div class="documentDescription" tal:content="context/description" />
 
+    <img src="logo">
+
+    <h2>Team</h2>
+    <div tal:content="context/team">Team</div>
+
+    <h2>Project Details</h2>
+    <div tal:content="struct context/project_details">Project Details</div>
+
+    <h2>Publications</h2>
+    <div tal:content="context/publications">Publications</div>
+
+    <h2>Media</h2>
+    <!-- listing for media goes here -->
+
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
     <div metal:use-macro="context/folder_listing/macros/listing" />
