@@ -4,5 +4,6 @@
                handler="infnine.data.setuphandlers.importVarious"
                title="Various Settings for Infnine Data">
    <dependency step="typeinfo"/>
+   <!--    <dependency step="skins"/> -->
  </import-step>
 </import-steps>

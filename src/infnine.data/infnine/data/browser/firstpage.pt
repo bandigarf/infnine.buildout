@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+	  i18n:domain="infnine.data">
+
+<body>
+    
+<metal:css fill-slot="css_slot">
+    <style type="text/css" media="all"
+            tal:content="string: @import url(${context/++resource++infnine-data.css});"></style>
+
+</metal:css>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+
+        <table id="profs" cellpadding="7">
+            <tr>
+                <td><img src="++resource++infnine.theme.images/pic1.png" /></td>
+                <td> Prof. Bernd Radig <br/>
+                    <a href="#">(Computer Vision and Image Understanding)</a>
+                </td>
+                <td><img src="++resource++infnine.theme.images/pic2.png" /></td>
+                <td> Prof. Michael Beetz <br/>
+                    <a href="#">(Intelligent Autonomous Systems)</a>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="++resource++infnine.theme.images/pic3.png" /></td>
+                <td> Dr. Martin Sachenbacher <br/>
+                    <a href="#">(Emmy Noether Research Group)</a>
+                </td>
+                <td><img src="++resource++infnine.theme.images/pic4.png" /></td>
+                <td> Prof. Peter Struss <br/>
+                    <a href="#">(Model-Based Systems & Qualitative Reasoning)</a>
+                </td>
+            </tr>
+        </table>
+
+        <hr />
+
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td><img src="++resource++infnine.theme.images/body1.png" /></td>
+                <td><img src="++resource++infnine.theme.images/body2.png" /></td>
+            </tr>
+            <tr>
+                <td><img src="++resource++infnine.theme.images/body3.png" /></td>
+                <td><img src="++resource++infnine.theme.images/body4.png" /></td>
+            </tr>
+        </table>
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>
+
