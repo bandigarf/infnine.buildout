@@ -22,7 +22,7 @@
     <div tal:content="context/team">Team</div>
 
     <h2>Project Details</h2>
-    <div tal:content="struct context/project_details">Project Details</div>
+    <div tal:content="structure context/project_details">Project Details</div>
 
     <h2>Publications</h2>
     <div tal:content="context/publications">Publications</div>
