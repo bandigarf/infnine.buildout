@@ -12,7 +12,7 @@
 
     <div tal:replace="structure provider:plone.abovecontenttitle" />
 
-    <table clas="invisible">
+    <table class="invisible">
         <tbody>
         <tr>
             <td>

@@ -11,7 +11,7 @@ class IResearchProject(Interface):
             required=True,
             )
 
-    description = TextLine(
+    description = Text(
             title=u"Summary",
             description=u"Summary of the research project",
             required=False,
