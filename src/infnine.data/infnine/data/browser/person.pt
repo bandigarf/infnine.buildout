@@ -22,6 +22,8 @@
 
                 <h1 class="documentFirstHeading" tal:replace="context/title" />
 
+                <div tal:content="context/status" />
+
                 <div tal:content="context/position" />
 
                 <div tal:content="context/department" />
@@ -38,17 +40,27 @@
         </tbody>
     </table>
 
-    <h2>Research Topics</h2>
-    <div>TODO: TAL code to display this field, in person.pt</div>
+    <h2>Publications</h2>
+    <ul tal:define="text context/publications; items python:text.splitlines()" tal:repeat="item items">
+        <li>
+            <a tal:attributes="href python:'/publications/' + item">
+                <span tal:content="python:item" />
+            </a>
+        </li>
+    </ul>
+    <div tal:content="context/publications" />
 
     <h2>Current Research Projects</h2>
-    <div>TODO: TAL code to display this field, in person.pt</div>
+    <div tal:content="context/research_projects_current" />
+
+    <h2>Former Research Projects</h2>
+    <div tal:content="context/research_projects_former" />
 
     <h2>Teaching</h2>
-    <div>TODO: TAL code to display this field, in person.pt</div>
+    <div tal:content="context/teaching" />
 
-    <h2>Publications</h2>
-    <div>TODO: TAL code to display this field, in person.pt</div>
+    <h2>Students</h2>
+    <div tal:content="context/students" />
 
     <h2>Misc</h2>
     <div tal:content="structure context/misc">Misc</div>
