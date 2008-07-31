@@ -40,15 +40,19 @@
         </tbody>
     </table>
 
-    <h2>Publications</h2>
-    <ul tal:define="text context/publications; items python:text.splitlines()" tal:repeat="item items">
-        <li>
-            <a tal:attributes="href python:'/publications/' + item">
+    <div tal:define="text context/publications" tal:condition="python: text != None">
+        <h2>Publications</h2>
+        <ul tal:define="text context/publications; items python:text.splitlines()" tal:repeat="item items">
+            <li>
+                <a tal:attributes="href python:'/publications/' + item">
+                <!-- TODO: replace following with the title of the publication
+                     something like tal:content="/publications/$item/title -->
                 <span tal:content="python:item" />
-            </a>
-        </li>
-    </ul>
-    <div tal:content="context/publications" />
+                </a>
+            </li>
+        </ul>
+        <div tal:content="context/publications" />
+    </div>
 
     <h2>Current Research Projects</h2>
     <div tal:content="context/research_projects_current" />
