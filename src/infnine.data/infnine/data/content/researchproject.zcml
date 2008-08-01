@@ -31,7 +31,7 @@
         meta_type="Research Project"
         permission="infnine.data.AddResearchProject"
         addview="infnine.data.ResearchProject"
-        icon="++resource++infnine_data_researchproject.png"
+        icon="infnine_data_researchproject.png"
         />
 
 </configure>

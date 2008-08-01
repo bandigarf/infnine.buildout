@@ -31,7 +31,7 @@
         meta_type="Publication"
         permission="infnine.data.AddPublication"
         addview="infnine.data.Publication"
-        icon="++resource++infnine_data_publication.png"
+        icon="infnine_data_publication.png"
         />
 
 </configure>
