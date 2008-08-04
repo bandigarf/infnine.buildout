@@ -15,7 +15,7 @@
     <table class="invisible">
         <tbody>
         <tr>
-            <td>
+            <td tal:define="photo context/photo|nothing" tal:condition="photo">
                 <img src="photo">
             </td>
             <td>
