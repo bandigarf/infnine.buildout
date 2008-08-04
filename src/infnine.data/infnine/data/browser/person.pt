@@ -22,19 +22,19 @@
 
                 <h1 class="documentFirstHeading" tal:replace="context/title" />
 
-                <div tal:content="context/status" />
+                <div tal:condition="python: context.status != None" tal:content="context/status" />
 
-                <div tal:content="context/position" />
+                <div tal:condition="python: context.position != None" tal:content="context/position" />
 
-                <div tal:content="context/department" />
+                <div tal:condition="python: context.department != None" tal:content="context/department" />
 
-                <div>E-Mail: <span tal:content="context/email" /></div>
+                <div tal:condition="python: context.email != None">E-Mail: <span tal:content="context/email" /></div>
 
-                <div>Telephone: <span tal:content="context/telephone" /></div>
+                <div tal:condition="python: context.telephone != None">Telephone: <span tal:content="context/telephone" /></div>
 
-                <div>Fax: <span tal:content="context/fax" /></div>
+                <div tal:condition="python: context.fax != None">Fax: <span tal:content="context/fax" /></div>
 
-                <div>Office: <span tal:content="context/office" /></div>
+                <div tal:condition="python: context.office != None">Office: <span tal:content="context/office" /></div>
             </td>
         </tr>
         </tbody>
