@@ -12,16 +12,26 @@ class IResearchProject(Interface):
             )
 
     description = Text(
+            title=u"Description",
+            description=u"A short description of the research project",
+            required=False,
+            )
+
+    summary = Text(
             title=u"Summary",
             description=u"Summary of the research project",
             required=False,
             )
 
-    # should be a list of objects of type IPerson
-    # or, a text field with people aliases (approach #2)
     team = Text(
             title=u"Team",
             description=u"People working on the research project",
+            required=False,
+            )
+
+    former_personell = Text(
+            title=u"Former personell",
+            description=u"People who used to work on the project",
             required=False,
             )
 
@@ -31,8 +41,18 @@ class IResearchProject(Interface):
             required=False,
             )
 
-    # should be a list of objects of type IPublication
-    # or, a text field with publication reference strings (approach #2)
+    research_topic = TextLine(
+            title=u"Research topic",
+            description=u"Research topic name",
+            required=False,
+            )
+
+    application_domain = TextLine(
+            title=u"Application domain",
+            description=u"Application domain of the project",
+            required=False,
+            )
+
     publications = Text(
             title=u"Publications",
             description=u"Publications related to the project",
