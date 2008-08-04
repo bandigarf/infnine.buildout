@@ -23,6 +23,18 @@ class IResearchProject(Interface):
             required=False,
             )
 
+    research_topic = TextLine(
+            title=u"Research topic",
+            description=u"Research topic name",
+            required=False,
+            )
+
+    application_domain = TextLine(
+            title=u"Application domain",
+            description=u"Application domain of the project",
+            required=False,
+            )
+
     team = Text(
             title=u"Team",
             description=u"People working on the research project",
@@ -38,18 +50,6 @@ class IResearchProject(Interface):
     project_details = Text(
             title=u"Project details",
             description=u"Detailed description of the project",
-            required=False,
-            )
-
-    research_topic = TextLine(
-            title=u"Research topic",
-            description=u"Research topic name",
-            required=False,
-            )
-
-    application_domain = TextLine(
-            title=u"Application domain",
-            description=u"Application domain of the project",
             required=False,
             )
 

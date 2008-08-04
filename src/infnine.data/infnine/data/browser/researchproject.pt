@@ -16,19 +16,74 @@
 
     <div class="documentDescription" tal:content="context/description" />
 
-    <img src="logo">
+    <table class="invisible">
+        <tbody>
+        <tr>
+            <td>
+                <div tal:define="text context/summary" tal:condition="python: text != None" tal:content="text">Summary</div>
+            </td>
+            <td tal:define="logo context/logo|nothing" tal:condition="logo">
+                <img src="logo">
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
-    <h2>Team</h2>
-    <div tal:content="context/team">Team</div>
+    <div tal:define="text context/research_topic" tal:condition="python: text != None">
+        <h2>Research Topic</h2>
+        <div tal:content="text">Research topic</div>
+    </div>
 
-    <h2>Project Details</h2>
-    <div tal:content="structure context/project_details">Project Details</div>
+    <div tal:define="text context/application_domain" tal:condition="python: text != None">
+        <h2>Application Domain</h2>
+        <div tal:content="text">Application domain</div>
+    </div>
 
-    <h2>Publications</h2>
-    <div tal:content="context/publications">Publications</div>
+    <div tal:define="text context/team" tal:condition="python: text != None">
+        <h2>Team</h2>
+        <ul tal:define="items python:text.split()" tal:repeat="item items">
+            <li>
+                <a tal:attributes="href python: context.portal_url() + '/people/' + item">
+                    <span tal:content="python: portal.people.__getitem__(item).title" />
+                </a>
+            </li>
+        </ul>
+    </div>
 
-    <h2>Media</h2>
-    <!-- listing for media goes here -->
+    <div tal:define="text context/former_personell" tal:condition="python: text != None">
+        <h2>Former Personell</h2>
+        <ul tal:define="items python:text.split()" tal:repeat="item items">
+            <li>
+                <a tal:attributes="href python: context.portal_url() + '/people/' + item">
+                    <span tal:content="python: portal.people.__getitem__(item).title" />
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div tal:define="text context/project_details" tal:condition="python: text != None">
+        <h2>Project Details</h2>
+        <div tal:content="structure text">Project details</div>
+    </div>
+
+    <div tal:define="text context/publications" tal:condition="python: text != None">
+        <h2>Publications</h2>
+        <ul tal:define="items python:text.split()" tal:repeat="item items">
+            <li>
+                <a tal:attributes="href python: context.portal_url() + '/publications/' + item">
+                    <span tal:content="python: portal.publications.__getitem__(item).title" />
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div tal:define="media context/media|nothing" tal:condition="media">
+        <h2>Media</h2>
+        <!-- TODO: should list contents of media/ subfolder -->
+        <div metal:use-macro="context/media/folder_listing/macros/listing" />
+    </div>
+
+    <hr />
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
