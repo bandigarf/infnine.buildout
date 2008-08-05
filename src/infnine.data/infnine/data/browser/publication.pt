@@ -16,6 +16,43 @@
 
     <div class="documentDescription" tal:content="context/description" />
 
+    <div tal:define="text context/pubtype" tal:condition="python: text != None">
+        Publication type: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/author" tal:condition="python: text != None">
+        Author: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/funded_by" tal:condition="python: text != None">
+        Funded by: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/journal" tal:condition="python: text != None">
+        Journal: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/booktitle" tal:condition="python: text != None">
+        Book title: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/year" tal:condition="python: text != None">
+        Year of publication: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/groups" tal:condition="python: text != None">
+        Groups: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/rescat" tal:condition="python: text != None">
+        Rescat: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/bibtex_entry" tal:condition="python: text != None">
+        BibTex entry:
+        <pre tal:content="text" />
+    </div>
+
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
     <div metal:use-macro="context/folder_listing/macros/listing" />
