@@ -19,15 +19,15 @@ class PublicationContent(Container):
 
     pubtype = FieldProperty(IPublication['pubtype'])
     author = FieldProperty(IPublication['author'])
+    funded_by = FieldProperty(IPublication['funded_by'])
     journal = FieldProperty(IPublication['journal'])
     booktitle = FieldProperty(IPublication['booktitle'])
     year = FieldProperty(IPublication['year'])
     note = FieldProperty(IPublication['note'])
     abstract = FieldProperty(IPublication['abstract'])
-    bib2html_groups = FieldProperty(IPublication['bib2html_groups'])
-    bib2html_pubtype = FieldProperty(IPublication['bib2html_pubtype'])
-    bib2html_rescat = FieldProperty(IPublication['bib2html_rescat'])
-    bib2html_funding = FieldProperty(IPublication['bib2html_funding'])
+    groups = FieldProperty(IPublication['groups'])
+    rescat = FieldProperty(IPublication['rescat'])
+    bibtex_entry = FieldProperty(IPublication['bibtex_entry'])
 
 factory = Factory(
         PublicationContent,

@@ -18,10 +18,15 @@ class IPublication(Interface):
             required=True,
             )
 
-    # should be a list of objects of type IPerson
-    author = TextLine(
+    author = Text(
             title=u"Author(s)",
             description=u"Author(s) of the publication",
+            required=False,
+            )
+
+    funded_by = Text(
+            title=u"Funded by",
+            description=u"The party that provided funding for the publication",
             required=False,
             )
 
@@ -55,18 +60,20 @@ class IPublication(Interface):
             required=False,
             )
 
-    bib2html_groups = TextLine(
+    groups = TextLine(
+            title=u"Groups",
+            description=u"Groups, internal or external",
             required=False,
             )
 
-    bib2html_pubtype = TextLine(
+    rescat = TextLine(
+            title=u"Rescat",
+            description=u"",
             required=False,
             )
 
-    bib2html_rescat = TextLine(
-            required=False,
-            )
-
-    bib2html_funding = TextLine(
+    bibtex_entry = Text(
+            title=u"BibTeX entry",
+            description=u"BibTex entry of the publication",
             required=False,
             )
