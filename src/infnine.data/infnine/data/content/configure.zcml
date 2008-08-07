@@ -8,6 +8,7 @@
     <include file="person.zcml" />
     <include file="publication.zcml" />
     <include file="researchproject.zcml" />
+    <include file="researchpage.zcml" />
     <include file="firstpage.zcml" />
 
 </configure>

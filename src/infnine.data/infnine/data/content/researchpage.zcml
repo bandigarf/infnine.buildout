@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddResearchPage"
+        title="Infnine Data: Add Research Page"
+        />
+
+    <utility
+        component=".researchpage.factory"
+        name="infnine.data.ResearchPage"
+        />
+
+    <class class=".researchpage.ResearchPageContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.IResearchPage"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.IResearchPage"
+          />
+    </class>
+
+    <five:registerClass
+        class=".researchpage.ResearchPageContent"
+        meta_type="Research Page"
+        permission="infnine.data.AddResearchPage"
+        addview="infnine.data.ResearchPage"
+        icon="infnine_data_researchpage.png"
+        />
+
+</configure>
