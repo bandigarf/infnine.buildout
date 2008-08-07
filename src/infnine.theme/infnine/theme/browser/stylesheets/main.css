@@ -198,3 +198,8 @@ body {
     padding-right: 10px;
     margin: 0px;
 }
+
+/*center column width*/
+#portal-column-content {
+    max-width:600px;
+}
