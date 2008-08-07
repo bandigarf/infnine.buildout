@@ -19,7 +19,9 @@
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
     <div>
+        <div style="text-align: center;">
         <img src="research-map">
+        </div>
             <div>
                 <h2><a class="external-link" href="http://www9.cs.tum.edu/people/sachenba/">Constraint-based Models and Algorithms for Self-Diagnosis and -Planning</a></h2>
             </div>
