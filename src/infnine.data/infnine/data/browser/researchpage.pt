@@ -39,6 +39,11 @@
                                 <h3 tal:content="item/title" />
                             </a>
                             <div tal:content="item/summary|nothing" />
+                            <div>
+                                <a href="" tal:attributes="href python: item.id">
+                                    More...
+                                </a>
+                            </div>
                         </td>
                         <td>
                             <a href="" tal:attributes="href python: item.id">
@@ -59,6 +64,11 @@
                                 <h3 tal:content="item/title" />
                             </a>
                             <div tal:content="item/summary|nothing" />
+                            <div>
+                                <a href="" tal:attributes="href python: item.id">
+                                    More...
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
