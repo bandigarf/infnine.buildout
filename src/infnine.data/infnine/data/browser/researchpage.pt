@@ -18,7 +18,45 @@
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
-    <div metal:use-macro="context/folder_listing/macros/listing" />
+    <div>
+        <img src="research-map">
+            <div>
+                <h2><a class="external-link" href="http://www9.cs.tum.edu/people/sachenba/">Constraint-based Models and Algorithms for Self-Diagnosis and -Planning</a></h2>
+            </div>
+            <div>
+                <h2><a class="external-link" href="http://www9.cs.tum.edu/research/MQM/">Model-Based Systems &amp; Qualitative Reasoning</a></h2>
+            </div>
+            <div>
+                <h2>Projects details:</h2>
+                <table class="invisible">
+                <tbody tal:define="items python:[item[1] for item in context.items() if item[1].meta_type == 'Research Project']"
+                       tal:repeat="item items">
+
+                    <!-- even row, logo on the right side, summary & title on the left -->
+                    <tr tal:condition="repeat/item/even">
+                        <td>
+                            <h3 tal:content="item/title" />
+                            <div tal:content="item/summary|nothing" />
+                        </td>
+                        <td>
+                            <img tal:condition="exists:item/logo" tal:attributes="src python: item.id + '/logo' " src="">
+                        </td>
+                    </tr>
+
+                    <!-- odd row, logo on the left side, summary & title on the right -->
+                    <tr tal:condition="repeat/item/odd">
+                        <td>
+                            <img tal:condition="exists:item/logo" tal:attributes="src python: item.id + '/logo' " src="">
+                        </td>
+                        <td>
+                            <h3 tal:content="item/title" />
+                            <div tal:content="item/summary|nothing" />
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+    </div>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />
 
