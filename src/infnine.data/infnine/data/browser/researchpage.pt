@@ -35,21 +35,29 @@
                     <!-- even row, logo on the right side, summary & title on the left -->
                     <tr tal:condition="repeat/item/even">
                         <td>
-                            <h3 tal:content="item/title" />
+                            <a href="" tal:attributes="href python: item.id">
+                                <h3 tal:content="item/title" />
+                            </a>
                             <div tal:content="item/summary|nothing" />
                         </td>
                         <td>
-                            <img tal:condition="exists:item/logo" tal:attributes="src python: item.id + '/logo' " src="">
+                            <a href="" tal:attributes="href python: item.id">
+                                <img tal:condition="exists:item/logo" tal:attributes="src python: item.id + '/logo' " src="">
+                            </a>
                         </td>
                     </tr>
 
                     <!-- odd row, logo on the left side, summary & title on the right -->
                     <tr tal:condition="repeat/item/odd">
                         <td>
-                            <img tal:condition="exists:item/logo" tal:attributes="src python: item.id + '/logo' " src="">
+                            <a href="" tal:attributes="href python: item.id">
+                                <img tal:condition="exists:item/logo" tal:attributes="src python: item.id + '/logo' " src="">
+                            </a>
                         </td>
                         <td>
-                            <h3 tal:content="item/title" />
+                            <a href="" tal:attributes="href python: item.id">
+                                <h3 tal:content="item/title" />
+                            </a>
                             <div tal:content="item/summary|nothing" />
                         </td>
                     </tr>
