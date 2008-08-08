@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddPeoplePage"
+        title="Infnine Data: Add People Page"
+        />
+
+    <utility
+        component=".peoplepage.factory"
+        name="infnine.data.PeoplePage"
+        />
+
+    <class class=".peoplepage.PeoplePageContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.IPeoplePage"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.IPeoplePage"
+          />
+    </class>
+
+    <five:registerClass
+        class=".peoplepage.PeoplePageContent"
+        meta_type="People Page"
+        permission="infnine.data.AddPeoplePage"
+        addview="infnine.data.PeoplePage"
+        icon="infnine_data_peoplepage.png"
+        />
+
+</configure>

@@ -4,6 +4,7 @@
     i18n_domain="infnine.data">
 
     <include file="person.zcml" />
+    <include file="peoplepage.zcml" />
     <include file="publication.zcml" />
     <include file="researchproject.zcml" />
     <include file="researchpage.zcml" />

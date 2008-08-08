@@ -12,6 +12,7 @@ infnine.data.egg-info/paster_plugins.txt
 infnine.data.egg-info/requires.txt
 infnine.data.egg-info/top_level.txt
 infnine/data/FirstPage.py
+infnine/data/PeoplePage.py
 infnine/data/Person.py
 infnine/data/Publication.py
 infnine/data/ResearchPage.py
@@ -23,12 +24,14 @@ infnine/data/setuphandlers.py
 infnine/data/tests.py
 infnine/data/browser/__init__.py
 infnine/data/browser/firstpage.py
+infnine/data/browser/peoplepage.py
 infnine/data/browser/person.py
 infnine/data/browser/publication.py
 infnine/data/browser/researchpage.py
 infnine/data/browser/researchproject.py
 infnine/data/content/__init__.py
 infnine/data/content/firstpage.py
+infnine/data/content/peoplepage.py
 infnine/data/content/person.py
 infnine/data/content/publication.py
 infnine/data/content/researchpage.py
