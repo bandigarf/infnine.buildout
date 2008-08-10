@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="infnine.data">
+<head>
+</head>
+
+<body>
+<div metal:fill-slot="main">
+
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+    <h1 class="documentFirstHeading" tal:replace="context/title" />
+
+    <div class="documentDescription" tal:content="context/description" />
+
+    <div tal:replace="structure provider:plone.abovecontentbody" />
+
+    <div tal:define="people python:[person[1] for person in context.items()
+                                    if person[1].meta_type == 'Person'
+                                    and person[1].status == 'Alumnus']"
+            tal:condition="python: len(people) > 0">
+        <h3>Alumni</h3>
+        <ul tal:repeat="person people">
+            <a href="" tal:attributes="href python: context.portal_url() + '/people/' + person.id">
+                <li tal:content="person/title" />
+            </a>
+        </ul>
+    </div>
+
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+
+</div>
+</body>
+</html>

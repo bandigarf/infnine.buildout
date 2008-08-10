@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddAlumniPage"
+        title="Infnine Data: Add Alumni Page"
+        />
+
+    <utility
+        component=".alumnipage.factory"
+        name="infnine.data.AlumniPage"
+        />
+
+    <class class=".alumnipage.AlumniPageContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.IAlumniPage"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.IAlumniPage"
+          />
+    </class>
+
+    <five:registerClass
+        class=".alumnipage.AlumniPageContent"
+        meta_type="Alumni Page"
+        permission="infnine.data.AddAlumniPage"
+        addview="infnine.data.AlumniPage"
+        icon="infnine_data_alumnipage.png"
+        />
+
+</configure>
