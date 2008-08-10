@@ -5,7 +5,6 @@
 
     <include file="person.zcml" />
     <include file="peoplepage.zcml" />
-    <include file="alumnipage.zcml" />
     <include file="publication.zcml" />
     <include file="researchproject.zcml" />
     <include file="researchpage.zcml" />
