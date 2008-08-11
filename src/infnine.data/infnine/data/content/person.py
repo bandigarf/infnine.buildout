@@ -18,6 +18,7 @@ class PersonContent(Container):
     portal_type = "Person"
 
     status = FieldProperty(IPerson['status'])
+    alumni_date = FieldProperty(IPerson['alumni_date'])
     position = FieldProperty(IPerson['position'])
     department = FieldProperty(IPerson['department'])
     email = FieldProperty(IPerson['email'])

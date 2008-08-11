@@ -1,5 +1,5 @@
 from zope.interface import Interface
-from zope.schema import TextLine, Text, Choice
+from zope.schema import TextLine, Text, Choice, Datetime
 
 class IPerson(Interface):
     """A person
@@ -18,6 +18,12 @@ class IPerson(Interface):
             default="Other",
             values=("Professor", "Secretariat", "Researcher", "Visiting Researcher",
                     "Alumnus", "Administration", "Student Member", "External", "Other"),
+            )
+
+    alumni_date = Datetime(
+            title=u"Alumni Date",
+            description=u"The date when the person has become an alumnus",
+            required=False,
             )
 
     position = TextLine(
