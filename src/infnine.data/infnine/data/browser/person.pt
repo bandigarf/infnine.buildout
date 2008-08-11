@@ -21,7 +21,11 @@
             <td>
                 <h1 class="documentFirstHeading" tal:replace="context/title" />
 
-                <div tal:condition="python: context.status != None" tal:content="context/status" />
+                <div tal:condition="python: context.status != None">
+                    <span tal:replace="context/status" />
+                    <span tal:condition="python: context.status == 'Alumnus'"
+                          tal:replace="python: 'from ' + `context.alumni_date.year` + '-' + `context.alumni_date.month` + '-' + `context.alumni_date.day`" />
+                </div>
 
                 <div tal:condition="python: context.position != None" tal:content="context/position" />
 
