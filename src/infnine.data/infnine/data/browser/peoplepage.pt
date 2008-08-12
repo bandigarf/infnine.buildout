@@ -122,7 +122,9 @@
         <ul tal:condition="python: len(people) > 0"
             tal:repeat="person people">
             <a href="" tal:attributes="href python: context.portal_url() + '/people/' + person.id">
-                <li tal:content="person/title" />
+                <li tal:condition="python: (person.alumni_date != None) and (modules['DateTime'].DateTime() -
+                                           modules['DateTime'].DateTime(person.alumni_date.year, person.alumni_date.month, person.alumni_date.day) < 365)"
+                    tal:content="person/title" />
             </a>
         </ul>
     </div>
