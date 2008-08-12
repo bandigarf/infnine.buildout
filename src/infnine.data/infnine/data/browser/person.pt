@@ -107,8 +107,6 @@
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
-    <div metal:use-macro="context/folder_listing/macros/listing" />
-
     <div tal:replace="structure provider:plone.belowcontentbody" />
 
 </div>

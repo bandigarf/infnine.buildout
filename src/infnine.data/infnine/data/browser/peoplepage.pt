@@ -114,7 +114,7 @@
         </ul>
     </div>
 
-    <!-- TODO: List only recent alumni here (date - 1 year) -->
+    <!-- list only recent alumni here (date - 1 year), the full list is in the alumni page -->
     <a href="alumni"><h3>Alumni</h3></a>
     <div tal:define="people python:[person[1] for person in context.items()
                                     if person[1].meta_type == 'Person'
