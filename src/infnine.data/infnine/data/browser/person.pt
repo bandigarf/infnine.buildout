@@ -59,8 +59,9 @@
         <ul tal:define="items python:text.split()" tal:repeat="item items">
             <li>
                 <a tal:attributes="href python: context.portal_url() + '/research/' + item">
-                    <span tal:content="python: portal.research.__getitem__(item).title" />
+                    <span tal:replace="python: portal.research.__getitem__(item).title" />
                 </a>
+                : <span tal:replace="python: portal.research.__getitem__(item).description" />
             </li>
         </ul>
     </div>
