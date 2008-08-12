@@ -127,6 +127,7 @@
                     tal:content="person/title" />
             </a>
         </ul>
+        <a href="alumni"><span>Full list...</span></a>
     </div>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />
