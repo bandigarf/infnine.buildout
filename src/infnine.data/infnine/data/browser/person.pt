@@ -23,7 +23,7 @@
 
                 <div tal:condition="python: context.status != None">
                     <span tal:replace="context/status" />
-                    <span tal:condition="python: context.status == 'Alumnus'"
+                    <span tal:condition="python: (context.status == 'Alumnus') and (context.alumni_date != None)"
                           tal:replace="python: 'from ' + `context.alumni_date.year` + '-' + `context.alumni_date.month` + '-' + `context.alumni_date.day`" />
                 </div>
 
