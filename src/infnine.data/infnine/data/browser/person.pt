@@ -98,10 +98,9 @@
         </ul>
     </div>
 
-    <div tal:define="text context/misc" tal:condition="python: text != None">
-        <h2>Misc</h2>
-        <div tal:content="structure text">Misc</div>
-    </div>
+    <div tal:define="text context/misc"
+         tal:condition="python: text != None"
+         tal:content="structure text" />
 
     <hr />
 
