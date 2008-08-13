@@ -55,9 +55,16 @@ class IPerson(Interface):
             description=u"Fax number",
             required=False,
             )
+
     office = TextLine(
             title=u"Office",
             description=u"Office number",
+            required=False,
+            )
+
+    introduction = Text(
+            title=u"Introduction",
+            description=u"Introduction",
             required=False,
             )
 

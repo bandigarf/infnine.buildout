@@ -43,6 +43,10 @@
         </tbody>
     </table>
 
+    <div tal:define="text context/introduction"
+         tal:condition="python: text != None"
+         tal:content="structure text" />
+
     <div tal:define="text context/publications" tal:condition="python: text != None">
         <h2>Publications</h2>
         <ul tal:define="items python:text.split()" tal:repeat="item items">
