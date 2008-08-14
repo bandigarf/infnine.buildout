@@ -42,7 +42,7 @@
     <div tal:define="text context/team" tal:condition="python: text != None">
         <h2>Team</h2>
         <ul tal:define="items python:text.split()" tal:repeat="item items">
-            <li>
+            <li tal:condition="python: item in portal.people.items()">
                 <a tal:attributes="href python: context.portal_url() + '/people/' + item">
                     <span tal:content="python: portal.people.__getitem__(item).title" />
                 </a>
