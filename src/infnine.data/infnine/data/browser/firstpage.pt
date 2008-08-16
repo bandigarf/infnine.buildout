@@ -15,21 +15,21 @@
         <tr>
             <td><img src="++resource++infnine.theme.images/pic1.png" /></td>
             <td> Prof. Bernd Radig <br/>
-                <a href="/people/radig">(Computer Vision and Image Understanding)</a>
+                <a href="people/radig">(Computer Vision and Image Understanding)</a>
             </td>
             <td><img src="++resource++infnine.theme.images/pic2.png" /></td>
             <td> Prof. Michael Beetz <br/>
-                <a href="/people/beetz">(Intelligent Autonomous Systems)</a>
+                <a href="people/beetz">(Intelligent Autonomous Systems)</a>
             </td>
         </tr>
         <tr>
             <td><img src="++resource++infnine.theme.images/pic3.png" /></td>
             <td> Dr. Martin Sachenbacher <br/>
-                <a href="/people/sachenba">(Emmy Noether Research Group)</a>
+                <a href="people/sachenba">(Emmy Noether Research Group)</a>
             </td>
             <td><img src="++resource++infnine.theme.images/pic4.png" /></td>
             <td> Prof. Peter Struss <br/>
-                <a href="/people/struss">(Model-Based Systems & Qualitative Reasoning)</a>
+                <a href="people/struss">(Model-Based Systems & Qualitative Reasoning)</a>
             </td>
         </tr>
     </table>
