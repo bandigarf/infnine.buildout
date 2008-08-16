@@ -6,10 +6,10 @@ class IFirstPage(Interface):
     """
 
     title = TextLine(
-            title=u"FirstPage Title",
+            title=u"First Page Title",
             description=u"Title of the first page",
             required=True,
-            default=u"First Page"
+            default=u"Index Page"
             )
 
     description = Text(
