@@ -1,16 +1,16 @@
 <object name="portal_types" meta_type="Plone Types Tool">
-  <object name="Person"
+  <object name="Alumni Page"
+    meta_type="Factory-based Type Information"/>
+  <object name="First Page"
     meta_type="Factory-based Type Information"/>
   <object name="People Page"
     meta_type="Factory-based Type Information"/>
-  <object name="Alumni Page"
+  <object name="Person"
     meta_type="Factory-based Type Information"/>
   <object name="Publication"
     meta_type="Factory-based Type Information"/>
-  <object name="Research Project"
-    meta_type="Factory-based Type Information"/>
   <object name="Research Page"
     meta_type="Factory-based Type Information"/>
-  <object name="FirstPage"
-    meta_type="Factory-based Type Information with dynamic views"/>
+  <object name="Research Project"
+    meta_type="Factory-based Type Information"/>
 </object>

@@ -5,16 +5,33 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="infnine.data">
 
-    <!-- FirstPage: -->
-    <class class=".firstpage.FirstPage">
-        <require
-            permission="zope2.View"
-            interface="..interfaces.IFirstPage"
-            />
-        <require
-            permission="cmf.ModifyPortalContent"
-            set_schema="..interfaces.IFirstPage"
-            />
+    <permission
+        id="infnine.data.AddFirstPage"
+        title="Infnine Data: Add First Page"
+        />
+
+    <utility
+        component=".firstpage.factory"
+        name="infnine.data.FirstPage"
+        />
+
+    <class class=".firstpage.FirstPageContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.IFirstPage"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.IFirstPage"
+          />
     </class>
+
+    <five:registerClass
+        class=".firstpage.FirstPageContent"
+        meta_type="First Page"
+        permission="infnine.data.AddFirstPage"
+        addview="infnine.data.FirstPage"
+        icon="infnine_data_firstpage.png"
+        />
 
 </configure>

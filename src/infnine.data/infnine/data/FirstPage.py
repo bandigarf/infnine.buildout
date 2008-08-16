@@ -1,13 +1,19 @@
 from zope.interface import Interface
-from zope import schema
-
-from zope.app.container.constraints import contains
-
-from infnine.data import ContentMessageFactory as _
+from zope.schema import TextLine, Text
 
 class IFirstPage(Interface):
-    """A First page
+    """The first page
     """
 
-    title = schema.TextLine(title=_(u"FirstPage title"),
-                            required=True)
+    title = TextLine(
+            title=u"FirstPage Title",
+            description=u"Title of the first page",
+            required=True,
+            default=u"First Page"
+            )
+
+    description = Text(
+            title=u"Description",
+            description=u"Description of the first page",
+            required=False,
+            )

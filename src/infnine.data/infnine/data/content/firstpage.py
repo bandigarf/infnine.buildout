@@ -1,46 +1,22 @@
-"""Definition of the FirstPage content type. See cinemafolder.py for more
-explanation on the statements below.
-"""
+from plone.app.content.interfaces import INameFromTitle
+from plone.app.content.item import Item
+from plone.locking.interfaces import ITTWLockable
 
+from zope.component.factory import Factory
 from zope.interface import implements
-from zope.component import adapts
-
-from Products.Archetypes import atapi
-from Products.validation import V_REQUIRED
-
-from Products.ATContentTypes.content import base
-from Products.ATContentTypes.content import schemata
-from Products.ATContentTypes.content.schemata import finalizeATCTSchema
+from zope.schema.fieldproperty import FieldProperty
 
 from infnine.data.interfaces import IFirstPage
-from infnine.data.config import PROJECTNAME
 
-from infnine.data import ContentMessageFactory as _
-
-FirstPageSchema = schemata.ATContentTypeSchema.copy() + atapi.Schema((
-
-    ))
-
-FirstPageSchema['title'].storage = atapi.AnnotationStorage()
-FirstPageSchema['title'].widget.label = _(u"FirstPage title")
-FirstPageSchema['title'].widget.description = _(u"")
-
-FirstPageSchema['description'].storage = atapi.AnnotationStorage()
-FirstPageSchema['description'].widget.label = _("Short description")
-FirstPageSchema['description'].widget.description = _(u"")
-
-finalizeATCTSchema(FirstPageSchema, folderish=False, moveDiscussion=False)
-
-class FirstPage(base.ATCTContent):
-    """Describe a FirstPage.
+class FirstPageContent(Item):
+    """First page
     """
-    implements(IFirstPage)
+    implements(IFirstPage,
+            ITTWLockable,
+            INameFromTitle)
 
-    portal_type = "FirstPage"
-    _at_rename_after_creation = True
-    schema = FirstPageSchema
+    portal_type = "First Page"
 
-    title = atapi.ATFieldProperty('title')
-    description = atapi.ATFieldProperty('description')
-
-atapi.registerType(FirstPage, PROJECTNAME)
+factory = Factory(
+        FirstPageContent,
+        )

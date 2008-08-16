@@ -1,34 +1,39 @@
-<configure 
+<configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="infnine.data">
 
-    <include package="plone.app.contentmenu" />
-
-    <browser:resource
-        name="infnine-data.css"
-        file="data.css"
+    <browser:page
+        for="..interfaces.IFirstPage"
+        name="view"
+        template="firstpage.pt"
+        permission="zope2.View"
         />
 
-    <!-- FIRSTPAGE -->
-    <browser:resource
-        name="firstpage.png"
-        image="firstpage.png"
+    <browser:page
+        for="zope.app.container.interfaces.IAdding"
+        name="infnine.data.FirstPage"
+        class=".firstpage.AddForm"
+        permission="infnine.data.AddFirstPage"
         />
 
     <browser:page
         for="..interfaces.IFirstPage"
-        name="view"
-        class=".firstpage.FirstPageView"
-        permission="zope2.View"
+        name="edit"
+        class=".firstpage.EditForm"
+        permission="cmf.ModifyPortalContent"
         />
 
-    <browser:menuItem
-        for="..interfaces.IFirstPage"
-        menu="plone_displayviews"
-        title="FirstPage view"
-        action="@@view"
-        description="Default representation of a firstpage"
+    <browser:addMenuItem
+        title="First Page"
+        factory="infnine.data.firstpage.factory"
+        view="infnine.data.FirstPage"
+        permission="infnine.data.AddFirstPage"
+        />
+
+    <browser:resource
+        name="infnine_data_firstpage.png"
+        image="firstpage.png"
         />
 
 </configure>
