@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="infnine.data">
+<head>
+</head>
+
+<body>
+<div metal:fill-slot="main">
+
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+    <h1 class="documentFirstHeading" tal:replace="context/title" />
+
+    <div class="documentDescription" tal:content="context/description" />
+
+    <table class="invisible">
+        <tbody>
+        <tr>
+            <td>
+                <div tal:define="text context/summary" tal:condition="python: text != None" tal:content="text">Summary</div>
+            </td>
+            <td tal:define="logo context/logo|nothing" tal:condition="logo">
+                <img src="logo">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div tal:define="text context/research_topic" tal:condition="python: text != None">
+        <h2>Research Topic</h2>
+        <div tal:content="text">Research topic</div>
+    </div>
+
+    <div tal:define="text context/application_domain" tal:condition="python: text != None">
+        <h2>Application Domain</h2>
+        <div tal:content="text">Application domain</div>
+    </div>
+
+    <div tal:define="text context/team" tal:condition="python: text != None">
+        <h2>Team</h2>
+        <ul tal:define="items python:text.split()" tal:repeat="item items">
+            <li tal:define="people python:[person[0] for person in portal.people.items()
+                                           if person[1].meta_type == 'Person']"
+                tal:condition="python: item in people">
+                <a tal:attributes="href python: context.portal_url() + '/people/' + item">
+                    <span tal:content="python: portal.people.__getitem__(item).title" />
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div tal:define="text context/former_personell" tal:condition="python: text != None">
+        <h2>Former Personell</h2>
+        <ul tal:define="items python:text.split()" tal:repeat="item items">
+            <li tal:define="people python:[person[0] for person in portal.people.items()
+                                           if person[1].meta_type == 'Person']"
+                tal:condition="python: item in people">
+                <a tal:attributes="href python: context.portal_url() + '/people/' + item">
+                    <span tal:content="python: portal.people.__getitem__(item).title" />
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div tal:define="text context/group_details" tal:condition="python: text != None">
+        <h2>Group Details</h2>
+        <div tal:content="structure text">Group details</div>
+    </div>
+
+    <div tal:define="text context/publications" tal:condition="python: text != None">
+        <h2>Publications</h2>
+        <ul tal:define="items python:text.split()" tal:repeat="item items">
+            <li tal:define="publications python:[publication[0] for publication in portal.publications.items()
+                                                 if publication[1].meta_type == 'Publication']"
+                tal:condition="python: item in publications">
+                <a tal:attributes="href python: context.portal_url() + '/publications/' + item">
+                    <span tal:content="python: portal.publications.__getitem__(item).title" />
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div tal:define="media context/media|nothing" tal:condition="media">
+        <h2>Media</h2>
+        <!-- TODO: should list contents of media/ subfolder -->
+        <div metal:use-macro="context/media/folder_listing/macros/listing" />
+    </div>
+
+    <hr />
+
+    <div tal:replace="structure provider:plone.abovecontentbody" />
+
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+
+</div>
+</body>
+</html>

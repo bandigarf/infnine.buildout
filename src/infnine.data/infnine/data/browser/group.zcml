@@ -1,0 +1,39 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="infnine.data">
+
+    <browser:page
+        for="..interfaces.IGroup"
+        name="view"
+        template="group.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="zope.app.container.interfaces.IAdding"
+        name="infnine.data.Group"
+        class=".group.AddForm"
+        permission="infnine.data.AddGroup"
+        />
+
+    <browser:page
+        for="..interfaces.IGroup"
+        name="edit"
+        class=".group.EditForm"
+        permission="cmf.ModifyPortalContent"
+        />
+
+    <browser:addMenuItem
+        title="Group"
+        factory="infnine.data.group.factory"
+        view="infnine.data.Group"
+        permission="infnine.data.AddGroup"
+        />
+
+    <browser:resource
+        name="infnine_data_group.png"
+        image="group.png"
+        />
+
+</configure>

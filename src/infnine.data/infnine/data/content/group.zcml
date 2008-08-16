@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddGroup"
+        title="Infnine Data: Add Group"
+        />
+
+    <utility
+        component=".group.factory"
+        name="infnine.data.Group"
+        />
+
+    <class class=".group.GroupContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.IGroup"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.IGroup"
+          />
+    </class>
+
+    <five:registerClass
+        class=".group.GroupContent"
+        meta_type="Group"
+        permission="infnine.data.AddGroup"
+        addview="infnine.data.Group"
+        icon="infnine_data_group.png"
+        />
+
+</configure>

@@ -10,5 +10,6 @@
     <include file="researchproject.zcml" />
     <include file="researchpage.zcml" />
     <include file="firstpage.zcml" />
+    <include file="group.zcml" />
 
 </configure>

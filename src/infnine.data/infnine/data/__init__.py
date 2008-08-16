@@ -8,6 +8,7 @@ from Products.CMFCore.permissions import setDefaultRoles
 _ = MessageFactory('infnine.data')
 
 setDefaultRoles('Infnine Data: Add First Page', ('Manager',))
+setDefaultRoles('Infnine Data: Add Group', ('Manager',))
 setDefaultRoles('Infnine Data: Add Person', ('Manager',))
 setDefaultRoles('Infnine Data: Add Publication', ('Manager',))
 setDefaultRoles('Infnine Data: Add Research Project', ('Manager',))
