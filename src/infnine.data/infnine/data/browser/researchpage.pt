@@ -23,10 +23,13 @@
         <img src="research-map">
         </div>
             <div>
-                <h2><a class="external-link" href="http://www9.cs.tum.edu/people/sachenba/">Constraint-based Models and Algorithms for Self-Diagnosis and -Planning</a></h2>
-            </div>
-            <div>
-                <h2><a class="external-link" href="http://www9.cs.tum.edu/research/MQM/">Model-Based Systems &amp; Qualitative Reasoning</a></h2>
+                <h2>Other groups at the chair:</h2>
+                <div>
+                    <h2 class="visualHighlight"><a class="external-link" href="http://www9.cs.tum.edu/people/sachenba/">Constraint-based Models and Algorithms for Self-Diagnosis and -Planning</a></h2>
+                </div>
+                <div>
+                    <h2 class="visualHighlight"><a class="external-link" href="http://www9.cs.tum.edu/research/MQM/">Model-Based Systems &amp; Qualitative Reasoning</a></h2>
+                </div>
             </div>
             <div>
                 <h2>Projects details:</h2>
