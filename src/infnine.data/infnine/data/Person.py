@@ -19,7 +19,9 @@ class IPerson(Interface):
             required=True,
             default="Other",
             values=("Professor", "Junior Research Group Leader", "Secretariat", "Researcher",
-                    "Visiting Researcher", "Alumnus", "Administration", "Student Member", "External", "Other"),
+                    "Visiting Researcher", "Alumnus", "Administration", "Student Member",
+                    "External", "Other",
+                    ),
             )
 
     alumni_date = Datetime(
@@ -84,7 +86,7 @@ class IPerson(Interface):
             value_type=Choice(
                     title=u"Research Topic",
                     values=research_topics_list,
-                    )
+                    ),
             )
 
     research_projects_current = Text(
