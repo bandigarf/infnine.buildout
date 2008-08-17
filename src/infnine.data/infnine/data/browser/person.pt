@@ -60,7 +60,7 @@
         </ul>
     </div>
 
-    <div tal:define="items context/research_topics" tal:condition="python: items != None">
+    <div tal:define="items context/research_topics" tal:condition="python: (items != None) and (len(items) > 0)">
         <h2>Research Topics</h2>
         <ul tal:repeat="item items">
             <li>
