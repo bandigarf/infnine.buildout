@@ -1,5 +1,7 @@
 from zope.interface import Interface
-from zope.schema import TextLine, Text, Choice, Datetime
+from zope.schema import TextLine, Text, List, Choice, Datetime
+
+from infnine.data.common import research_topics_list
 
 class IPerson(Interface):
     """A person
@@ -72,6 +74,17 @@ class IPerson(Interface):
             title=u"Publications",
             description=u"",
             required=False,
+            )
+
+    research_topics = List(
+            title=u"Research Topics",
+            description=u"",
+            required=False,
+            unique=True,
+            value_type=Choice(
+                    title=u"Research Topic",
+                    values=research_topics_list,
+                    )
             )
 
     research_projects_current = Text(

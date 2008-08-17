@@ -27,6 +27,7 @@ class PersonContent(Container):
     office = FieldProperty(IPerson['office'])
     introduction = FieldProperty(IPerson['introduction'])
     publications = FieldProperty(IPerson['publications'])
+    research_topics = FieldProperty(IPerson['research_topics'])
     research_projects_current = FieldProperty(IPerson['research_projects_current'])
     research_projects_former = FieldProperty(IPerson['research_projects_former'])
     teaching = FieldProperty(IPerson['teaching'])

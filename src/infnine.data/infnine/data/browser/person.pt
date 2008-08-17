@@ -60,6 +60,15 @@
         </ul>
     </div>
 
+    <div tal:define="items context/research_topics" tal:condition="python: items != None">
+        <h2>Research Topics</h2>
+        <ul tal:repeat="item items">
+            <li>
+                <span tal:content="item" />
+            </li>
+        </ul>
+    </div>
+
     <div tal:define="text context/research_projects_current" tal:condition="python: text != None">
         <h2>Current Research Projects</h2>
         <ul tal:define="items python:text.split()" tal:repeat="item items">
