@@ -31,13 +31,25 @@
 
                 <div tal:condition="python: context.department != None" tal:content="context/department" />
 
-                <div tal:condition="python: context.email != None">E-Mail: <span tal:content="context/email" /></div>
+                <table>
+                    <tbody>
+                        <tr tal:condition="python: context.email != None">
+                            <td>E-Mail:</td><td tal:content="context/email" />
+                        </tr>
 
-                <div tal:condition="python: context.telephone != None">Telephone: <span tal:content="context/telephone" /></div>
+                        <tr tal:condition="python: context.telephone != None">
+                            <td>Telephone:</td><td tal:content="context/telephone" />
+                        </tr>
 
-                <div tal:condition="python: context.fax != None">Fax: <span tal:content="context/fax" /></div>
+                        <tr tal:condition="python: context.fax != None">
+                            <td>Fax:</td><td tal:content="context/fax" />
+                        </tr>
 
-                <div tal:condition="python: context.office != None">Office: <span tal:content="context/office" /></div>
+                        <tr tal:condition="python: context.office != None">
+                            <td>Office: </td><td tal:content="context/office" />
+                        </tr>
+                    </tbody>
+                </table>
             </td>
         </tr>
         </tbody>
