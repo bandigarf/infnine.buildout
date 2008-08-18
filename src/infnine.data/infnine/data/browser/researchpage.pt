@@ -20,7 +20,20 @@
 
     <div>
         <div style="text-align: center;">
-        <img src="research-map">
+        <img usemap="#research-map" src="research-map">
+        <map name="research-map">
+            <area shape="rect" href="cogmash" title="Plan-Based Control for Cognitive Factories" coords="485,126,548,384" />
+            <area shape="rect" href="face-mimic" title="Face and Mimic Expressions Recognition" coords="163,433,416,474" />
+            <area shape="rect" href="env-mod" title="Acquisition of Environment Models" coords="228,170,482,253" />
+            <area shape="rect" href="cogito" title="Cogito" coords="163,390,416,431" />
+            <area shape="rect" href="cop" title="Cognitive Perception" coords="230,127,482,167" />
+            <area shape="rect" href="mudis" title="Mudis" coords="164,127,225,167" />
+            <area shape="rect" href="knowledge4cotesys" title="Knowledge4Cotesys" coords="229,301,482,341" />
+            <area shape="rect" href="cogito" title="Cogito" coords="230,257,482,297" />
+            <area shape="rect" href="cogman" title="CogMan" coords="290,345,416,386" />
+            <area shape="rect" href="agilo" title="Agilo" coords="552,343,677,384" />
+            <area shape="rect" href="aspogamo" title="ASPOGAMO" coords="552,127,677,341" />
+        </map>
         </div>
             <div>
                 <h2>Other groups at the chair:</h2>
