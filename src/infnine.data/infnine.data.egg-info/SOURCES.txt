@@ -20,6 +20,7 @@ infnine/data/Publication.py
 infnine/data/ResearchPage.py
 infnine/data/ResearchProject.py
 infnine/data/__init__.py
+infnine/data/bib2zope.py
 infnine/data/common.py
 infnine/data/config.py
 infnine/data/interfaces.py
