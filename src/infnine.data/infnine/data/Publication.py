@@ -5,11 +5,10 @@ class IPublication(Interface):
     """A publication
     """
 
-    pubtype = Choice(
+    pubtype = TextLine(
             title=u"Type",
             description=u"Type of publication",
             required=False,
-            values = ('InProcedings', 'Article', 'PhdThesis')
             )
 
     title = TextLine(

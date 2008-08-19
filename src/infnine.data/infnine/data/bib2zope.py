@@ -23,9 +23,42 @@ def createZopePublication(app, id, entry_dict):
         app = makerequest(app)
         app.infnine.stuff.invokeFactory('Publication', id)
 
-    print "Updating field values for", id
+    print "Updating", id, entry_dict.keys()
     pub = app.infnine.stuff.__getitem__(id)
+
     pub.title = entry_dict['title']
+
+    if 'pubtype' in entry_dict.keys():
+        pub.pubtype = unicode(entry_dict['pubtype'])
+
+    if 'author' in entry_dict.keys():
+        pub.author = unicode(entry_dict['author'])
+
+    if 'funding' in entry_dict.keys():
+        pub.funded_by = unicode(entry_dict['funding'])
+
+    if 'journal' in entry_dict.keys():
+        pub.journal = unicode(entry_dict['journal'])
+
+    if 'booktitle' in entry_dict.keys():
+        pub.booktitle = unicode(entry_dict['booktitle'])
+
+    if 'year' in entry_dict.keys():
+        pub.year = int(entry_dict['year'])
+
+    if 'note' in entry_dict.keys():
+        pub.note = unicode(entry_dict['note'])
+
+    if 'abstract' in entry_dict.keys():
+        pub.abstract = unicode(entry_dict['abstract'])
+
+    if 'groups' in entry_dict.keys():
+        pub.groups = unicode(entry_dict['groups'])
+
+    if 'rescat' in entry_dict.keys():
+        pub.rescat = unicode(entry_dict['rescat'])
+
+#    bibtex_entry = ''
 
     pub.reindexObject()
     import transaction
@@ -45,6 +78,7 @@ def parseBibTeX(bibtex):
             l.extend(re.findall(r'([a-z]+)\s*=\s*%s(.*?)%s' % (delim[0], delim[1]), entry))
         ret[id] = dict(map(lambda x: (x[0], x[1].strip("{}").strip()), l))
     return ret
+
 
 
 # main code goes here
