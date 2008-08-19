@@ -17,6 +17,8 @@ class PeoplePageContent(Item):
 
     portal_type = "People Page"
 
+    description = FieldProperty(IPeoplePage['description'])
+
 factory = Factory(
         PeoplePageContent,
         )

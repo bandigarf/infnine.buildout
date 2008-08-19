@@ -17,6 +17,8 @@ class ResearchPageContent(Item):
 
     portal_type = "Research Page"
 
+    description = FieldProperty(IResearchPage['description'])
+
 factory = Factory(
         ResearchPageContent,
         )

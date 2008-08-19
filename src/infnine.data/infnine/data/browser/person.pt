@@ -46,7 +46,7 @@
                         </tr>
 
                         <tr tal:condition="python: context.office != None">
-                            <td>Office: </td><td tal:content="context/office" />
+                            <td>Office:</td><td tal:content="context/office" />
                         </tr>
                     </tbody>
                 </table>

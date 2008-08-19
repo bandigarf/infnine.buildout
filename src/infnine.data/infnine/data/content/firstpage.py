@@ -17,6 +17,8 @@ class FirstPageContent(Item):
 
     portal_type = "First Page"
 
+    description = FieldProperty(IFirstPage['description'])
+
 factory = Factory(
         FirstPageContent,
         )
