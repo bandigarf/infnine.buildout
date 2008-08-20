@@ -23,7 +23,7 @@ class IPublication(Interface):
             required=False,
             )
 
-    funded_by = Text(
+    bib2html_funding = Text(
             title=u"Funded by",
             description=u"The party that provided funding for the publication",
             required=False,
@@ -59,14 +59,122 @@ class IPublication(Interface):
             required=False,
             )
 
-    groups = TextLine(
+    bib2html_groups = TextLine(
             title=u"Groups",
             description=u"Groups, internal or external",
             required=False,
             )
 
-    rescat = TextLine(
+    bib2html_rescat = TextLine(
             title=u"Rescat",
+            description=u"",
+            required=False,
+            )
+
+    publisher = TextLine(
+            title=u"Publisher",
+            description=u"",
+            required=False,
+            )
+
+    issn = TextLine(
+            title=u"ISSN",
+            description=u"",
+            required=False,
+            )
+
+    isbn = TextLine(
+            title=u"ISBN",
+            description=u"",
+            required=False,
+            )
+
+    address = TextLine(
+            title=u"Address",
+            description=u"",
+            required=False,
+            )
+
+    volume = TextLine(
+            title=u"Volume",
+            description=u"",
+            required=False,
+            )
+
+    doi = TextLine(
+            title=u"DOI",
+            description=u"",
+            required=False,
+            )
+
+    pages = TextLine(
+            title=u"Pages",
+            description=u"",
+            required=False,
+            )
+
+    number = TextLine(
+            title=u"Number",
+            description=u"",
+            required=False,
+            )
+
+    url = TextLine(
+            title=u"URL",
+            description=u"",
+            required=False,
+            )
+
+    howpublished = TextLine(
+            title=u"Howpublished",
+            description=u"",
+            required=False,
+            )
+
+    keywords = TextLine(
+            title=u"Keywords",
+            description=u"",
+            required=False,
+            )
+
+    priority = TextLine(
+            title=u"Priority",
+            description=u"",
+            required=False,
+            )
+
+    month = TextLine(
+            title=u"Month",
+            description=u"",
+            required=False,
+            )
+
+    bib2html_pubtype = TextLine(
+            title=u"bib2html_pubtype",
+            description=u"",
+            required=False,
+            )
+
+    bib2html_keywords = TextLine(
+            title=u"bib2html_keywords",
+            description=u"",
+            required=False,
+            )
+
+    school = TextLine(
+            title=u"School",
+            description=u"",
+            required=False,
+            )
+
+    pdf = TextLine(
+            title=u"Pdf",
+            description=u"",
+            required=False,
+            )
+
+    citeulike_article_id = TextLine(
+            title=u"citeulike-article-id",
             description=u"",
             required=False,
             )

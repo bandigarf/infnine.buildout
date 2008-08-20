@@ -24,7 +24,7 @@
         Author: <span tal:replace="text" />
     </div>
 
-    <div tal:define="text context/funded_by" tal:condition="python: text != None">
+    <div tal:define="text context/bib2html_funding" tal:condition="python: text != None">
         Funded by: <span tal:replace="text" />
     </div>
 
@@ -40,12 +40,84 @@
         Year of publication: <span tal:replace="text" />
     </div>
 
-    <div tal:define="text context/groups" tal:condition="python: text != None">
+    <div tal:define="text context/bib2html_groups" tal:condition="python: text != None">
         Groups: <span tal:replace="text" />
     </div>
 
-    <div tal:define="text context/rescat" tal:condition="python: text != None">
+    <div tal:define="text context/bib2html_rescat" tal:condition="python: text != None">
         Rescat: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/issn" tal:condition="python: text != None">
+        ISSN: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/isbn" tal:condition="python: text != None">
+        ISBN: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/number" tal:condition="python: text != None">
+        Number: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/month" tal:condition="python: text != None">
+        Month: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/keywords" tal:condition="python: text != None">
+        Keywords: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/priority" tal:condition="python: text != None">
+        Priority: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/bib2html_pubtype" tal:condition="python: text != None">
+        bib2html_pubtype: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/bib2html_keywords" tal:condition="python: text != None">
+        bib2html_keywords: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/howpublished" tal:condition="python: text != None">
+        Howpublished: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/citeulike_article_id" tal:condition="python: text != None">
+        citeulike_article_id: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/volume" tal:condition="python: text != None">
+        Volume: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/address" tal:condition="python: text != None">
+        Address: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/pages" tal:condition="python: text != None">
+        Pages: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/publisher" tal:condition="python: text != None">
+        Publisher: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/school" tal:condition="python: text != None">
+        School: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/doi" tal:condition="python: text != None">
+        DOI: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/url" tal:condition="python: text != None">
+        URL: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/pdf" tal:condition="python: text != None">
+        PDF: <span tal:replace="text" />
     </div>
 
     <div tal:define="text context/bibtex_entry" tal:condition="python: text != None">
