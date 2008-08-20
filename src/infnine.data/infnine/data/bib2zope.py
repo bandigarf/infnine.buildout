@@ -17,16 +17,17 @@ def bib2zope(filename, app = None):
             print key, ':', _bibtex.get_native(entry[4][key]).strip('{} ')
 
         if app != None:
+            publications = app.infnine.publications
             print "Running in Zope, creating objects in ZODB..."
-            if not app.infnine.stuff.hasObject(id):
+            if not publications.hasObject(id):
                 print "Entry", id, "not yet in ZODB, creating"
                 admin = app.acl_users.getUser('admin')
                 import AccessControl
                 AccessControl.SecurityManagement.newSecurityManager(None, admin)
                 from Testing.makerequest import makerequest
                 app = makerequest(app)
-                app.infnine.stuff.invokeFactory('Publication', id)
-            pub = app.infnine.stuff.__getitem__(id)
+                publications.invokeFactory('Publication', id)
+            pub = publications.__getitem__(id)
 
             print "Updating", id, keys
             from infnine.data.interfaces import IPublication
