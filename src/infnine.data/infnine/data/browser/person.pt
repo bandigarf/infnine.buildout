@@ -16,7 +16,7 @@
         <tbody>
         <tr>
             <td tal:define="photo context/photo|nothing" tal:condition="photo">
-                <img src="photo">
+                <img class="personphoto" src="photo">
             </td>
             <td>
                 <h1 class="documentFirstHeading" tal:replace="context/title" />
