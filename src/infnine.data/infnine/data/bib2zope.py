@@ -31,14 +31,20 @@ def bib2zope(filename, app = None):
             print "Updating", id, keys
             from infnine.data.interfaces import IPublication
             for key in keys:
-                if not key in IPublication._v_attrs.keys():
+                if not key in (IPublication._v_attrs.keys() + ['citeulike-article-id']):
                     print "!!! Missing key:", key
+
                 value = _bibtex.get_native(entry[4][key]).strip('{} ')
+
                 if key in ['year']:
                     value = int(value)
                 else:
                     value = unicode(value)
-                pub.__setattr__(key, value)
+
+                if key in ['citeulike-article-id']:
+                    pub.__setattr__(key.replace('-', '_'), value)
+                else:
+                    pub.__setattr__(key, value)
 
             pub.reindexObject()
             import transaction
