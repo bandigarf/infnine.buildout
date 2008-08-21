@@ -11,13 +11,12 @@ body {
 /* Header background */
 #portal-header {
     background: #7696c1 url(++resource++infnine.theme.images/header.jpg) repeat-x;
+    padding-top:7px;
 }
 
 /* Logo */
 #portal-logo img {
     margin: 0px;
-    margin-top: 7px;
-    margin-bottom: -7px;
 }
 
 #portal-columns-wrapper {
@@ -49,6 +48,10 @@ body {
 #portal-column-content {
     max-width:600px;
     padding-left:0px;
+}
+
+.documentContent {
+    margin-left:-10px;
 }
 
 /* Rounded corners */
@@ -205,6 +208,46 @@ body {
     margin: 0px;
 }
 
-.personphoto {
-    margin-right: 20px;
+/* First Page */
+#project_name1 {
+    background: transparent url(++resource++infnine.theme.images/body1.png) top left no-repeat;
+    height: 185px;
+    width: 310px;
+    margin-left: 1px;
+}
+
+#project_name2 {
+    background: transparent url(++resource++infnine.theme.images/body2.png) top left no-repeat;
+    height: 185px;
+    width: 311px;
+}
+
+#project_name3 {
+    background: transparent url(++resource++infnine.theme.images/body3.png) top left no-repeat;
+    height: 191px;
+    width: 311px;
+}
+
+#project_name4 {
+    background: transparent url(++resource++infnine.theme.images/body4.png) top left no-repeat;
+    height: 191px;
+    width: 311px;
+}
+
+#proj1 {
+    position: absolute;
+    margin-top: 150px;
+    font-size: 14pt;
+    color: #fff;
+    width: 311px;
+    text-align: center;
+}
+
+#proj2 {
+    position: absolute;
+    margin-top: 12px;
+    font-size: 14pt;
+    color: #fff;
+    width: 311px;
+    text-align: center;
 }
