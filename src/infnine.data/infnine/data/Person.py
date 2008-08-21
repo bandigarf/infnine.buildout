@@ -72,12 +72,6 @@ class IPerson(Interface):
             required=False,
             )
 
-    publications = Text(
-            title=u"Publications",
-            description=u"",
-            required=False,
-            )
-
     research_topics = List(
             title=u"Research Topics",
             description=u"",
@@ -116,5 +110,11 @@ class IPerson(Interface):
     misc = Text(
             title=u"Misc",
             description=u"Miscellaneous",
+            required=False,
+            )
+
+    publications = Text(
+            title=u"Publications",
+            description=u"",
             required=False,
             )
