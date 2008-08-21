@@ -19,7 +19,7 @@
                 <img class="personphoto" src="photo">
             </td>
             <td>
-                <h1 class="documentFirstHeading" tal:replace="context/title" />
+                <h1 class="documentFirstHeading" tal:content="context/title" />
 
                 <div tal:condition="python: context.status != None">
                     <span tal:replace="context/status" />

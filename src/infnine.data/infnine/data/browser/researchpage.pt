@@ -12,7 +12,7 @@
 
     <div tal:replace="structure provider:plone.abovecontenttitle" />
 
-    <h1 class="documentFirstHeading" tal:replace="context/title" />
+    <h1 class="documentFirstHeading" tal:content="context/title" />
 
     <div class="documentDescription" tal:content="context/description" />
 
