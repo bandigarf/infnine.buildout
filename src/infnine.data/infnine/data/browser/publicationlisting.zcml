@@ -1,0 +1,39 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="infnine.data">
+
+    <browser:page
+        for="..interfaces.IPublicationListing"
+        name="view"
+        template="publicationlisting.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="zope.app.container.interfaces.IAdding"
+        name="infnine.data.PublicationListing"
+        class=".publicationlisting.AddForm"
+        permission="infnine.data.AddPublicationListing"
+        />
+
+    <browser:page
+        for="..interfaces.IPublicationListing"
+        name="edit"
+        class=".publicationlisting.EditForm"
+        permission="cmf.ModifyPortalContent"
+        />
+
+    <browser:addMenuItem
+        title="Publication Listing"
+        factory="infnine.data.publicationlisting.factory"
+        view="infnine.data.PublicationListing"
+        permission="infnine.data.AddPublicationListing"
+        />
+
+    <browser:resource
+        name="infnine_data_publicationlisting.png"
+        image="publicationlisting.png"
+        />
+
+</configure>

@@ -1,0 +1,63 @@
+ 	 	<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="infnine.data">
+<head>
+</head>
+
+<body>
+<div metal:fill-slot="main">
+
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+    <h1 class="documentFirstHeading" tal:replace="context/title" />
+
+    <div class="documentDescription" tal:content="context/description" />
+
+    <div tal:replace="structure provider:plone.abovecontentbody" />
+
+	<div tal:define="yearlist python: []">
+		<div tal:define="pubs python: context.getParentNode().objectValues(['Publication'])">
+			<div tal:repeat="item pubs">
+				<div tal:condition="python: not(item.year in yearlist)" tal:replace="python: yearlist.append(item.year)">YEARLIST</div>
+			</div>
+			<div tal:replace="python: yearlist.sort()">YEARLIST</div>
+			<div tal:replace="python: yearlist.reverse()">YEARLIST</div>
+			<span tal:repeat="year yearlist">
+				<a href="link" tal:attributes="href python: '#'+`year`" tal:content="year">YEARLIST</a>
+			</span>
+
+			<ul tal:repeat="year yearlist">
+			<h2> <a name="" tal:attributes="name year" tal:content="year">YEAR</a></h2>
+				<div tal:repeat="pub pubs">
+  				<li tal:condition="python: pub.year == year">
+    			<p tal:replace="pub/author">Author</p>,
+				<p tal:replace="pub/title">Title</p>,
+				<p tal:replace="pub/pubtype">Pubtype</p>,
+				<p tal:replace="pub/year">Year</p>,
+				<p tal:replace="pub/bibtex_entry">BibEntry</p>,
+				</li>
+				</div>
+			</ul>
+
+		</div>
+	</div>
+	
+	  	<!--<table>
+    <tr>
+      <td width="300">File</td>
+      <td>Last Modified</td>
+    </tr>
+    <tr>
+      <td><a href="URL">TITLE</a></td>
+      <td>MON DD, YYYY H:MM AM</td>
+    </tr>
+  	</table>-->
+
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+
+</div>
+</body>
+</html>
