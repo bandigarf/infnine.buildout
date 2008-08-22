@@ -13,5 +13,6 @@
     <include file="researchpage.zcml" />
     <include file="firstpage.zcml" />
     <include file="group.zcml" />
+    <include file="applicationdomain.zcml" />
 
 </configure>

@@ -18,7 +18,7 @@ class GroupContent(Container):
     portal_type = "Group"
 
     summary = FieldProperty(IGroup['summary'])
-    research_topic = FieldProperty(IGroup['research_topic'])
+    research_topics = FieldProperty(IGroup['research_topics'])
     application_domain = FieldProperty(IGroup['application_domain'])
     team = FieldProperty(IGroup['team'])
     former_personell = FieldProperty(IGroup['former_personell'])

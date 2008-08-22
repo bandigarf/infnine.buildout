@@ -1,6 +1,8 @@
 <object name="portal_types" meta_type="Plone Types Tool">
   <object name="Alumni Page"
     meta_type="Factory-based Type Information"/>
+  <object name="Application Domain"
+    meta_type="Factory-based Type Information"/>
   <object name="First Page"
     meta_type="Factory-based Type Information"/>
   <object name="Group"

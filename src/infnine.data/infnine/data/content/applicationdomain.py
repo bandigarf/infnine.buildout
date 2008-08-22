@@ -6,17 +6,19 @@ from zope.component.factory import Factory
 from zope.interface import implements
 from zope.schema.fieldproperty import FieldProperty
 
-from infnine.data.interfaces import IResearchPage
+from infnine.data.interfaces import IApplicationDomain
 
-class ResearchPageContent(Item):
-    """Page to list research projects
+class ApplicationDomainContent(Item):
+    """Application Domain Content
     """
-    implements(IResearchPage,
+    implements(IApplicationDomain,
             ITTWLockable,
             INameFromTitle)
 
-    portal_type = "Research Page"
+    portal_type = "Application Domain"
+
+    details = FieldProperty(IApplicationDomain['details'])
 
 factory = Factory(
-        ResearchPageContent,
+        ApplicationDomainContent,
         )

@@ -29,14 +29,22 @@
         </tbody>
     </table>
 
-    <div tal:define="text context/research_topic" tal:condition="python: text != None">
-        <h2>Research Topic</h2>
-        <div tal:content="text">Research topic</div>
+    <div tal:define="items context/research_topics" tal:condition="python: (items != None) and (len(items) > 0)">
+        <h2>Research Topics</h2>
+        <ul tal:repeat="item items">
+            <li>
+                <span tal:content="item" />
+            </li>
+        </ul>
     </div>
 
-    <div tal:define="text context/application_domain" tal:condition="python: text != None">
+    <div tal:define="items context/application_domain" tal:condition="python: (items != None) and (len(items) > 0)">
         <h2>Application Domain</h2>
-        <div tal:content="text">Application domain</div>
+        <ul tal:repeat="item items">
+            <li>
+                <span tal:content="item" />
+            </li>
+        </ul>
     </div>
 
     <div tal:define="text context/team" tal:condition="python: text != None">

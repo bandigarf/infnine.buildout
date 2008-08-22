@@ -6,3 +6,4 @@ from ResearchProject import IResearchProject
 from ResearchPage import IResearchPage
 from FirstPage import IFirstPage
 from Group import IGroup
+from ApplicationDomain import IApplicationDomain

@@ -12,6 +12,7 @@ infnine.data.egg-info/paster_plugins.txt
 infnine.data.egg-info/requires.txt
 infnine.data.egg-info/top_level.txt
 infnine/data/AlumniPage.py
+infnine/data/ApplicationDomain.py
 infnine/data/FirstPage.py
 infnine/data/Group.py
 infnine/data/PeoplePage.py
@@ -28,6 +29,7 @@ infnine/data/setuphandlers.py
 infnine/data/tests.py
 infnine/data/browser/__init__.py
 infnine/data/browser/alumnipage.py
+infnine/data/browser/applicationdomain.py
 infnine/data/browser/firstpage.py
 infnine/data/browser/group.py
 infnine/data/browser/peoplepage.py
@@ -37,6 +39,7 @@ infnine/data/browser/researchpage.py
 infnine/data/browser/researchproject.py
 infnine/data/content/__init__.py
 infnine/data/content/alumnipage.py
+infnine/data/content/applicationdomain.py
 infnine/data/content/firstpage.py
 infnine/data/content/group.py
 infnine/data/content/peoplepage.py

@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddApplicationDomain"
+        title="Infnine Data: Add Application Domain"
+        />
+
+    <utility
+        component=".applicationdomain.factory"
+        name="infnine.data.ApplicationDomain"
+        />
+
+    <class class=".applicationdomain.ApplicationDomainContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.IApplicationDomain"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.IApplicationDomain"
+          />
+    </class>
+
+    <five:registerClass
+        class=".applicationdomain.ApplicationDomainContent"
+        meta_type="Application Domain"
+        permission="infnine.data.AddApplicationDomain"
+        addview="infnine.data.ApplicationDomain"
+        icon="infnine_data_applicationdomain.png"
+        />
+
+</configure>

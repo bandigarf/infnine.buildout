@@ -1,5 +1,8 @@
 from zope.interface import Interface
-from zope.schema import TextLine, Text, Choice, Int
+from zope.schema import TextLine, Text, List, Choice, Int
+
+from infnine.data.common import research_topics_list
+from infnine.data.common import application_domains_list
 
 class IResearchProject(Interface):
     """A research project
@@ -23,16 +26,26 @@ class IResearchProject(Interface):
             required=False,
             )
 
-    research_topic = TextLine(
-            title=u"Research topic",
-            description=u"Research topic name",
+    research_topics = List(
+            title=u"Research Topics",
+            description=u"Research topics covered by the project",
             required=False,
+            unique=True,
+            value_type=Choice(
+                    title=u"Research Topic",
+                    values=research_topics_list,
+                    ),
             )
 
-    application_domain = TextLine(
+    application_domain = List(
             title=u"Application domain",
             description=u"Application domain of the project",
             required=False,
+            unique=True,
+            value_type=Choice(
+                    title=u"Application Domain",
+                    values=application_domains_list,
+                    ),
             )
 
     team = Text(

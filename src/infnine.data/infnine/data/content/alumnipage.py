@@ -17,8 +17,6 @@ class AlumniPageContent(Item):
 
     portal_type = "Alumni Page"
 
-    description = FieldProperty(IAlumniPage['description'])
-
 factory = Factory(
         AlumniPageContent,
         )
