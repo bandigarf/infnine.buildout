@@ -38,9 +38,13 @@
         </ul>
     </div>
 
-    <div tal:define="text context/application_domain" tal:condition="python: text != None">
+    <div tal:define="items context/application_domain" tal:condition="python: (items != None) and (len(items) > 0)">
         <h2>Application Domain</h2>
-        <div tal:content="text">Application domain</div>
+        <ul tal:repeat="item items">
+            <li>
+                <span tal:content="item" />
+            </li>
+        </ul>
     </div>
 
     <div tal:define="text context/team" tal:condition="python: text != None">

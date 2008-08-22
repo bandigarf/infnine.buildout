@@ -1,3 +1,10 @@
+application_domains_list=(
+    'Multi-Joint Action',
+    'Intelligent Kitchen',
+    'Cognitive Factory',
+    'Soccer Analysis',
+)
+
 research_topics_list=(
     'model-based image interpretation',
     'model fitting',
