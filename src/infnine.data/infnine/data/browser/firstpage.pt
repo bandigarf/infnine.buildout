@@ -38,13 +38,21 @@
 
     <table border="0" cellspacing="0" cellpadding="0">
         <tr>
-            <td><img src="++resource++infnine.theme.images/body1.png" /></td>
-            <td><img src="++resource++infnine.theme.images/body2.png" /></td>
-        </tr>
-        <tr>
-            <td><img src="++resource++infnine.theme.images/body3.png" /></td>
-            <td><img src="++resource++infnine.theme.images/body4.png" /></td>
-        </tr>
+             <td>
+                 <a href="#"><div id="project_name1"><div id="proj1"> Project Name </div></div></a>
+             </td>
+             <td>
+                <a href="#"><div id="project_name2"><div id="proj1"> Project Name </div></div></a>
+            </td>
+         </tr>
+         <tr>
+             <td>
+                 <a href="#"><div id="project_name3"><div id="proj2"> Project Name </div></div></a>
+             </td>
+             <td>
+                <a href="#"><div id="project_name4"><div id="proj2"> Project Name </div></div></a>
+             </td>
+         </tr>
     </table>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />
