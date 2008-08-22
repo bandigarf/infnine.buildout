@@ -35,7 +35,7 @@ def bib2zope(filename, app = None):
                 if not key.replace('-', '_') in (IPublication._v_attrs.keys()):
                     print "!!! Missing key:", key
 
-                value = _bibtex.get_native(entry[4][key]).strip('{} ')
+                value = _bibtex.get_native(entry[4][key]).strip('{} "')
 
                 if key in ['year']:
                     value = int(value)
