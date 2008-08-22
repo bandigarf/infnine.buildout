@@ -7,3 +7,4 @@ from ResearchPage import IResearchPage
 from FirstPage import IFirstPage
 from Group import IGroup
 from ApplicationDomain import IApplicationDomain
+from PublicationListing import IPublicationListing
