@@ -39,18 +39,18 @@
     <table border="0" cellspacing="0" cellpadding="0">
         <tr>
              <td>
-                 <a href="#"><div id="project_name1"><div id="proj1"> Project Name </div></div></a>
+                 <a href="#"><div id="project_name1"><div id="proj1"> Aspogamo </div></div></a>
              </td>
              <td>
-                <a href="#"><div id="project_name2"><div id="proj1"> Project Name </div></div></a>
+                <a href="#"><div id="project_name2"><div id="proj1"> Intelligent Kitchen </div></div></a>
             </td>
          </tr>
          <tr>
              <td>
-                 <a href="#"><div id="project_name3"><div id="proj2"> Project Name </div></div></a>
+                 <a href="#"><div id="project_name3"><div id="proj2"> Cognitive Factory </div></div></a>
              </td>
              <td>
-                <a href="#"><div id="project_name4"><div id="proj2"> Project Name </div></div></a>
+                <a href="#"><div id="project_name4"><div id="proj2"> Multi-Joint Action </div></div></a>
              </td>
          </tr>
     </table>

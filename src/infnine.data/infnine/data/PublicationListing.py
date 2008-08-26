@@ -1,5 +1,5 @@
 from zope.interface import Interface
-from zope.schema import TextLine, Text
+from zope.schema import TextLine, Text, List, Choice, Int
 
 class IPublicationListing(Interface):
     """The page for listing of Chair Publications

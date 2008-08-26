@@ -17,31 +17,99 @@
     <div class="documentDescription" tal:content="context/description" />
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
-
+	<!-- Sorting Publications by year-->
 	<div tal:define="yearlist python: []">
 		<div tal:define="pubs python: context.getParentNode().objectValues(['Publication'])">
 			<div tal:repeat="item pubs">
 				<div tal:condition="python: not(item.year in yearlist)" tal:replace="python: yearlist.append(item.year)">YEARLIST</div>
 			</div>
+	<!--Test Area
+	<div tal:define="personlistpubs python: [pub.author for pub in pubs]">
+        <div tal:define="authorlist context/author_list">
+            <div tal:repeat="person personlistpubs">
+                <div tal:define="wordlist python: `person`.split()">
+                    <div tal:repeat="pword wordlist" >  
+                        <div tal:define="pwordlower python: pword.lower()">             
+                        <a tal:condition="python: pword in authorlist" href="link" tal:attributes="href python: context.portal_url()
+                         + '/people/' + pwordlower">
+                            <span tal:content="python: portal.people.__getitem__(pwordlower).title" />
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	    </div>
+	</div>-->
+	<h2>Publications Sorted bt Year</h2>
+	<!--End of Test Area-->
+	<!--Year List-->
 			<div tal:replace="python: yearlist.sort()">YEARLIST</div>
 			<div tal:replace="python: yearlist.reverse()">YEARLIST</div>
 			<span tal:repeat="year yearlist">
 				<a href="link" tal:attributes="href python: '#'+`year`" tal:content="year">YEARLIST</a>
 			</span>
-
+	<!--Publications Display-->
+            <div tal:define="authorlist context/author_list">
 			<ul tal:repeat="year yearlist">
 			<h2> <a name="" tal:attributes="name year" tal:content="year">YEAR</a></h2>
 				<div tal:repeat="pub pubs">
   				<li tal:condition="python: pub.year == year">
-    			<p tal:replace="pub/author">Author</p>,
-				<p tal:replace="pub/title">Title</p>,
-				<p tal:replace="pub/pubtype">Pubtype</p>,
-				<p tal:replace="pub/year">Year</p>,
-				<p tal:replace="pub/bibtex_entry">BibEntry</p>,
+					<span tal:condition="pub/author | nothing">
+                        <span tal:define="wordlist python: `pub.author`.split(' and ')">
+                            <span tal:repeat="pword wordlist" >
+                            <span tal:define="names python: pword.split(' ')">
+                            <span tal:repeat="name names">
+                                        <span tal:define="global isext python: False"></span>
+                                        <span tal:define="global haspage python: True"></span>
+                                <span tal:define="pwordlower python: name.lower()">            
+                                    <a  
+                                        tal:condition="python: authorlist.__contains__(name.rstrip('\''))"
+                                        href="link" tal:attributes="href python: context.portal_url()
+                                        + '/people/' + pwordlower.rstrip('\'')">
+
+                                        <span tal:condition="python: not(authorlist.__contains__(name.rstrip('\'')))"
+                                        tal:define="global isext python: True"></span>
+
+                                        <span 
+                                        tal:condition="python: 
+                                        portal.people.__contains__(pwordlower.rstrip('\''))" 
+                                        tal:content="python: 
+                                        portal.people.__getitem__(pwordlower.rstrip('\'')).title"> TITLE</span>
+
+                                        <span tal:condition="python: 
+                                        not (portal.people.__contains__(pwordlower.rstrip('\'')))"
+                                        tal:define="global haspage python: False"></span>
+                                    </a>
+                                    <span>isext:
+                                    <span tal:content="isext"></span></span>
+                                    <span>haspage:
+                                    <span tal:content="haspage"></span></span>
+                                </span>
+                            </span>
+                            </span>
+                                        <span tal:condition="python: (isext == True) and (haspage == False)"
+                                        tal:content="pword"></span>
+                                        <span tal:condition="python: (isext == False) and (haspage == False)"
+                                        tal:content="pword"></span>
+                            </span>
+                        </span>
+                    </span>
+					<span tal:condition="pub/title | nothing">						
+						<p tal:replace="pub/title">Title</p>,
+					</span>
+					<span tal:condition="pub/pubtype | nothing">
+						<p tal:condition="pub/pubtype" tal:replace="pub/pubtype">Pubtype</p>,
+					</span>
+					<span tal:condition="pub/year | nothing">
+						<p tal:replace="pub/year">Year</p>,
+					</span>
+					<span tal:condition="pub/bibtex_entry | nothing">
+						<p tal:replace="pub/bibtex_entry">BibEntry</p>
+					</span>
 				</li>
 				</div>
 			</ul>
-
+            </div>
 		</div>
 	</div>
 	
