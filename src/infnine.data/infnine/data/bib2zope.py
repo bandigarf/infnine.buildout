@@ -62,7 +62,7 @@ bibpath = './'
 
 import os
 all_files = os.listdir(bibpath)
-bib_files = [file for file in all_files if (file[-4:] == '.bib' and file[-11:] != "private.bib" and file[-10:] != "latex8.bib" and file[0:12] != "bibliography")]
+bib_files = [file for file in all_files if (file[-4:] == '.bib' and file[-11:] != "private.bib" and file[-10:] != "latex8.bib" and file[0:12] != "bibliography" and file[0:12] != "aspogamo.bib")]
 print "Found .bib files:", bib_files
 
 if not 'app' in dir():

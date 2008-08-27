@@ -121,5 +121,4 @@ authors_list=(
     'Stulp',
     'Tenorth',
     'Wimmer',
-    'Michael',
 )

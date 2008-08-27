@@ -21,81 +21,70 @@
 	<div tal:define="yearlist python: []">
 		<div tal:define="pubs python: context.getParentNode().objectValues(['Publication'])">
 			<div tal:repeat="item pubs">
-				<div tal:condition="python: not(item.year in yearlist)" tal:replace="python: yearlist.append(item.year)">YEARLIST</div>
-			</div>
-	<!--Test Area
-	<div tal:define="personlistpubs python: [pub.author for pub in pubs]">
-        <div tal:define="authorlist context/author_list">
-            <div tal:repeat="person personlistpubs">
-                <div tal:define="wordlist python: `person`.split()">
-                    <div tal:repeat="pword wordlist" >  
-                        <div tal:define="pwordlower python: pword.lower()">             
-                        <a tal:condition="python: pword in authorlist" href="link" tal:attributes="href python: context.portal_url()
-                         + '/people/' + pwordlower">
-                            <span tal:content="python: portal.people.__getitem__(pwordlower).title" />
-                        </a>
-                        </div>
-                    </div>
+				<div    tal:condition="python: not(item.year in yearlist)" 
+                        tal:replace="python: yearlist.append(item.year)">YEARLIST
                 </div>
-            </div>
-	    </div>
-	</div>-->
+			</div>
 	<h2>Publications Sorted bt Year</h2>
-	<!--End of Test Area-->
 	<!--Year List-->
 			<div tal:replace="python: yearlist.sort()">YEARLIST</div>
 			<div tal:replace="python: yearlist.reverse()">YEARLIST</div>
 			<span tal:repeat="year yearlist">
+                <!--Reference to Location inside the Page-->
 				<a href="link" tal:attributes="href python: '#'+`year`" tal:content="year">YEARLIST</a>
 			</span>
+
 	<!--Publications Display-->
+            <!-- author_list defined in data/content/publicationlisting.py-->
             <div tal:define="authorlist context/author_list">
 			<ul tal:repeat="year yearlist">
 			<h2> <a name="" tal:attributes="name year" tal:content="year">YEAR</a></h2>
 				<div tal:repeat="pub pubs">
   				<li tal:condition="python: pub.year == year">
 					<span tal:condition="pub/author | nothing">
-                        <span tal:define="wordlist python: `pub.author`.split(' and ')">
-                            <span tal:repeat="pword wordlist" >
-                            <span tal:define="names python: pword.split(' ')">
+                        <!--Display authors with bold link if members of chair, only bold if members
+                        and have no page in portal.people and diplay normal if they are externals-->
+                        <span tal:define="namelist python: `pub.author`.split(' and ')">
+                            <span tal:repeat="fullname namelist" >                         
+                            <span tal:define="names python: fullname.split(' ')">
+                            <!--is author external for later use-->
+                            <span tal:define="global isExt python: True">
                             <span tal:repeat="name names">
-                                        <span tal:define="global isext python: False"></span>
-                                        <span tal:define="global haspage python: True"></span>
-                                <span tal:define="pwordlower python: name.lower()">            
-                                    <a  
-                                        tal:condition="python: authorlist.__contains__(name.rstrip('\''))"
-                                        href="link" tal:attributes="href python: context.portal_url()
-                                        + '/people/' + pwordlower.rstrip('\'')">
-
-                                        <span tal:condition="python: not(authorlist.__contains__(name.rstrip('\'')))"
-                                        tal:define="global isext python: True"></span>
-
-                                        <span 
-                                        tal:condition="python: 
-                                        portal.people.__contains__(pwordlower.rstrip('\''))" 
-                                        tal:content="python: 
-                                        portal.people.__getitem__(pwordlower.rstrip('\'')).title"> TITLE</span>
-
-                                        <span tal:condition="python: 
-                                        not (portal.people.__contains__(pwordlower.rstrip('\'')))"
-                                        tal:define="global haspage python: False"></span>
-                                    </a>
-                                    <span>isext:
-                                    <span tal:content="isext"></span></span>
-                                    <span>haspage:
-                                    <span tal:content="haspage"></span></span>
+                            <!--is author in the list of chair members for later use-->
+                            <span tal:define="isInList python: ' '">
+                                <span tal:define="namelower python: name.lower()">
+                                    <span   tal:condition="python: authorlist.__contains__(name.rstrip('\''))"
+                                            tal:define="isInList python: context.portal_url()
+                                        + '/people/' + namelower.rstrip('\'')">
+                                        <b   tal:condition="python: isInList">
+                                            <a tal:condition="python: 
+                                            portal.people.__contains__(namelower.rstrip('\''))"
+                                            href="link" tal:attributes="href isInList"
+                                            tal:content="python: 
+                                            portal.people.__getitem__(namelower.rstrip('\'')).title" 
+                                            tal:define="global isExt python: False">
+                                            </a>
+                                        </b>
+                                        <b   tal:condition="python: isInList">
+                                            <span tal:condition="python: 
+                                            not (portal.people.__contains__(namelower.rstrip('\'')))"
+                                            tal:content="python: fullname.lstrip('u\'').rstrip('\'')">
+                                            </span>
+                                        </b>
+                                    </span>  
                                 </span>
+                            </span>   
                             </span>
+                                <span   tal:condition="python: isExt == True" 
+                                        tal:content="python: fullname.lstrip('u\'').rstrip('\'')">
+                                </span>
+                            </span>,
                             </span>
-                                        <span tal:condition="python: (isext == True) and (haspage == False)"
-                                        tal:content="pword"></span>
-                                        <span tal:condition="python: (isext == False) and (haspage == False)"
-                                        tal:content="pword"></span>
                             </span>
                         </span>
                     </span>
 					<span tal:condition="pub/title | nothing">						
-						<p tal:replace="pub/title">Title</p>,
+						<i tal:content="pub/title">Title</i>,
 					</span>
 					<span tal:condition="pub/pubtype | nothing">
 						<p tal:condition="pub/pubtype" tal:replace="pub/pubtype">Pubtype</p>,
@@ -112,18 +101,6 @@
             </div>
 		</div>
 	</div>
-	
-	  	<!--<table>
-    <tr>
-      <td width="300">File</td>
-      <td>Last Modified</td>
-    </tr>
-    <tr>
-      <td><a href="URL">TITLE</a></td>
-      <td>MON DD, YYYY H:MM AM</td>
-    </tr>
-  	</table>-->
-
     <div tal:replace="structure provider:plone.belowcontentbody" />
 
 </div>
