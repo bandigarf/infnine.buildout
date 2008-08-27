@@ -1,5 +1,5 @@
 from plone.app.content.interfaces import INameFromTitle
-from plone.app.content.container import Container
+from plone.app.content.item import Item
 from plone.locking.interfaces import ITTWLockable
 
 from zope.component.factory import Factory
@@ -10,7 +10,7 @@ from infnine.data.interfaces import IPublicationListing
 
 from infnine.data.common import authors_list
 
-class PublicationListingContent(Container):
+class PublicationListingContent(Item):
     """Page to list Chair Publications
     """
     implements(IPublicationListing,
