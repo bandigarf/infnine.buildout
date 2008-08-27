@@ -25,7 +25,7 @@
                         tal:replace="python: yearlist.append(item.year)">YEARLIST
                 </div>
 			</div>
-	<h2>Publications Sorted bt Year</h2>
+	<h1>Publications Sorted bt Year</h1>
 	<!--Year List-->
 			<div tal:replace="python: yearlist.sort()">YEARLIST</div>
 			<div tal:replace="python: yearlist.reverse()">YEARLIST</div>
