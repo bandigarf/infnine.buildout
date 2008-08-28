@@ -60,31 +60,35 @@
                             <span tal:repeat="name names">
                             <!--is author in the list of chair members for later use-->
                             <span tal:define="isInList python: ' '">
-                                <span tal:define="namelower python: name.lower()">
-                                    <span   tal:condition="python: authorlist.__contains__(name.rstrip('\''))"
-                                            tal:define="isInList python: context.portal_url()
-                                        + '/people/' + namelower.rstrip('\'')">
-                                        <b   tal:condition="python: isInList">
+                            <!-- .fN is defined in content/publicationlisting.py-->
+                                <span tal:define="namelower python: context.fN(name.rstrip('\''))">
+                                    <span   tal:condition="python: namelower in authorlist"
+                                            tal:define="isInList python: context.fN(name.rstrip('\''))">  
+                                        <!--Chair Members with Person page-->       
+                                        <b  tal:condition="python: isInList">
                                             <a tal:condition="python: 
-                                            portal.people.__contains__(namelower.rstrip('\''))"
-                                            href="link" tal:attributes="href isInList"
+                                            portal.people.__contains__(isInList)"
+                                            href="link" tal:attributes="href python: context.portal_url() + '/people/' + isInList"
                                             tal:content="python: 
-                                            portal.people.__getitem__(namelower.rstrip('\'')).title" 
+                                            portal.people.__getitem__(isInList).title" 
                                             tal:define="global isExt python: False">
                                             </a>
                                         </b>
+                                        <!--Chair Members withOUT Person page-->
                                         <b   tal:condition="python: isInList">
+                                            <!-- .fNU is defined in content/publicationlisting.py-->
                                             <span tal:condition="python: 
-                                            not (portal.people.__contains__(namelower.rstrip('\'')))"
-                                            tal:content="python: fullname.lstrip('u\'').rstrip('\'')">
+                                            not (portal.people.__contains__(isInList))"
+                                            tal:content="python: context.fNU(fullname.lstrip('u\'').rstrip('\''))">
                                             </span>
                                         </b>
-                                    </span>  
+                                    </span> 
                                 </span>
-                            </span>   
+                            </span> 
                             </span>
+                                        <!--Externals-->
                                 <span   tal:condition="python: isExt == True" 
-                                        tal:content="python: fullname.lstrip('u\'').rstrip('\'')">
+                                        tal:content="python: context.fNU(fullname.lstrip('u\'').rstrip('\''))">
                                 </span>
                             </span>,
                             </span>
