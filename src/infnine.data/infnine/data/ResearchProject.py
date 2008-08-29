@@ -50,13 +50,13 @@ class IResearchProject(Interface):
 
     team = Text(
             title=u"Team",
-            description=u"People working on the research project",
+            description=u"People working on the research project, enter line by line person url part name",
             required=False,
             )
 
     former_personell = Text(
             title=u"Former personell",
-            description=u"People who used to work on the project",
+            description=u"People who used to work on the project, enter line by line person url part name",
             required=False,
             )
 
@@ -68,7 +68,7 @@ class IResearchProject(Interface):
 
     publications = Text(
             title=u"Publications",
-            description=u"Publications related to the project",
+            description=u"Publications related to the project, enter line by line bibtex citation string",
             required=False,
             )
 

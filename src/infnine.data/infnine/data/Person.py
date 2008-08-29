@@ -85,13 +85,13 @@ class IPerson(Interface):
 
     research_projects_current = Text(
             title=u"Current research projects",
-            description=u"Research projects the person is currently active in",
+            description=u"Research projects the person is currently active in, enter line by line url part name of project",
             required=False,
             )
 
     research_projects_former = Text(
             title=u"Former research projects",
-            description=u"Research projects the person was active in",
+            description=u"Research projects the person was active in, enter line by line url part name of project",
             required=False,
             )
 
@@ -103,7 +103,7 @@ class IPerson(Interface):
 
     students = Text(
             title=u"Students",
-            description=u"",
+            description=u"Line by line url part name of the students working for you, must have page at the chair",
             required=False,
             )
 
@@ -115,6 +115,6 @@ class IPerson(Interface):
 
     publications = Text(
             title=u"Publications",
-            description=u"",
+            description=u"Only selected Publications, enter line by line bibtex citation string",
             required=False,
             )

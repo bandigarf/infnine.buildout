@@ -26,7 +26,7 @@ body {
 /* Line below the logo */
 #portal-header1 {
     background: #7696c1 url(++resource++infnine.theme.images/header1_bg.png) repeat-x;
-    width: 100%;
+    width: 200%;
 }
 
 /* Random picture in the top right corner */

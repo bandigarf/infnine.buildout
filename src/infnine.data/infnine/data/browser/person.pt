@@ -127,7 +127,7 @@
          tal:content="structure text" />
 
     <div tal:define="text context/publications" tal:condition="python: text != None">
-        <h2>Publications</h2>
+        <h2>Selected Publications</h2>
         <ul tal:define="items python:text.split()" tal:repeat="item items">
             <li tal:define="publications python:[publication[0] for publication in portal.publications.items()
                                                  if publication[1].meta_type == 'Publication']"
@@ -136,7 +136,14 @@
                     <span tal:content="python: portal.publications.__getitem__(item).title" />
                 </a>
             </li>
-        </ul>
+        </ul>   
+    </div>
+
+    <div>
+         For the full list of my Publications please see the
+        <a href="link" tal:attributes="href python: context.portal_url() + '/publications/'">
+            <span tal:replace="python: portal.publications.title"/>
+        </a> section. 
     </div>
 
     <hr />
