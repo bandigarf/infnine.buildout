@@ -1,0 +1,50 @@
+[GENERALS]
+-https
+-final design (Vilmos) + fine tunning
+-static portlet header font to be the same as news portlet
+-static portlet to render private page
+-backups make cron job
+./repozo -B -f ../var/filestorage/Data.fs -z -v -r ../var/filestorage/backup/
+-page down msg - dejan to garbas/nejc
+-bilingual
+-tutorial
+
+PEOPLE
+-room number a link to the map
+- research topics make comma separeted list
+- application domain list and make them url
+- alphabetical sort of ppl
+
+RESEARCH
+- Application domain make url
+- update research map with links to application domains
+- improve research map image - Dejan
+- make Project Details Images uniform in size
+ 
+
+PUBLICATIONS
+- script to be run and objects generated - Dejan
+- publication listing on author, year, type and project/research category - Dejan
+- to appear in person - Dejan
+- selected publication
+
+IMPRESSUM
+- do Map of Offices 
+- remove Phone Dir
+- add Secreteriat and Web responsibilities - see http://www9.cs.tum.edu/infos/ 
+
+NEWS
+- restrict adding only to News folder
+
+TEACHING
+
+DESIGN
+- TUM and IN logos to be solid
+- TUM - link to www.tum.de
+- IN - link to www.in.tum.de
+- footer of navigation portlet (central part is ovelapping it)
+
+Paperwork
+- call Frau Sprang
+- KVR
+- Papers for Quirin

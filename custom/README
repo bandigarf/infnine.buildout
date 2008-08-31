@@ -1,0 +1,5 @@
+This folder contains non-standard auxiliary scripts
+and files for running the Zope/Plone Instance.
+Current list:
+- backing up Data.fs
+- TODOs
