@@ -255,3 +255,14 @@ body {
 .personphoto {
     margin-right: 20px;
 }
+
+.researchprojectlogo,
+.researchprojectsummaryeven,
+.researchprojectsummaryodd {
+    width: 50%;
+    padding-bottom: 30px;
+}
+
+.researchprojectlogo {
+    text-align: center;
+}

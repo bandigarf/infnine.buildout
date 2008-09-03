@@ -52,7 +52,7 @@
 
                     <!-- even row, logo on the right side, summary & title on the left -->
                     <tr tal:condition="repeat/item/even">
-                        <td>
+                        <td class="researchprojectsummaryeven">
                             <a href="" tal:attributes="href python: item.id">
                                 <h3 tal:content="item/title" />
                             </a>
@@ -63,7 +63,7 @@
                                 </a>
                             </div>
                         </td>
-                        <td>
+                        <td class="researchprojectlogo">
                             <a href="" tal:attributes="href python: item.id">
                                 <img tal:condition="exists:item/logo" tal:attributes="src python: item.id + '/logo' " src="">
                             </a>
@@ -72,12 +72,12 @@
 
                     <!-- odd row, logo on the left side, summary & title on the right -->
                     <tr tal:condition="repeat/item/odd">
-                        <td>
+                        <td class="researchprojectlogo">
                             <a href="" tal:attributes="href python: item.id">
                                 <img tal:condition="exists:item/logo" tal:attributes="src python: item.id + '/logo' " src="">
                             </a>
                         </td>
-                        <td>
+                        <td class="researchprojectsummaryodd">
                             <a href="" tal:attributes="href python: item.id">
                                 <h3 tal:content="item/title" />
                             </a>
