@@ -66,8 +66,7 @@ bib_files = [file for file in all_files if (file[-4:] == '.bib' and file[-11:] !
 print "Found .bib files:", bib_files
 
 if not 'app' in dir():
-   app = None
+    app = None
 
 for file in bib_files:
-#    bibfile2zopeobject(file)
     bib2zope(file, app)
