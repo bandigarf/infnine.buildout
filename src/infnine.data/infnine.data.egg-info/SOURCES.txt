@@ -18,6 +18,7 @@ infnine/data/Group.py
 infnine/data/PeoplePage.py
 infnine/data/Person.py
 infnine/data/Publication.py
+infnine/data/PublicationListing.py
 infnine/data/ResearchPage.py
 infnine/data/ResearchProject.py
 infnine/data/__init__.py
@@ -35,6 +36,7 @@ infnine/data/browser/group.py
 infnine/data/browser/peoplepage.py
 infnine/data/browser/person.py
 infnine/data/browser/publication.py
+infnine/data/browser/publicationlisting.py
 infnine/data/browser/researchpage.py
 infnine/data/browser/researchproject.py
 infnine/data/content/__init__.py
@@ -45,5 +47,6 @@ infnine/data/content/group.py
 infnine/data/content/peoplepage.py
 infnine/data/content/person.py
 infnine/data/content/publication.py
+infnine/data/content/publicationlisting.py
 infnine/data/content/researchpage.py
 infnine/data/content/researchproject.py

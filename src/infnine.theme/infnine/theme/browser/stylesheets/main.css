@@ -261,8 +261,11 @@ body {
 .researchprojectsummaryodd {
     width: 50%;
     padding-bottom: 30px;
+    text-align: justify;
 }
 
 .researchprojectlogo {
     text-align: center;
 }
+
+

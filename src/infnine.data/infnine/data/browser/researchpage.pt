@@ -22,17 +22,18 @@
         <div style="text-align: center;">
         <img usemap="#research-map" src="research-map">
         <map name="research-map">
-            <area shape="rect" href="cogmash" title="Plan-Based Control for Cognitive Factories" coords="485,126,548,384" />
-            <area shape="rect" href="face-mimic" title="Face and Mimic Expressions Recognition" coords="163,433,416,474" />
-            <area shape="rect" href="envmod" title="Acquisition of Environment Models" coords="228,170,482,253" />
-            <area shape="rect" href="cogito" title="Cogito" coords="163,390,416,431" />
-            <area shape="rect" href="cop" title="Cognitive Perception" coords="230,127,482,167" />
-            <area shape="rect" href="mudis" title="Mudis" coords="164,127,225,167" />
+            <area shape="rect" href="http://www.cotesys.org" title="COgniton for TEchnical SYSstems" coords="5,4,170,100" />
+            <area shape="rect" href="cogmash" title="lan-Based Control for Cognitive Factories" coords="498,111,544,380" />
+            <area shape="rect" href="face-mimic" title="Face and Mimic Expressions Recognition" coords="183,447,418,476" />
+            <area shape="rect" href="envmod" title="Acquisition of Environment Models" coords="262,163,488,238" />
+            <area shape="rect" href="cogito" title="Cogito" coords="262,256,489,286" />
+            <area shape="rect" href="cop" title="Cognitive Perception" coords="261,111,489,142" />
+            <area shape="rect" href="mudis" title="Mudis" coords="182,112,251,140" />
             <area shape="rect" href="knowledge4cotesys" title="Knowledge4Cotesys" coords="229,301,482,341" />
-            <area shape="rect" href="cogito" title="Cogito" coords="230,257,482,297" />
-            <area shape="rect" href="cogman" title="CogMan" coords="290,345,416,386" />
-            <area shape="rect" href="agilo" title="Agilo" coords="552,343,677,384" />
-            <area shape="rect" href="aspogamo" title="ASPOGAMO" coords="552,127,677,341" />
+            <area shape="rect" href="cogito" title="Cogito" coords="181,395,421,427" />
+            <area shape="rect" href="cogman" title="CogMan" coords="308,351,419,380" />
+            <area shape="rect" href="agilo" title="Agilo" coords="557,353,666,382" />
+            <area shape="rect" href="aspogamo" title="ASPOGAMO" coords="556,112,667,331" />
         </map>
         </div>
             <div tal:define="items python: [item[1] for item in context.items() if item[1].meta_type == 'Group']"
