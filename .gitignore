@@ -9,3 +9,4 @@ bin/*
 parts/*
 downloads/*
 eggs/*
+custom/backup_cron/*
