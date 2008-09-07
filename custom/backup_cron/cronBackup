@@ -1,9 +1,0 @@
-MAILTO=dejan.pangercic@in.tum.de
-
-30 2 * * * ${INFNINEHOME}/custom/backup_cron/backup.sh
-
-
-
-
-
-
