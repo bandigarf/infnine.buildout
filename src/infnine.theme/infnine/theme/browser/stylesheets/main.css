@@ -26,33 +26,58 @@ body {
 /* Line below the logo */
 #portal-header1 {
     background: #7696c1 url(++resource++infnine.theme.images/header1_bg.png) repeat-x;
-    width: 200%;
+    width: 100%;
 }
 
 /* Random picture in the top right corner */
 #portal-header-pic {
-    /*float:right;*/
-    position:absolute;
-    right:0px;
+    float:right;
     margin-top: -5px;
 }
 
 /* Centering */
 #portal-columns-table-wrapper {
-    width: 1020px !important;
-    margin: 0 auto;
-    border: 1px solid black;
-    background-color: #d7dbe4;
+    margin-right: 10px;
+/*     border: 1px solid black; */
+/*     background-color: #d7dbe4; */
 }
 
 #portal-column-content {
     max-width:600px;
-    padding-left:0px;
+    padding:0px;
+    margin: 0 auto;
+    /*border: 1px solid black !important;*/
+    /*border-right: none;*/
+    background-color: #d7dbe4;
 }
 
-.documentContent {
-    margin-left:-10px;
+.center_aligned {
+/*     text-align: center; */
+    padding-left: auto;
+    padding-right: auto;
 }
+
+#region-content {
+    /*border: 1px black solid;*/
+    border-right: none;
+}
+
+#fp_center {
+    width:620px;
+    margin: 0 auto;
+}
+
+/*#right_column{
+    border: 1px black solid;
+    border-left: none;
+}*/
+
+#portal-column-two {
+    /*border: 1px solid black;*/
+    border-left: none;
+    background-color: #d7dbe4;
+}
+
 
 /* Rounded corners */
 #contentTopLeft {
@@ -61,8 +86,6 @@ body {
   height: 13px;
   width: 13px;
   float: left;
-  margin-top: -1px;
-  margin-left: -1px;
 }
 
 #contentBottomRight {
@@ -79,7 +102,7 @@ body {
 .portlet {
     width: 182px!important;
     border-bottom: 0px;
-    margin-left:-5px;
+    /*margin-left:-5px;*/
 }
 
 .portletNavigationTree{
@@ -95,6 +118,8 @@ body {
 .portletNavigationTree .portletItem {
     background-color: #7696c1;
     border-top: 1px solid #d7dbe4;
+    border-left: 1px solid #d7dbe4;
+    border-right: 1px solid #d7dbe4;
     padding-bottom: 30px;
 }
 
@@ -118,7 +143,7 @@ body {
     height: 48px;
     width: 146px;
     margin-top: 12px;
-    margin-left: -11px;
+    margin-left: -12px;
     border-top: 1px solid #d7dbe4;
 }
 
@@ -169,11 +194,12 @@ body {
 /* News portlet */
 .portletItemDetails {
     color:#8CACBB;
-    margin-top: -16px;
+    text-align:left;
+   /* margin-top: -16px;*/
 }
 
 .portletNews .portletItem a {
-    margin-top: -11px;
+    /*margin-top: -11px;*/
     font-weight: bold;
 }
 
@@ -182,7 +208,7 @@ body {
 }
 
 .portletNews .portletHeader a {
-    margin-left: -9px;
+    /*margin-left: -9px;*/
 }
 
 .portletNews .portletItem {
