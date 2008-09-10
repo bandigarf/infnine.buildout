@@ -11,7 +11,7 @@ body {
 /* Header background */
 #portal-header {
     background: #7696c1 url(++resource++infnine.theme.images/header.jpg) repeat-x;
-    padding-top:7px;
+    padding-top: 7px;
 }
 
 /* Logo */
@@ -31,7 +31,7 @@ body {
 
 /* Random picture in the top right corner */
 #portal-header-pic {
-    float:right;
+    float: right;
     margin-top: -5px;
 }
 
@@ -43,8 +43,8 @@ body {
 }
 
 #portal-column-content {
-    max-width:600px;
-    padding:0px;
+    max-width: 600px;
+    padding: 0px;
     margin: 0 auto;
     /*border: 1px solid black !important;*/
     /*border-right: none;*/
@@ -63,7 +63,7 @@ body {
 }
 
 #fp_center {
-    width:620px;
+    width: 620px;
     margin: 0 auto;
 }
 
@@ -81,21 +81,21 @@ body {
 
 /* Rounded corners */
 #contentTopLeft {
-  background: transparent url(++resource++infnine.theme.images/body_top_left.png) top left no-repeat;
-  border: none;
-  height: 13px;
-  width: 13px;
-  float: left;
+    background: transparent url(++resource++infnine.theme.images/body_top_left.png) top left no-repeat;
+    border: none;
+    height: 13px;
+    width: 13px;
+    float: left;
 }
 
 #contentBottomRight {
-  background: transparent url(++resource++infnine.theme.images/body_bottom_right.png) top left no-repeat;
-  border: none;
-  height: 14px;
-  width: 14px;
-  float: right;
-  margin-top: -13px;
-  margin-right: -1px;
+    background: transparent url(++resource++infnine.theme.images/body_bottom_right.png) top left no-repeat;
+    border: none;
+    height: 14px;
+    width: 14px;
+    float: right;
+    margin-top: -14px;
+    margin-right: 0px;
 }
 
 /* Portlets */
@@ -111,7 +111,7 @@ body {
 
 /* Navigation portlet */
 .navTreeItem a, dd.portletItem .navTreeItem a {
-	border:none;
+    border: none;
     color: #fff;
 }
 
@@ -148,19 +148,19 @@ body {
 }
 
 .navTreeItem a, dd.portletItem .navTreeItem a {
-	border:none;
+    border: none;
     font-weight: bold;
 }
 
 .navTreeCurrentItem {
-	border:none!important;
-	background-color:transparent;
-	color:#fff!important;
+    border: none !important;
+    background-color: transparent;
+    color: #fff !important;
 }
 
 .navTreeItem a:hover, dd.portletItem .navTreeItem a:hover {
-	background-color:transparent;
-	border:none;
+    background-color: transparent;
+    border: none;
     color: #fff;
 }
 
@@ -171,9 +171,18 @@ body {
     border-left: 0px;
     border-right: 0px;
     background-color: transparent;
+    color: #7696c1;
+    font-weight: bold;
+    font-size: 10pt;
 }
 
 .portletHeader a {
+    color: #7696c1;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+.portletHeader span {
     color: #7696c1;
     font-weight: bold;
     font-size: 10pt;
@@ -193,8 +202,8 @@ body {
 
 /* News portlet */
 .portletItemDetails {
-    color:#8CACBB;
-    text-align:left;
+    color: #8CACBB;
+    text-align: left;
    /* margin-top: -16px;*/
 }
 
@@ -294,4 +303,6 @@ body {
     text-align: center;
 }
 
-
+#portal-column-one .visualPadding {
+    padding: 2em 1em 1em 2em;
+}
