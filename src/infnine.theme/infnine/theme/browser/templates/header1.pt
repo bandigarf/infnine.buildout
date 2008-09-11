@@ -1,3 +1,6 @@
 <div id="portal-header1">
-    <img src="++resource++infnine.theme.images/header1.png" />
+    <map name="www9">
+        <area shape="rect" href="http://www9.cs.tum.edu/" coords="0,1,453,30" />
+    </map>
+    <img usemap="#www9" src="++resource++infnine.theme.images/header1.png" />
 </div>
