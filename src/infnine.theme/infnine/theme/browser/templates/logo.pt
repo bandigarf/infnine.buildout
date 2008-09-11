@@ -1,0 +1,7 @@
+<a id="portal-logo">
+    <map name="logo">
+        <area shape="rect" href="http://www.tum.de" coords="0,0,256,91" />
+        <area shape="rect" href="http://www.in.tum.de" coords="257,0,453,91" />
+    </map>
+    <img usemap="#logo" src="logo.jpg" />
+</a>

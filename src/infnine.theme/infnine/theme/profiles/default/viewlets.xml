@@ -3,11 +3,12 @@
     <!-- Header - contained within plone.portaltop -->
     <order manager="plone.portalheader" skinname="Infnine Theme">
         <viewlet name="infnine.headerpic" />
-        <viewlet name="plone.logo" />
+        <viewlet name="infnine.logo" />
         <viewlet name="infnine.header1" />
     </order>
     
     <hidden manager="plone.portalheader" skinname="Infnine Theme">
+        <viewlet name="plone.logo" />
         <viewlet name="plone.skip_links" />
         <viewlet name="plone.searchbox" />
         <viewlet name="plone.global_sections" />
