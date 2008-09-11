@@ -5,6 +5,7 @@
         <viewlet name="infnine.headerpic" />
         <viewlet name="infnine.logo" />
         <viewlet name="infnine.header1" />
+        <viewlet name="plone.personal_bar" />
     </order>
     
     <hidden manager="plone.portalheader" skinname="Infnine Theme">
@@ -17,7 +18,6 @@
     
     <!-- portaltop -->
     <hidden manager="plone.portaltop" skinname="Infnine Theme">
-        <viewlet name="plone.personal_bar" />
         <viewlet name="plone.app.i18n.locales.languageselector" />
         <viewlet name="plone.path_bar" />
     </hidden>

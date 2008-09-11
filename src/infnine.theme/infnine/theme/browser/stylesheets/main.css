@@ -19,10 +19,6 @@ body {
     margin: 0px;
 }
 
-#portal-columns-wrapper {
-    margin-top: 14px;
-}
-
 /* Line below the logo */
 #portal-header1 {
     background: #7696c1 url(++resource++infnine.theme.images/header1_bg.png) repeat-x;
@@ -305,4 +301,13 @@ body {
 
 #portal-column-one .visualPadding {
     padding: 2em 1em 1em 2em;
+}
+
+#portal-personaltools {
+    background: none;
+    border: none;
+}
+
+#portal-personaltools li a {
+    color: #DEE7EC;
 }
