@@ -36,21 +36,25 @@
 
     <hr />
 
-    <table border="0" cellspacing="0" cellpadding="0">
+    <table border="0" cellspacing="0" cellpadding="0"
+        tal:define="aspogamo_id python: 'aspogamo' + `modules['random'].choice(range(1, 5))`;
+                    factory_id python: 'factory' + `modules['random'].choice(range(1, 4))`;
+                    kitchen_id python: 'kitchen' + `modules['random'].choice(range(1, 8))`;
+                    multijoint_id python: 'multijoint' + `modules['random'].choice(range(1, 5))`">
         <tr>
              <td>
-                 <a href="#"><div id="project_name1"><div id="proj1"> Aspogamo </div></div></a>
+                 <a href="#"><div class="first-page-projects" id="project_name1" tal:attributes="id aspogamo_id"><div id="proj1"> Aspogamo </div></div></a>
              </td>
              <td>
-                <a href="#"><div id="project_name2"><div id="proj1"> Intelligent Kitchen </div></div></a>
+                <a href="#"><div class="first-page-projects" id="project_name2" tal:attributes="id kitchen_id"><div id="proj1"> Intelligent Kitchen </div></div></a>
             </td>
          </tr>
          <tr>
              <td>
-                 <a href="#"><div id="project_name3"><div id="proj2"> Cognitive Factory </div></div></a>
+                 <a href="#"><div class="first-page-projects" id="project_name3" tal:attributes="id factory_id"><div id="proj2"> Cognitive Factory </div></div></a>
              </td>
              <td>
-                <a href="#"><div id="project_name4"><div id="proj2"> Multi-Joint Action </div></div></a>
+                <a href="#"><div class="first-page-projects" id="project_name4" tal:attributes="id multijoint_id"><div id="proj2"> Multi-Joint Action </div></div></a>
              </td>
          </tr>
     </table>

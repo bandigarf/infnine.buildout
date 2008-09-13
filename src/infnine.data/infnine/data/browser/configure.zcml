@@ -12,6 +12,14 @@
     <include file="firstpage.zcml" />
     <include file="group.zcml" />
     <include file="applicationdomain.zcml" />
-	<include file="publicationlisting.zcml"/>
+    <include file="publicationlisting.zcml"/>
+
+    <!-- Zope 3 browser resources -->
+
+    <!-- Resource directory for images -->
+    <browser:resourceDirectory
+        name="infnine.data.images"
+        directory="images"
+        />
 
 </configure>

@@ -240,29 +240,47 @@ body {
 }
 
 /* First Page */
+.first-page-projects {
+    height: 185px;
+    width: 311px;
+}
+
+#aspogamo1 { background: transparent url(++resource++infnine.data.images/aspogamo1.png) top left no-repeat; }
+#aspogamo2 { background: transparent url(++resource++infnine.data.images/aspogamo2.png) top left no-repeat; }
+#aspogamo3 { background: transparent url(++resource++infnine.data.images/aspogamo3.png) top left no-repeat; }
+#aspogamo4 { background: transparent url(++resource++infnine.data.images/aspogamo4.png) top left no-repeat; }
+
+#factory1 { background: transparent url(++resource++infnine.data.images/factory1.png) top left no-repeat; }
+#factory2 { background: transparent url(++resource++infnine.data.images/factory2.png) top left no-repeat; }
+#factory3 { background: transparent url(++resource++infnine.data.images/factory3.png) top left no-repeat; }
+
+#kitchen1 { background: transparent url(++resource++infnine.data.images/kitchen1.png) top left no-repeat; }
+#kitchen2 { background: transparent url(++resource++infnine.data.images/kitchen2.png) top left no-repeat; }
+#kitchen3 { background: transparent url(++resource++infnine.data.images/kitchen3.png) top left no-repeat; }
+#kitchen4 { background: transparent url(++resource++infnine.data.images/kitchen4.png) top left no-repeat; }
+#kitchen5 { background: transparent url(++resource++infnine.data.images/kitchen5.png) top left no-repeat; }
+#kitchen6 { background: transparent url(++resource++infnine.data.images/kitchen6.png) top left no-repeat; }
+#kitchen7 { background: transparent url(++resource++infnine.data.images/kitchen7.png) top left no-repeat; }
+
+#multijoint1 { background: transparent url(++resource++infnine.data.images/multijoint1.png) top left no-repeat; }
+#multijoint2 { background: transparent url(++resource++infnine.data.images/multijoint2.png) top left no-repeat; }
+#multijoint3 { background: transparent url(++resource++infnine.data.images/multijoint3.png) top left no-repeat; }
+#multijoint4 { background: transparent url(++resource++infnine.data.images/multijoint4.png) top left no-repeat; }
+
 #project_name1 {
     background: transparent url(++resource++infnine.theme.images/body1.png) top left no-repeat;
-    height: 185px;
-    width: 310px;
-    margin-left: 1px;
 }
 
 #project_name2 {
     background: transparent url(++resource++infnine.theme.images/body2.png) top left no-repeat;
-    height: 185px;
-    width: 311px;
 }
 
 #project_name3 {
     background: transparent url(++resource++infnine.theme.images/body3.png) top left no-repeat;
-    height: 191px;
-    width: 311px;
 }
 
 #project_name4 {
     background: transparent url(++resource++infnine.theme.images/body4.png) top left no-repeat;
-    height: 191px;
-    width: 311px;
 }
 
 #proj1 {
