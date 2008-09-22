@@ -1,7 +1,5 @@
 [GENERALS]
 -https
--final design (Vilmos) + fine tunning
--static portlet header font to be the same as news portlet
 -static portlet to render private page
 -page down msg - we will use supervisord.org, Quirin and Dejan will deploy it this week
 -bilingual
@@ -20,8 +18,6 @@ group names as plain text only
 RESEARCH
 - Application domain make url
 - update research map with links to application domains
-- Dejan: improve research map image
-- make Project Details Images uniform in size
  
 
 PUBLICATIONS
@@ -39,21 +35,11 @@ NEWS
 - restrict adding only to News folder
 
 TEACHING
+- create StudentProjects content type, see student_projects.png image for the reference
+- create Courses Page as here: http://www9.cs.tum.edu/teaching/lehrveranstaltungen/ by reading the data from the database dump: teaching.sql
+-create Phd Talks Page as here: http://www9.cs.tum.edu/seminare/doktorandenseminar/
 
 DESIGN
-- TUM and IN logos to be solid
-- TUM - link to www.tum.de
-- IN - link to www.in.tum.de
-- Link "Image Understanding and Knowledge-Based Systems" text
-- footer of navigation portlet (central part is ovelapping it)
 - In Navigation Portlet -> 1 Level Navigation Items to have 
 no icons and smaller fonts than 0 Level Items
 - 0 Level Items to have no icons as well
-- Provide Login Button (top-right corner??)
-- Dejan: Improve design by:
-  making TUM and IN logo conform to corporate design (I HATE design, Dejan)
-  pushing Image Understanding and Knowledge-Based Systems to where TU Muenchen ... stands now
-  excluding navigation portlet out of the light blue frame
-
-Paperwork
-- Dejan: wait for answer from Frau Sprang
