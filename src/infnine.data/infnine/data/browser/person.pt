@@ -46,7 +46,7 @@
                         </tr>
 
                         <tr tal:condition="python: context.office != None">
-                            <td>Office:</td><td tal:content="context/office" />
+                            <td>Office:</td><td><a href="" tal:attributes="href python: context.portal_url() + '/offices'"><span tal:replace="context/office" /></a></td>
                         </tr>
                     </tbody>
                 </table>
