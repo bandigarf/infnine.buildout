@@ -1,19 +1,17 @@
-[GENERALS]
--https
--static portlet to render private page
--page down msg - we will use supervisord.org, Quirin and Dejan will deploy it this week
--bilingual
--tutorial
+GENERALS
+- https
++ static portlet to render private page (tal portlet dependency added, need a dedicated sidebar page + tal code)
+- page down msg - we will use supervisord.org, Quirin and Dejan will deploy it this week
+- bilingual
+- tutorial
 
 PEOPLE
-- room number a link to the map
++ room number a link to the map
 - research topics make comma separeted list
 - application domain list and make them url
 - alphabetical sort of ppl
-- make additional html field under Teaching to specify
-external courses (url to them)
-- On the first page link only Profs to their personal pages, leave 
-group names as plain text only
+- make additional html field under Teaching to specify external courses (url to them)
++ On the first page link only Profs to their personal pages, leave group names as plain text only
 
 RESEARCH
 - Application domain make url
@@ -30,8 +28,8 @@ PUBLICATIONS
 - Dejan: to appear in person
 
 IMPRESSUM
-- do Map of Offices 
-- remove Phone Dir
++ do Map of Offices 
++ remove Phone Dir
 - add Secreteriat and Web responsibilities - see http://www9.cs.tum.edu/infos/ 
 
 NEWS
@@ -40,9 +38,8 @@ NEWS
 TEACHING
 - create StudentProjects content type, see student_projects.png image for the reference
 - create Courses Page as here: http://www9.cs.tum.edu/teaching/lehrveranstaltungen/ by reading the data from the database dump: teaching.sql
--create Phd Talks Page as here: http://www9.cs.tum.edu/seminare/doktorandenseminar/
+- create Phd Talks Page as here: http://www9.cs.tum.edu/seminare/doktorandenseminar/
 
 DESIGN
-- In Navigation Portlet -> 1 Level Navigation Items to have 
-no icons and smaller fonts than 0 Level Items
+- In Navigation Portlet -> 1 Level Navigation Items to have no icons and smaller fonts than 0 Level Items
 - 0 Level Items to have no icons as well
