@@ -1,7 +1,10 @@
 import transaction
 from Products.CMFCore.utils import getToolByName
 
-PRODUCT_DEPENDENCIES = ('infnine.theme','infnine.content',)
+PRODUCT_DEPENDENCIES = ('infnine.theme',
+                        'infnine.content',
+                        'plone.portlet.static',
+                        'collective.portlet.tal',)
 
 EXTENSION_PROFILES = ('infnine.policy:default',)
 
