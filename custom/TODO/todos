@@ -19,6 +19,9 @@ RESEARCH
 - Dejan: Enter ProbCog into the research map such that it spans:
 across "Models/Representation" and "Reasoning/Learning..."
 i.e. not only Reasoning/Learning
+- Make a navigation menu at the top of the ResearchProject CT. It should be such that allows for
+links to the current fields inside the CT (Application Domain, Research Topics, Team, etc) as well as 
+to any custom subpages like: http://atradig121.informatik.tu-muenchen.de:8080/infnine/research/aspogamo/research/aspogamo/links/technology. In the latter case the menu link shall be called "Technology".
  
 
 PUBLICATIONS
