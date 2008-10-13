@@ -19,4 +19,6 @@
     meta_type="Factory-based Type Information"/>
   <object name="Publication Listing"
     meta_type="Factory-based Type Information"/>
+  <object name="Student Project"
+    meta_type="Factory-based Type Information"/>
 </object>

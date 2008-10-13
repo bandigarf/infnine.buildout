@@ -14,6 +14,7 @@
     <include file="firstpage.zcml" />
     <include file="group.zcml" />
     <include file="applicationdomain.zcml" />
-    <include file="publicationlisting.zcml"/>
+    <include file="publicationlisting.zcml" />
+    <include file="studentproject.zcml" />
 
 </configure>

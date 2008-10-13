@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddStudentProject"
+        title="Infnine Data: Add Student Project"
+        />
+
+    <utility
+        component=".studentproject.factory"
+        name="infnine.data.StudentProject"
+        />
+
+    <class class=".studentproject.StudentProjectContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.IStudentProject"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.IStudentProject"
+          />
+    </class>
+
+    <five:registerClass
+        class=".studentproject.StudentProjectContent"
+        meta_type="Student Project"
+        permission="infnine.data.AddStudentProject"
+        addview="infnine.data.StudentProject"
+        icon="infnine_data_studentproject.png"
+        />
+
+</configure>

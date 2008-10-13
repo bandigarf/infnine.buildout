@@ -8,3 +8,4 @@ from FirstPage import IFirstPage
 from Group import IGroup
 from ApplicationDomain import IApplicationDomain
 from PublicationListing import IPublicationListing
+from StudentProject import IStudentProject
