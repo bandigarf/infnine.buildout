@@ -54,6 +54,7 @@ infnine/theme/browser/templates/footer.pt
 infnine/theme/browser/templates/footer1.pt
 infnine/theme/browser/templates/header1.pt
 infnine/theme/browser/templates/headerpic.pt
+infnine/theme/browser/templates/logo.pt
 infnine/theme/browser/templates/news.pt
 infnine/theme/profiles/default/cssregistry.xml
 infnine/theme/profiles/default/import_steps.xml

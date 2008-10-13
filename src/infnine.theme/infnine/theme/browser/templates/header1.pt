@@ -1,6 +1,6 @@
 <div id="portal-header1">
     <map name="www9">
-        <area shape="rect" href="http://atradig121.informatik.tu-muenchen.de:8080/infnine" coords="0,1,453,30" />
+        <area shape="rect" href="link" tal:attributes="href python: context.portal_url()" coords="0,1,453,30" />
     </map>
     <img usemap="#www9" src="++resource++infnine.theme.images/header1.png" />
 </div>
