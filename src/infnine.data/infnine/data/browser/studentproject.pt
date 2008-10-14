@@ -33,11 +33,11 @@
     </div>
 
     <div tal:define="text context/professor" tal:condition="python: text != None">
-        Professor: <span tal:replace="text" />
+        Professor: <a tal:attributes="href python: context.portal_url() + '/people/' + text"><span tal:replace="python: portal.people.__getitem__(text).title" /></a>
     </div>
 
     <div tal:define="text context/supervisor" tal:condition="python: text != None">
-        Supervisor: <span tal:replace="text" />
+        Supervisor: <a tal:attributes="href python: context.portal_url() + '/people/' + text"><span tal:replace="python: portal.people.__getitem__(text).title" /></a>
     </div>
 
     <div tal:define="text context/state" tal:condition="python: text != None">
