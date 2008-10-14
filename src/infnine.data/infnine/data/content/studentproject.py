@@ -17,7 +17,16 @@ class StudentProjectContent(Container):
 
     portal_type = "Student Project"
 
-    project_details = FieldProperty(IStudentProject['project_details'])
+    project_type = FieldProperty(IStudentProject['project_type'])
+    project_overview = FieldProperty(IStudentProject['project_overview'])
+    task_description = FieldProperty(IStudentProject['task_description'])
+    prerequisites = FieldProperty(IStudentProject['prerequisites'])
+    professor = FieldProperty(IStudentProject['professor'])
+    supervisor = FieldProperty(IStudentProject['supervisor'])
+    state = FieldProperty(IStudentProject['state'])
+    student = FieldProperty(IStudentProject['student'])
+    start_date = FieldProperty(IStudentProject['start_date'])
+    end_date = FieldProperty(IStudentProject['end_date'])
 
 factory = Factory(
         StudentProjectContent,

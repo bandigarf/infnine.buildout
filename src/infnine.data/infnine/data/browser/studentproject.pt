@@ -16,9 +16,44 @@
 
     <div class="documentDescription" tal:content="context/description" />
 
-    <div tal:define="text context/project_details" tal:condition="python: text != None">
-        <h2>Project Details</h2>
-        <div tal:content="structure text">Project details</div>
+    <div tal:define="text context/project_type" tal:condition="python: text != None">
+        Project type: <span tal:repeat="pt context/project_type" tal:replace="default"><span tal:replace="pt" /></span>
+    </div>
+
+    <div tal:define="text context/project_overview" tal:condition="python: text != None">
+        Project overview: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/task_description" tal:condition="python: text != None">
+        Task description: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/prerequisites" tal:condition="python: text != None">
+        Prerequisites: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/professor" tal:condition="python: text != None">
+        Professor: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/supervisor" tal:condition="python: text != None">
+        Supervisor: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/state" tal:condition="python: text != None">
+        State: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/student" tal:condition="python: text != None">
+        Student: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/start_date" tal:condition="python: text != None">
+        Start date: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/end_date" tal:condition="python: text != None">
+        End date: <span tal:replace="text" />
     </div>
 
     <hr />

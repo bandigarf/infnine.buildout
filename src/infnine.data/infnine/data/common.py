@@ -123,3 +123,18 @@ authors_list=(
     'tenorth',
     'wimmer',
 )
+
+professors = (
+    'beetz',
+    'radig',
+    'struss',
+)
+
+project_types = (
+    'Diploma Thesis',
+    'Master Thesis',
+    'Bachelor Thesis',
+    'SEP',
+    'IDP',
+    'HiWi'
+)

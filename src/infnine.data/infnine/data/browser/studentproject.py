@@ -2,7 +2,7 @@ from zope.component import createObject
 from zope.formlib import form
 
 from plone.app.form import base
-from plone.app.form.widgets.wysiwygwidget import WYSIWYGWidget
+from collective.dtwidget import dtwidget
 
 from Acquisition import aq_inner
 
@@ -17,7 +17,8 @@ class AddForm(base.AddForm):
 
     label = _(u"Add Student Project")
     form_name = _(u"Student Project Details")
-    form_fields['project_details'].custom_widget = WYSIWYGWidget
+    form_fields['start_date'].custom_widget = dtwidget
+    form_fields['end_date'].custom_widget = dtwidget
 
     def setUpWidgets(self, ignore_request=False):
         self.widgets = form.setUpWidgets(
@@ -41,4 +42,5 @@ class EditForm(base.EditForm):
 
     label = _(u"Edit Student Project")
     form_name = _(u"Student Project Details")
-    form_fields['project_details'].custom_widget = WYSIWYGWidget
+    form_fields['start_date'].custom_widget = dtwidget
+    form_fields['end_date'].custom_widget = dtwidget
