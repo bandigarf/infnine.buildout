@@ -14,6 +14,7 @@
     <include file="applicationdomain.zcml" />
     <include file="publicationlisting.zcml" />
     <include file="studentproject.zcml" />
+    <include file="studentprojectlisting.zcml" />
 
     <!-- Zope 3 browser resources -->
 

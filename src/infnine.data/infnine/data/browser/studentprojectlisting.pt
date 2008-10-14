@@ -1,0 +1,60 @@
+ 	 	<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="infnine.data">
+<head>
+</head>
+
+<body>
+<div metal:fill-slot="main">
+
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+    <h1 class="documentFirstHeading" tal:content="context/title" />
+
+    <div class="documentDescription" tal:content="context/description" />
+
+    <div tal:replace="structure provider:plone.abovecontentbody" />
+
+    <div tal:define="studentprojects python: [item[1] for item in context.items() if item[1].meta_type == 'Student Project']">
+        <h2>Open thesis offers</h2>
+        <table>
+        <thead>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Supervisor</th>
+        </thead>
+        <tbody><div tal:repeat="studentproject studentprojects" tal:replace="default">
+            <tr tal:condition="python: (studentproject.state == 'Open') and (True in ['Thesis' in studentproject.project_type[i] for i in range(len(studentproject.project_type))])">
+                <td tal:content="studentproject/title" />
+                <td><span tal:replace="default" tal:repeat="pt studentproject/project_type"><span tal:replace="pt" /><span tal:replace="default" tal:define="n repeat/pt/number" tal:condition="python: n < len(studentproject.project_type)">, </span></span></td>
+                <td tal:content="studentproject/supervisor" />
+            </tr>
+        </div></tbody>
+        </table>
+
+        <h2>Open HiWi positions</h2>
+        <table>
+        <thead>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Supervisor</th>
+        </thead>
+        <tbody><div tal:repeat="studentproject studentprojects" tal:replace="default">
+            <tr tal:condition="python: (studentproject.state == 'Open') and (True in ['HiWi' in studentproject.project_type[i] for i in range(len(studentproject.project_type))])">
+                <td tal:content="studentproject/title" />
+                <td><span tal:replace="default" tal:repeat="pt studentproject/project_type"><span tal:replace="pt" /><span tal:replace="default" tal:define="n repeat/pt/number" tal:condition="python: n < len(studentproject.project_type)">, </span></span></td>
+                <td tal:content="studentproject/supervisor" />
+            </tr>
+        </div></tbody>
+        </table>
+
+    </div>
+
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+
+</div>
+</body>
+</html>

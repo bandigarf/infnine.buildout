@@ -17,7 +17,7 @@
     <div class="documentDescription" tal:content="context/description" />
 
     <div tal:define="text context/project_type" tal:condition="python: text != None">
-        Project type: <span tal:repeat="pt context/project_type" tal:replace="default"><span tal:replace="pt" /></span>
+        Project type: <span tal:repeat="pt context/project_type" tal:replace="default"><span tal:replace="pt" /><span tal:replace="default" tal:define="n repeat/pt/number" tal:condition="python: n < len(context.project_type)">, </span></span>
     </div>
 
     <div tal:define="text context/project_overview" tal:condition="python: text != None">

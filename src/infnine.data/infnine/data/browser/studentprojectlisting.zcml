@@ -1,0 +1,39 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="infnine.data">
+
+    <browser:page
+        for="..interfaces.IStudentProjectListing"
+        name="view"
+        template="studentprojectlisting.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="zope.app.container.interfaces.IAdding"
+        name="infnine.data.StudentProjectListing"
+        class=".studentprojectlisting.AddForm"
+        permission="infnine.data.AddStudentProjectListing"
+        />
+
+    <browser:page
+        for="..interfaces.IStudentProjectListing"
+        name="edit"
+        class=".studentprojectlisting.EditForm"
+        permission="cmf.ModifyPortalContent"
+        />
+
+    <browser:addMenuItem
+        title="Student Project Listing"
+        factory="infnine.data.studentprojectlisting.factory"
+        view="infnine.data.StudentProjectListing"
+        permission="infnine.data.AddStudentProjectListing"
+        />
+
+    <browser:resource
+        name="infnine_data_studentprojectlisting.png"
+        image="studentprojectlisting.png"
+        />
+
+</configure>

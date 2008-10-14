@@ -12,6 +12,13 @@ setDefaultRoles('Infnine Data: Add Group', ('Manager',))
 setDefaultRoles('Infnine Data: Add Person', ('Manager',))
 setDefaultRoles('Infnine Data: Add Publication', ('Manager',))
 setDefaultRoles('Infnine Data: Add Research Project', ('Manager',))
+setDefaultRoles('Infnine Data: Add Alumni Page', ('Manager',))
+setDefaultRoles('Infnine Data: Add Application Domain', ('Manager',))
+setDefaultRoles('Infnine Data: Add People Page', ('Manager',))
+setDefaultRoles('Infnine Data: Add Publication Listing', ('Manager',))
+setDefaultRoles('Infnine Data: Add Research Page', ('Manager',))
+setDefaultRoles('Infnine Data: Add Student Project', ('Manager',))
+setDefaultRoles('Infnine Data: Add Student Project Listing', ('Manager',))
 
 def initialize(context):
     """Initializer called when used as a Zope 2 product.
