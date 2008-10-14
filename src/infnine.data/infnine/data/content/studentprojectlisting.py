@@ -1,5 +1,5 @@
 from plone.app.content.interfaces import INameFromTitle
-from plone.app.content.item import Item
+from plone.app.content.container import Container
 from plone.locking.interfaces import ITTWLockable
 
 from zope.component.factory import Factory
@@ -8,8 +8,8 @@ from zope.schema.fieldproperty import FieldProperty
 
 from infnine.data.interfaces import IStudentProjectListing
 
-class StudentProjectListingContent(Item):
-    """Page to list student projects
+class StudentProjectListingContent(Container):
+    """Container to list and hold student projects
     """
     implements(IStudentProjectListing,
             ITTWLockable,
