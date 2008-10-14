@@ -19,38 +19,43 @@
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
     <div tal:define="studentprojects python: [item[1] for item in context.items() if item[1].meta_type == 'Student Project']">
-        <h2>Open thesis offers</h2>
+    <div tal:repeat="status python: ['Open', 'Running', 'Completed']" tal:replace="default">
+        <h2 tal:content="python: status + ' thesis offers'">Open thesis offers</h2>
         <table class="grid listing">
         <thead>
             <th>Title</th>
             <th>Type</th>
             <th>Supervisor</th>
+            <th>Professor</th>
         </thead>
         <tbody><div tal:repeat="studentproject studentprojects" tal:replace="default">
-            <tr tal:condition="python: (studentproject.state == 'Open') and (True in ['Thesis' in studentproject.project_type[i] for i in range(len(studentproject.project_type))])">
-                <td tal:content="studentproject/title" />
+            <tr tal:condition="python: (studentproject.state == status) and (studentproject.project_type != ['HiWi'])">
+                <td><a tal:attributes="href python: studentproject.id"><span tal:replace="studentproject/title" /></a></td>
                 <td><span tal:replace="default" tal:repeat="pt studentproject/project_type"><span tal:replace="pt" /><span tal:replace="default" tal:define="n repeat/pt/number" tal:condition="python: n < len(studentproject.project_type)">, </span></span></td>
-                <td tal:content="studentproject/supervisor" />
+                <td><a tal:condition="studentproject/supervisor|nothing" tal:attributes="href python: context.portal_url() + '/people/' + studentproject.supervisor"><span tal:replace="python: portal.people.__getitem__(studentproject.supervisor).title" /></a></td>
+                <td><a tal:condition="studentproject/professor|nothing" tal:attributes="href python: context.portal_url() + '/people/' + studentproject.professor"><span tal:replace="python: portal.people.__getitem__(studentproject.professor).title" /></a></td>
             </tr>
         </div></tbody>
         </table>
 
-        <h2>Open HiWi positions</h2>
+        <h2 tal:content="python: status + ' HiWi positions'">Open HiWi positions</h2>
         <table class="grid listing">
         <thead>
             <th>Title</th>
             <th>Type</th>
             <th>Supervisor</th>
+            <th>Professor</th>
         </thead>
         <tbody><div tal:repeat="studentproject studentprojects" tal:replace="default">
-            <tr tal:condition="python: (studentproject.state == 'Open') and (True in ['HiWi' in studentproject.project_type[i] for i in range(len(studentproject.project_type))])">
-                <td tal:content="studentproject/title" />
+            <tr tal:condition="python: (studentproject.state == status) and (True in ['HiWi' in studentproject.project_type[i] for i in range(len(studentproject.project_type))])">
+                <td><a tal:attributes="href python: studentproject.id"><span tal:replace="studentproject/title" /></a></td>
                 <td><span tal:replace="default" tal:repeat="pt studentproject/project_type"><span tal:replace="pt" /><span tal:replace="default" tal:define="n repeat/pt/number" tal:condition="python: n < len(studentproject.project_type)">, </span></span></td>
-                <td tal:content="studentproject/supervisor" />
+                <td><a tal:condition="studentproject/supervisor|nothing" tal:attributes="href python: context.portal_url() + '/people/' + studentproject.supervisor"><span tal:replace="python: portal.people.__getitem__(studentproject.supervisor).title" /></a></td>
+                <td><a tal:condition="studentproject/professor|nothing" tal:attributes="href python: context.portal_url() + '/people/' + studentproject.professor"><span tal:replace="python: portal.people.__getitem__(studentproject.professor).title" /></a></td>
             </tr>
         </div></tbody>
         </table>
-
+    </div>
     </div>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />
