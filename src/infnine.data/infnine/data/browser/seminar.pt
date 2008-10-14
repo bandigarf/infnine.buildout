@@ -14,9 +14,41 @@
 
     <h1 class="documentFirstHeading" tal:content="context/title" />
 
+    <h1 class="documentFirstHeading" tal:content="context/title_german" />
+
     <div class="documentDescription" tal:content="context/description" />
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
+
+    <div tal:define="text context/details|nothing" tal:condition="text" tal:content="structure text" />
+
+    <div tal:define="text context/seminar_type|nothing" tal:condition="text">
+        Seminar type: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/professor|nothing" tal:condition="text">
+        Professor: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/instructor|nothing" tal:condition="text">
+        Instructor: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/date_place|nothing" tal:condition="text">
+        Date, place: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/language|nothing" tal:condition="text">
+        Language: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/modul|nothing" tal:condition="text">
+        Modul: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/term|nothing" tal:condition="text">
+        Term: <span tal:replace="text" />
+    </div>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />
 

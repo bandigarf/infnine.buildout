@@ -17,6 +17,7 @@ class AddForm(base.AddForm):
 
     label = _(u"Add Seminar")
     form_name = _(u"Seminar Details")
+    form_fields['details'].custom_widget = WYSIWYGWidget
 
     def setUpWidgets(self, ignore_request=False):
         self.widgets = form.setUpWidgets(
@@ -40,3 +41,4 @@ class EditForm(base.EditForm):
 
     label = _(u"Edit Seminar")
     form_name = _(u"Seminar Details")
+    form_fields['details'].custom_widget = WYSIWYGWidget

@@ -17,6 +17,16 @@ class SeminarContent(Container):
 
     portal_type = "Seminar"
 
+    title_german = FieldProperty(ISeminar['title_german'])
+    details = FieldProperty(ISeminar['details'])
+    seminar_type = FieldProperty(ISeminar['seminar_type'])
+    professor = FieldProperty(ISeminar['professor'])
+    instructor = FieldProperty(ISeminar['instructor'])
+    date_place = FieldProperty(ISeminar['date_place'])
+    language = FieldProperty(ISeminar['language'])
+    modul = FieldProperty(ISeminar['modul'])
+    term = FieldProperty(ISeminar['term'])
+
 factory = Factory(
         SeminarContent,
         )
