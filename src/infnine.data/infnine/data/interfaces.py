@@ -10,3 +10,6 @@ from ApplicationDomain import IApplicationDomain
 from PublicationListing import IPublicationListing
 from StudentProject import IStudentProject
 from StudentProjectListing import IStudentProjectListing
+from Lecture import ILecture
+from PracticalCourse import IPracticalCourse
+from Seminar import ISeminar

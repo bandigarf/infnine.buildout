@@ -15,6 +15,9 @@
     <include file="publicationlisting.zcml" />
     <include file="studentproject.zcml" />
     <include file="studentprojectlisting.zcml" />
+    <include file="lecture.zcml" />
+    <include file="practicalcourse.zcml" />
+    <include file="seminar.zcml" />
 
     <!-- Zope 3 browser resources -->
 

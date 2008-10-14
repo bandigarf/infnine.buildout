@@ -1,0 +1,39 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="infnine.data">
+
+    <browser:page
+        for="..interfaces.IPracticalCourse"
+        name="view"
+        template="practicalcourse.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="zope.app.container.interfaces.IAdding"
+        name="infnine.data.PracticalCourse"
+        class=".practicalcourse.AddForm"
+        permission="infnine.data.AddPracticalCourse"
+        />
+
+    <browser:page
+        for="..interfaces.IPracticalCourse"
+        name="edit"
+        class=".practicalcourse.EditForm"
+        permission="cmf.ModifyPortalContent"
+        />
+
+    <browser:addMenuItem
+        title="Practical Course"
+        factory="infnine.data.practicalcourse.factory"
+        view="infnine.data.PracticalCourse"
+        permission="infnine.data.AddPracticalCourse"
+        />
+
+    <browser:resource
+        name="infnine_data_practicalcourse.png"
+        image="practicalcourse.png"
+        />
+
+</configure>

@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddPracticalCourse"
+        title="Infnine Data: Add Practical Course"
+        />
+
+    <utility
+        component=".practicalcourse.factory"
+        name="infnine.data.PracticalCourse"
+        />
+
+    <class class=".practicalcourse.PracticalCourseContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.IPracticalCourse"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.IPracticalCourse"
+          />
+    </class>
+
+    <five:registerClass
+        class=".practicalcourse.PracticalCourseContent"
+        meta_type="Practical Course"
+        permission="infnine.data.AddPracticalCourse"
+        addview="infnine.data.PracticalCourse"
+        icon="infnine_data_practicalcourse.png"
+        />
+
+</configure>

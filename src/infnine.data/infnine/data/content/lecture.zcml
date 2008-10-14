@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddLecture"
+        title="Infnine Data: Add Lecture"
+        />
+
+    <utility
+        component=".lecture.factory"
+        name="infnine.data.Lecture"
+        />
+
+    <class class=".lecture.LectureContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.ILecture"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.ILecture"
+          />
+    </class>
+
+    <five:registerClass
+        class=".lecture.LectureContent"
+        meta_type="Lecture"
+        permission="infnine.data.AddLecture"
+        addview="infnine.data.Lecture"
+        icon="infnine_data_lecture.png"
+        />
+
+</configure>

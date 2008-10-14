@@ -1,0 +1,39 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="infnine.data">
+
+    <browser:page
+        for="..interfaces.ISeminar"
+        name="view"
+        template="seminar.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="zope.app.container.interfaces.IAdding"
+        name="infnine.data.Seminar"
+        class=".seminar.AddForm"
+        permission="infnine.data.AddSeminar"
+        />
+
+    <browser:page
+        for="..interfaces.ISeminar"
+        name="edit"
+        class=".seminar.EditForm"
+        permission="cmf.ModifyPortalContent"
+        />
+
+    <browser:addMenuItem
+        title="Seminar"
+        factory="infnine.data.seminar.factory"
+        view="infnine.data.Seminar"
+        permission="infnine.data.AddSeminar"
+        />
+
+    <browser:resource
+        name="infnine_data_seminar.png"
+        image="seminar.png"
+        />
+
+</configure>

@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddSeminar"
+        title="Infnine Data: Add Seminar"
+        />
+
+    <utility
+        component=".seminar.factory"
+        name="infnine.data.Seminar"
+        />
+
+    <class class=".seminar.SeminarContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.ISeminar"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.ISeminar"
+          />
+    </class>
+
+    <five:registerClass
+        class=".seminar.SeminarContent"
+        meta_type="Seminar"
+        permission="infnine.data.AddSeminar"
+        addview="infnine.data.Seminar"
+        icon="infnine_data_seminar.png"
+        />
+
+</configure>

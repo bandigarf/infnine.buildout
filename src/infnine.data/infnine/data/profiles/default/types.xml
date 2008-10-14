@@ -23,4 +23,10 @@
     meta_type="Factory-based Type Information"/>
   <object name="Student Project Listing"
     meta_type="Factory-based Type Information"/>
+  <object name="Lecture"
+    meta_type="Factory-based Type Information"/>
+  <object name="Practical Course"
+    meta_type="Factory-based Type Information"/>
+  <object name="Seminar"
+    meta_type="Factory-based Type Information"/>
 </object>
