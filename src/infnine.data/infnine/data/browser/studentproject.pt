@@ -21,15 +21,15 @@
     </div>
 
     <div tal:define="text context/project_overview" tal:condition="python: text != None">
-        Project overview: <span tal:replace="text" />
+        Project overview: <span tal:replace="structure text" />
     </div>
 
     <div tal:define="text context/task_description" tal:condition="python: text != None">
-        Task description: <span tal:replace="text" />
+        Task description: <span tal:replace="structure text" />
     </div>
 
     <div tal:define="text context/prerequisites" tal:condition="python: text != None">
-        Prerequisites: <span tal:replace="text" />
+        Prerequisites: <span tal:replace="structure text" />
     </div>
 
     <div tal:define="text context/professor" tal:condition="python: text != None">
