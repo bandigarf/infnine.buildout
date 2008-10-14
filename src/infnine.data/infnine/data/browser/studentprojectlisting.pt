@@ -20,7 +20,7 @@
 
     <div tal:define="studentprojects python: [item[1] for item in context.items() if item[1].meta_type == 'Student Project']">
         <h2>Open thesis offers</h2>
-        <table>
+        <table class="grid listing">
         <thead>
             <th>Title</th>
             <th>Type</th>
@@ -36,7 +36,7 @@
         </table>
 
         <h2>Open HiWi positions</h2>
-        <table>
+        <table class="grid listing">
         <thead>
             <th>Title</th>
             <th>Type</th>
