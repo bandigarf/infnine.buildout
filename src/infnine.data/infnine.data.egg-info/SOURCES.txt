@@ -29,6 +29,7 @@ infnine/data/StudentProjectListing.py
 infnine/data/__init__.py
 infnine/data/bib2zope.py
 infnine/data/common.py
+infnine/data/readdb.py
 infnine/data/config.py
 infnine/data/interfaces.py
 infnine/data/setuphandlers.py

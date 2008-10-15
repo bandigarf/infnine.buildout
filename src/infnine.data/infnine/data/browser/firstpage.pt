@@ -46,7 +46,7 @@
                  <a href="#"><div class="first-page-projects" id="project_name1" tal:attributes="id aspogamo_id"><div id="proj1"> Aspogamo </div></div></a>
              </td>
              <td>
-                <a href="#"><div class="first-page-projects" id="project_name2" tal:attributes="id kitchen_id"><div id="proj1"> Intelligent Kitchen </div></div></a>
+                <a href="#"><div class="first-page-projects" id="project_name2" tal:attributes="id kitchen_id"><div id="proj1"> Assistive Hausehold </div></div></a>
             </td>
          </tr>
          <tr>
@@ -54,7 +54,7 @@
                  <a href="#"><div class="first-page-projects" id="project_name3" tal:attributes="id factory_id"><div id="proj2"> Cognitive Factory </div></div></a>
              </td>
              <td>
-                <a href="#"><div class="first-page-projects" id="project_name4" tal:attributes="id multijoint_id"><div id="proj2"> Multi-Joint Action </div></div></a>
+                <a href="#"><div class="first-page-projects" id="project_name4" tal:attributes="id multijoint_id"><div id="proj2"> Image Understanding </div></div></a>
              </td>
          </tr>
     </table>
