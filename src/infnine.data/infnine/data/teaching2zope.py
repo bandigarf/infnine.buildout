@@ -71,6 +71,15 @@ for id in semester.keys():
     if ('app' in dir()) and (app != None):
         teaching = app.infnine.teaching
         print "Running in Zope, creating objects in ZODB..."
+        event = semester[id]
+        t = semester[id]['Type']
+        if (t == 'Wahlpflichtvorlesung') or (t == 'Vertiefungsvorlesung'):
+            event_type = 'Lecture'
+        elif t == 'Praktikum':
+            event_type = 'Practical Course'
+        else:
+            event_type = 'Seminar'
+
         if not teaching.hasObject(`id`):
             print "Entry", `id`, "not yet in ZODB, creating"
             admin = app.acl_users.getUser('admin')
@@ -82,14 +91,6 @@ for id in semester.keys():
             teaching.invokeFactory(event_type, `id`)
 
         event_zodb = teaching.__getitem__(`id`)
-        event = semester[id]
-        t = semester[id]['Type']
-        if (t == 'Wahlpflichtvorlesung') or (t == 'Vertiefungsvorlesung'):
-            event_type = 'Lecture'
-        elif t == 'Praktikum':
-            event_type = 'Practical Course'
-        else:
-            event_type = 'Seminar'
 
         keys = event.keys()
         print "Updating", `id`, keys
