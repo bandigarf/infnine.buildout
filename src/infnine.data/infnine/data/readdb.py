@@ -94,6 +94,7 @@ def getEvents(sem):
         rows = cursor.fetchall()
         event_tmp = events[idkey]
         for dateSingle in rows:
+                dateElem = {}
                 dateElem['StartHour'] = dateSingle[0]
                 dateElem['StartMinute'] = dateSingle[1]
                 dateElem['EndHour'] = dateSingle[2]
@@ -107,7 +108,7 @@ def getEvents(sem):
         event_tmp['Date'] = li
         events[idkey] = event_tmp
         li = []
-        dateElem = {}
+        #dateElem = {}
                        
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #find faculty's unique ID  
