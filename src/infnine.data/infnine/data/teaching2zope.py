@@ -26,16 +26,27 @@ def flatlist2string(l):
             s += ', '
     return s
 
+def datelist2string(datelist):
+    if len(datelist) == 0:
+        return u''
+    s = u''
+    for dateitem in datelist:
+        if len(dateitem) != 0:
+            s += dateitem['Day'] + ', ' \
+               + `dateitem['StartHour']` + ':' + `dateitem['StartMinute']` + '-' \
+               + `dateitem['EndHour']` + ':' + `dateitem['EndMinute']` + ', ' \
+               + dateitem['Room']
+    return s
+
 def keymap(event_type, key):
     keymap_generic = {
         'English Title': 'title',
         'German Title': 'title_german',
         #description
         #details
-        #foobar_type
         'Professor': 'professor',
         'Instructor': 'instructor',
-#        'Date': 'date_place',
+        'Date': 'date_place',
         'Module': 'module',
         #term
         'Url': 'url',
@@ -64,41 +75,44 @@ def setvalue(zodb_object, key, value):
             zodb_object.__setattr__(zodb_key, flatlist2string(flatten(value)))
         elif key == 'Module':
             zodb_object.__setattr__(zodb_key, str(value[0][1]).decode('utf-8'))
+        elif key == 'Date':
+            zodb_object.__setattr__(zodb_key, datelist2string(value))
         else:
             zodb_object.__setattr__(zodb_key, str(value).decode('utf-8'))
     else:
         pass
 
+if ('app' in dir()) and (app != None):
+    print "Running in Zope, creating objects in ZODB..."
+    teaching = app.infnine.teaching
+
 for id in semester.keys():
-    if ('app' in dir()) and (app != None):
-        teaching = app.infnine.teaching
-        print "Running in Zope, creating objects in ZODB..."
-        event = semester[id]
-        t = semester[id]['Type']
-        if (t == 'Wahlpflichtvorlesung') or (t == 'Vertiefungsvorlesung'):
-            event_type = 'Lecture'
-        elif t == 'Praktikum':
-            event_type = 'Practical Course'
-        else:
-            event_type = 'Seminar'
+    event = semester[id]
+    t = semester[id]['Type']
+    if (t == 'Wahlpflichtvorlesung') or (t == 'Vertiefungsvorlesung'):
+        event_type = 'Lecture'
+    elif t == 'Praktikum':
+        event_type = 'Practical Course'
+    else:
+        event_type = 'Seminar'
 
-        if not teaching.hasObject(`id`):
-            print "Entry", `id`, "not yet in ZODB, creating"
-            admin = app.acl_users.getUser('admin')
-            import AccessControl
-            AccessControl.SecurityManagement.newSecurityManager(None, admin)
-            from Testing.makerequest import makerequest
-            app = makerequest(app)
+    if not teaching.hasObject(`id`):
+        print "Entry", `id`, "not yet in ZODB, creating"
+        admin = app.acl_users.getUser('admin')
+        import AccessControl
+        AccessControl.SecurityManagement.newSecurityManager(None, admin)
+        from Testing.makerequest import makerequest
+        app = makerequest(app)
 
-            teaching.invokeFactory(event_type, `id`)
+        teaching.invokeFactory(event_type, `id`)
 
-        event_zodb = teaching.__getitem__(`id`)
+    event_zodb = teaching.__getitem__(`id`)
 
-        keys = event.keys()
-        print "Updating", `id`, keys
-        for key in keys:
-            setvalue(event_zodb, key, event[key])
+    keys = event.keys()
+    print "Updating", `id`, keys
+    for key in keys:
+        setvalue(event_zodb, key, event[key])
 
-        event_zodb.reindexObject()
-        import transaction
-        transaction.commit()
+    event_zodb.reindexObject()
+    import transaction
+    transaction.commit()
