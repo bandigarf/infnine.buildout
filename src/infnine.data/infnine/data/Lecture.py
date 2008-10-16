@@ -53,14 +53,14 @@ class ILecture(Interface):
             required=False,
             )
 
-    language = TextLine(
+    lecture_language = TextLine(
             title=u"Language",
             description=u"",
             required=False,
             )
 
-    modul = TextLine(
-            title=u"Modul",
+    module = TextLine(
+            title=u"Module",
             description=u"",
             required=False,
             )

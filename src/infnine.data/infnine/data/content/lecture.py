@@ -23,8 +23,8 @@ class LectureContent(Container):
     professor = FieldProperty(ILecture['professor'])
     instructor = FieldProperty(ILecture['instructor'])
     date_place = FieldProperty(ILecture['date_place'])
-    language = FieldProperty(ILecture['language'])
-    modul = FieldProperty(ILecture['modul'])
+    lecture_language = FieldProperty(ILecture['lecture_language'])
+    module = FieldProperty(ILecture['module'])
     term = FieldProperty(ILecture['term'])
 
 factory = Factory(

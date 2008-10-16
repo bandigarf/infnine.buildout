@@ -23,7 +23,7 @@ class SeminarContent(Container):
     professor = FieldProperty(ISeminar['professor'])
     instructor = FieldProperty(ISeminar['instructor'])
     date_place = FieldProperty(ISeminar['date_place'])
-    language = FieldProperty(ISeminar['language'])
+    seminar_language = FieldProperty(ISeminar['seminar_language'])
     modul = FieldProperty(ISeminar['modul'])
     term = FieldProperty(ISeminar['term'])
 

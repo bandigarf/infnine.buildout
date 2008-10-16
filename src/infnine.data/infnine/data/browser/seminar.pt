@@ -38,7 +38,7 @@
         Date, place: <span tal:replace="text" />
     </div>
 
-    <div tal:define="text context/language|nothing" tal:condition="text">
+    <div tal:define="text context/seminar_language|nothing" tal:condition="text">
         Language: <span tal:replace="text" />
     </div>
 

@@ -53,7 +53,7 @@ class IPracticalCourse(Interface):
             required=False,
             )
 
-    language = TextLine(
+    practicalcourse_language = TextLine(
             title=u"Language",
             description=u"",
             required=False,

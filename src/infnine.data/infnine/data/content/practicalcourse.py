@@ -23,7 +23,7 @@ class PracticalCourseContent(Container):
     professor = FieldProperty(IPracticalCourse['professor'])
     instructor = FieldProperty(IPracticalCourse['instructor'])
     date_place = FieldProperty(IPracticalCourse['date_place'])
-    language = FieldProperty(IPracticalCourse['language'])
+    practicalcourse_language = FieldProperty(IPracticalCourse['practicalcourse_language'])
     modul = FieldProperty(IPracticalCourse['modul'])
     term = FieldProperty(IPracticalCourse['term'])
 

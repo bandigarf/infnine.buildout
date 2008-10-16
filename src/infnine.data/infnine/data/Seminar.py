@@ -53,7 +53,7 @@ class ISeminar(Interface):
             required=False,
             )
 
-    language = TextLine(
+    seminar_language = TextLine(
             title=u"Language",
             description=u"",
             required=False,
