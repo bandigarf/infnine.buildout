@@ -18,15 +18,17 @@ def keymap(event_type, key):
         'Professor': 'professor',
         'Instructor': 'instructor',
 #        'Date': 'date_place',
-        #foobar_language
         'Module': 'module',
         #term
         'Url': 'url',
     }
+
     if key in keymap_generic.keys():
         return keymap_generic[key]
+
     if key in ('Type', 'Language'):
         return event_type + '_' + key.lower()
+
     print "!!! Don't know how to handle key:", key
     return None
 
@@ -38,7 +40,12 @@ def setvalue(zodb_object, key, value):
     }
     zodb_key = keymap(eventtype_prefix[zodb_object.meta_type], key)
     if zodb_key:
-        zodb_object.__setattr__(zodb_key, str(value).decode('utf-8'))
+        if key == 'Language':
+            print 'language:', value
+            zodb_object.__setattr__(zodb_key, [u'German', u'English'][value])
+        else:
+            zodb_object.__setattr__(zodb_key, str(value).decode('utf-8'))
+    else:
 
 for id in semester.keys():
     if ('app' in dir()) and (app != None):
