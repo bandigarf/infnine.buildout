@@ -50,6 +50,10 @@
         Term: <span tal:replace="text" />
     </div>
 
+    <div tal:define="text context/url|nothing" tal:condition="text">
+        URL: <a tal:attributes="href text" tal:content="text" />
+    </div>
+
     <div tal:replace="structure provider:plone.belowcontentbody" />
 
 </div>

@@ -70,3 +70,9 @@ class ILecture(Interface):
             description=u"",
             required=False,
             )
+
+    url = TextLine(
+            title=u"URL",
+            description=u"",
+            required=False,
+            )

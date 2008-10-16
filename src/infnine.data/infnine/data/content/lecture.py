@@ -26,6 +26,7 @@ class LectureContent(Container):
     lecture_language = FieldProperty(ILecture['lecture_language'])
     module = FieldProperty(ILecture['module'])
     term = FieldProperty(ILecture['term'])
+    url = FieldProperty(ILecture['url'])
 
 factory = Factory(
         LectureContent,

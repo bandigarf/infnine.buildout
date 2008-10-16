@@ -26,6 +26,7 @@ class PracticalCourseContent(Container):
     practicalcourse_language = FieldProperty(IPracticalCourse['practicalcourse_language'])
     modul = FieldProperty(IPracticalCourse['modul'])
     term = FieldProperty(IPracticalCourse['term'])
+    url = FieldProperty(IPracticalCourse['url'])
 
 factory = Factory(
         PracticalCourseContent,
