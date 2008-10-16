@@ -104,7 +104,7 @@ def getEvents(sem):
                 dateElem['Room'] = dateSingle[6]
                 dateElem['Day'] = dateSingle[7]
                 dateElem['Type'] = dateSingle[8]
-        li.append(dateElem)
+                li.append(dateElem)
         event_tmp['Date'] = li
         events[idkey] = event_tmp
         li = []
@@ -122,7 +122,7 @@ def getEvents(sem):
  
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #print to stdio?   
-    printDict = False
+    printDict = True
     if printDict == True:      
         for i, j in events.iteritems(): 
             print "ID: ", i
