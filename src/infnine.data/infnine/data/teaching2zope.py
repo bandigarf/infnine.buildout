@@ -20,6 +20,15 @@ def flatlist2string(l):
             s += ', '
     return s
 
+def num2str2(num):
+    if num >= 0:
+        if num < 10:
+            return '0' + `num`
+        elif num < 100:
+            return `num`
+        else:
+            return `num`[-2:]
+
 def datelist2string(datelist):
     if len(datelist) == 0:
         return u''
@@ -27,8 +36,8 @@ def datelist2string(datelist):
     for dateitem in datelist:
         if len(dateitem) != 0:
             s += dateitem['Day'] + ', ' \
-               + `dateitem['StartHour']` + ':' + `dateitem['StartMinute']` + '-' \
-               + `dateitem['EndHour']` + ':' + `dateitem['EndMinute']` + ', ' \
+               + `dateitem['StartHour']` + ':' + num2str2(dateitem['StartMinute']) + '-' \
+               + `dateitem['EndHour']` + ':' + num2str2(dateitem['EndMinute']) + ', ' \
                + dateitem['Room'] \
                + ', '
     return s[:-2]
