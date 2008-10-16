@@ -42,8 +42,8 @@
         Language: <span tal:replace="text" />
     </div>
 
-    <div tal:define="text context/modul|nothing" tal:condition="text">
-        Modul: <span tal:replace="text" />
+    <div tal:define="text context/module|nothing" tal:condition="text">
+        Module: <span tal:replace="text" />
     </div>
 
     <div tal:define="text context/term|nothing" tal:condition="text">
