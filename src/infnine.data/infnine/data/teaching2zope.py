@@ -78,7 +78,7 @@ def setvalue(zodb_object, key, value):
         elif key in ('Professor', 'Instructor'):
             zodb_object.__setattr__(zodb_key, flatlist2string(flatten(value)))
         elif key == 'Module':
-            zodb_object.__setattr__(zodb_key, str(value[0][1]).decode('utf-8'))
+            zodb_object.__setattr__(zodb_key, str(value[1]).decode('utf-8'))
         elif key == 'Date':
             zodb_object.__setattr__(zodb_key, datelist2string(value))
         else:

@@ -53,9 +53,10 @@ def getEvents(sem):
     module = [] 
     #loop
     for row in rows:
-        #print  "ID: ", row[0], "\nEnglishTitle: ", row[1], "\nGermanTitle: ", row[2], "\nType: ", row[3] 
+        #print  "ID: ", row[0], "\nEnglishTitle: ", row[1], "\nGermanTitle: ", row[2], "\nType: ", row[3]
+        
         event['English Title'] = row[1]
-        event['German Title'] = row[2]
+        event['German Title'] = unicode(row[2], 'iso-8859-1').encode('utf-8')
         event['Type'] = row[3]
         event['Language'] = row[4]
         event['Url'] = row[5]
@@ -69,19 +70,31 @@ def getEvents(sem):
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #find profs holding lecture
     for idkey in professor:
+        prof = []
         cursor.execute ("""SELECT name FROM person p JOIN lv_leiter l ON p.id=l.PID WHERE l.FSID=%s""", (idkey,))   
         rows = cursor.fetchall()
         event_tmp = events[idkey]
-        event_tmp['Professor'] = rows
+        for row in rows:
+            for el in row:
+                unicode(el,'iso-8859-1').encode('utf-8')
+                prof.append(el)
+        event_tmp['Professor'] = prof
         events[idkey] = event_tmp
 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #find instructors tutoring lecture
+    #str test = ''
     for idkey in instructor:
+        inst = []
         cursor.execute ("""select name from person p join lv_betreuer b on p.id=b.PID where b.FSID=%s""", (idkey,))   
         rows = cursor.fetchall()
         event_tmp = events[idkey]
-        event_tmp['Instructor'] = rows
+        for row in rows:
+                rowstr = str(row)
+                rowstr = rowstr.strip('(').strip(')').strip(',').strip('\'')
+                unicode(rowstr,'iso-8859-1').encode('utf-8')
+                inst.append(rowstr)
+        event_tmp['Instructor'] = inst
         events[idkey] = event_tmp
       
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -113,16 +126,27 @@ def getEvents(sem):
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #find faculty's unique ID  
     for idkey in module:
+        mod = []
         cursor.execute ("""select ModulName,ModulKennung from lv_findet_statt_ex fs join lv_module
         m on fs.IDModulDrehscheibe=m.IDModulDrehscheibe where fs.ID=%s""", (idkey,))   
         rows = cursor.fetchall()
         event_tmp = events[idkey]
-        event_tmp['Module'] = rows
+        for row in rows:
+                rowstr = str(rows)
+                rowstr = rowstr.split(',')
+                for el in rowstr:
+                    unicode(el,'iso-8859-1').encode('utf-8')
+                    el = el.strip(')').strip('(').strip('\'').lstrip()
+                    el = el.strip('\'')
+                    if el != '':
+                            mod.append(el)
+        event_tmp['Module'] = mod
+        print mod
         events[idkey] = event_tmp
  
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 #print to stdio?   
-    printDict = True
+    printDict = False
     if printDict == True:      
         for i, j in events.iteritems(): 
             print "ID: ", i
