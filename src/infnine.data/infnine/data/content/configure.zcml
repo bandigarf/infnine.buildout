@@ -20,5 +20,6 @@
     <include file="lecture.zcml" />
     <include file="practicalcourse.zcml" />
     <include file="seminar.zcml" />
+    <include file="teachinglisting.zcml" />
 
 </configure>

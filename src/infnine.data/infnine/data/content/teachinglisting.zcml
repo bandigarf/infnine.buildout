@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddTeachingListing"
+        title="Infnine Data: Add Teaching Listing"
+        />
+
+    <utility
+        component=".teachinglisting.factory"
+        name="infnine.data.TeachingListing"
+        />
+
+    <class class=".teachinglisting.TeachingListingContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.ITeachingListing"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.ITeachingListing"
+          />
+    </class>
+
+    <five:registerClass
+        class=".teachinglisting.TeachingListingContent"
+        meta_type="Teaching Listing"
+        permission="infnine.data.AddTeachingListing"
+        addview="infnine.data.TeachingListing"
+        icon="infnine_data_teachinglisting.png"
+        />
+
+</configure>

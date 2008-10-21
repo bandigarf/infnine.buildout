@@ -26,6 +26,7 @@ infnine/data/ResearchProject.py
 infnine/data/Seminar.py
 infnine/data/StudentProject.py
 infnine/data/StudentProjectListing.py
+infnine/data/TeachingListing.py
 infnine/data/__init__.py
 infnine/data/bib2zope.py
 infnine/data/common.py
@@ -51,6 +52,7 @@ infnine/data/browser/researchproject.py
 infnine/data/browser/seminar.py
 infnine/data/browser/studentproject.py
 infnine/data/browser/studentprojectlisting.py
+infnine/data/browser/teachinglisting.py
 infnine/data/content/__init__.py
 infnine/data/content/alumnipage.py
 infnine/data/content/applicationdomain.py
@@ -67,3 +69,4 @@ infnine/data/content/researchproject.py
 infnine/data/content/seminar.py
 infnine/data/content/studentproject.py
 infnine/data/content/studentprojectlisting.py
+infnine/data/content/teachinglisting.py

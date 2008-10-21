@@ -13,3 +13,4 @@ from StudentProjectListing import IStudentProjectListing
 from Lecture import ILecture
 from PracticalCourse import IPracticalCourse
 from Seminar import ISeminar
+from TeachingListing import ITeachingListing
