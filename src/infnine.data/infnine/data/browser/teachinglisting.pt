@@ -24,7 +24,7 @@
     <ul>
         <li tal:repeat="lecture lectures">
             <a tal:attributes="href lecture/id" tal:content="lecture/Title" /> (<span tal:replace="lecture/lecture_type" />)<br />
-            (<span tal:replace="lecture/professor"/><span tal:condition="python: len(lecture.professor) > 0" tal:replace="python: ', '"/><span tal:replace="lecture/instructor" />)
+            (<span tal:replace="lecture/professor"/><span tal:condition="python: (len(lecture.professor) > 0) and (len(lecture.instructor) > 0)" tal:replace="python: ', '"/><span tal:replace="lecture/instructor" />)
         </li>
     </ul>
     </div>
@@ -35,7 +35,7 @@
     <ul>
         <li tal:repeat="seminar seminars">
             <a tal:attributes="href seminar/id" tal:content="seminar/Title" /> (<span tal:replace="seminar/seminar_type" />)<br />
-            (<span tal:replace="seminar/professor"/><span tal:condition="python: len(seminar.professor) > 0" tal:replace="python: ', '"/><span tal:replace="seminar/instructor" />)
+            (<span tal:replace="seminar/professor"/><span tal:condition="python: (len(seminar.professor) > 0) and (len(seminar.instructor) > 0)" tal:replace="python: ', '"/><span tal:replace="seminar/instructor" />)
         </li>
     </ul>
     </div>
@@ -46,7 +46,7 @@
     <ul>
         <li tal:repeat="practicalcourse practicalcourses">
             <a tal:attributes="href practicalcourse/id" tal:content="practicalcourse/Title" /> (<span tal:replace="practicalcourse/practicalcourse_type" />)<br />
-            (<span tal:replace="practicalcourse/professor"/><span tal:condition="python: len(practicalcourse.professor) > 0" tal:replace="python: ', '"/><span tal:replace="practicalcourse/instructor" />)
+            (<span tal:replace="practicalcourse/professor"/><span tal:condition="python: (len(practicalcourse.professor) > 0) and (len(practicalcourse.instructor) > 0)" tal:replace="python: ', '"/><span tal:replace="practicalcourse/instructor" />)
         </li>
     </ul>
     </div>
