@@ -18,8 +18,37 @@
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
-    <div>
-        Teaching listing goes here
+    <div tal:define="lectures python: [item[1] for item in context.items() if item[1].meta_type == 'Lecture']"
+         tal:condition="python: (lectures != None) and (len(lectures) > 0)">
+    <h2>Lectures</h2>
+    <ul>
+        <li tal:repeat="lecture lectures">
+            <a tal:attributes="href lecture/id" tal:content="lecture/Title" /> (<span tal:replace="lecture/lecture_type" />)<br />
+            (<span tal:replace="lecture/professor"/><span tal:condition="python: len(lecture.professor) > 0" tal:replace="python: ', '"/><span tal:replace="lecture/instructor" />)
+        </li>
+    </ul>
+    </div>
+
+    <div tal:define="seminars python: [item[1] for item in context.items() if item[1].meta_type == 'Seminar']"
+         tal:condition="python: (seminars != None) and (len(seminars) > 0)">
+    <h2>Seminars</h2>
+    <ul>
+        <li tal:repeat="seminar seminars">
+            <a tal:attributes="href seminar/id" tal:content="seminar/Title" /> (<span tal:replace="seminar/seminar_type" />)<br />
+            (<span tal:replace="seminar/professor"/><span tal:condition="python: len(seminar.professor) > 0" tal:replace="python: ', '"/><span tal:replace="seminar/instructor" />)
+        </li>
+    </ul>
+    </div>
+
+    <div tal:define="practicalcourses python: [item[1] for item in context.items() if item[1].meta_type == 'Practical Course']"
+         tal:condition="python: (practicalcourses != None) and (len(practicalcourses) > 0)">
+    <h2>Practical Courses</h2>
+    <ul>
+        <li tal:repeat="practicalcourse practicalcourses">
+            <a tal:attributes="href practicalcourse/id" tal:content="practicalcourse/Title" /> (<span tal:replace="practicalcourse/practicalcourse_type" />)<br />
+            (<span tal:replace="practicalcourse/professor"/><span tal:condition="python: len(practicalcourse.professor) > 0" tal:replace="python: ', '"/><span tal:replace="practicalcourse/instructor" />)
+        </li>
+    </ul>
     </div>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />
