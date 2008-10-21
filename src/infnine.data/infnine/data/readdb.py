@@ -32,6 +32,16 @@
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55Applet begins here
 import MySQLdb
 
+def filterNamesUmlaut(string):
+    """Filter Names for {Umlaut} Strings and return corresponding unicode umlauts - to 
+    represent names of ppl"""
+    listUmlauts = {'\\xe4':'\xc3\xa4', '\\xf6':'\xc3\xb6', '\\xfc':'\xc3\xbc'}
+    for key, value  in listUmlauts.iteritems():
+        if string.find(key) != -1:
+                    return string.replace(key, value) 
+    #No Umlaut found
+    return string 
+
 def getEvents(sem):
     #connect to DB oberseminar
     db = MySQLdb.connect(   host="sqlradig.informatik.tu-muenchen.de", user="dejan", passwd="infninetest", db="oberseminar")
@@ -75,9 +85,10 @@ def getEvents(sem):
         rows = cursor.fetchall()
         event_tmp = events[idkey]
         for row in rows:
-            for el in row:
-                unicode(el,'iso-8859-1').encode('utf-8')
-                prof.append(el)
+                rowstr = str(row)
+                rowstr = rowstr.strip('(').strip(')').strip(',').strip('\'')
+                rowstr = filterNamesUmlaut(rowstr)
+                prof.append(rowstr)
         event_tmp['Professor'] = prof
         events[idkey] = event_tmp
 
@@ -92,7 +103,7 @@ def getEvents(sem):
         for row in rows:
                 rowstr = str(row)
                 rowstr = rowstr.strip('(').strip(')').strip(',').strip('\'')
-                unicode(rowstr,'iso-8859-1').encode('utf-8')
+                rowstr = filterNamesUmlaut(rowstr)
                 inst.append(rowstr)
         event_tmp['Instructor'] = inst
         events[idkey] = event_tmp
@@ -139,9 +150,8 @@ def getEvents(sem):
                     el = el.strip(')').strip('(').strip('\'').lstrip()
                     el = el.strip('\'')
                     if el != '':
-                            mod.append(el)
+                            mod.append(filterNamesUmlaut(el))
         event_tmp['Module'] = mod
-        print mod
         events[idkey] = event_tmp
  
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
