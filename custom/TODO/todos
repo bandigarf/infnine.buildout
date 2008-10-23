@@ -13,6 +13,8 @@ PEOPLE
 - alphabetical sort of ppl
 - make additional html field under Teaching to specify external courses (url to them)
 + On the first page link only Profs to their personal pages, leave group names as plain text only
+Think on how to display classes taught in previous semesters
+display type of the class next to the Title under "Teaching"
 
 RESEARCH
 - Application domain make url
