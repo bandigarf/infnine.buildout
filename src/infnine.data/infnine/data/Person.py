@@ -97,7 +97,12 @@ class IPerson(Interface):
 
     teaching = Text(
             title=u"Teaching",
-            description=u"",
+            description=u"Teaching events, enter line by line url part name of the teaching event(int number)",
+            required=False,
+            )
+    teaching_misc = Text(
+            title=u"Teaching Misc",
+            description=u"Put courses as html that are not held by Inf9",
             required=False,
             )
 

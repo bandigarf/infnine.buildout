@@ -77,7 +77,7 @@
                 <a tal:attributes="href python: context.portal_url() + '/research/' + item">
                     <span tal:replace="python: portal.research.__getitem__(item).title" />
                 </a>
-                : <span tal:replace="python: portal.research.__getitem__(item).description" />
+                : <span tal:replace="python: portal.research.__getitem__(item).summary" />
             </li>
         </ul>
     </div>
@@ -97,16 +97,28 @@
     </div>
 
     <div tal:define="text context/teaching" tal:condition="python: text != None">
-        <h2>Teaching</h2>
+        <h2>Teaching (Current Term)</h2>
         <ul tal:define="items python:text.split()" tal:repeat="item items">
             <li tal:define="teachings python:[teaching[0] for teaching in portal.teaching.items()
-                                              if teaching[1].meta_type == 'Teaching']"
+                                              if teaching[1].meta_type == 'Lecture' or 'Practical Course' or 'Seminar']"
                 tal:condition="python: item in teachings">
                 <a tal:attributes="href python: context.portal_url() + '/teaching/' + item">
                     <span tal:content="python: portal.teaching.__getitem__(item).title" />
                 </a>
+                 <!--(<span tal:replace="python: portal.teaching.__getitem__(item).lecture_type" />)-->
             </li>
         </ul>
+    </div>
+
+    <div tal:define="text context/teaching_misc"
+         tal:condition="python: text != None"
+         tal:content="structure text" />
+
+    <div>
+         For my previously taught courses please see
+        <a href="link" tal:attributes="href python: context.portal_url() + '/teaching/all-terms/'">All Terms
+            <!--<span tal:replace="python: portal.teaching.all_terms.title"/>-->
+        </a> section. 
     </div>
 
     <div tal:define="text context/students" tal:condition="python: text != None">

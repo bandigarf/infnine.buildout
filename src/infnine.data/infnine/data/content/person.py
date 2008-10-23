@@ -30,6 +30,7 @@ class PersonContent(Container):
     research_projects_current = FieldProperty(IPerson['research_projects_current'])
     research_projects_former = FieldProperty(IPerson['research_projects_former'])
     teaching = FieldProperty(IPerson['teaching'])
+    teaching_misc = FieldProperty(IPerson['teaching_misc'])
     students = FieldProperty(IPerson['students'])
     misc = FieldProperty(IPerson['misc'])
     publications = FieldProperty(IPerson['publications'])

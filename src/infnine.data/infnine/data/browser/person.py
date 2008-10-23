@@ -20,6 +20,7 @@ class AddForm(base.AddForm):
     form_name = _(u"Person Details")
     form_fields['alumni_date'].custom_widget = dtwidget
     form_fields['introduction'].custom_widget = WYSIWYGWidget
+    form_fields['teaching_misc'].custom_widget = WYSIWYGWidget
     form_fields['misc'].custom_widget = WYSIWYGWidget
 
     def setUpWidgets(self, ignore_request=False):
@@ -46,4 +47,5 @@ class EditForm(base.EditForm):
     form_name = _(u"Person Details")
     form_fields['alumni_date'].custom_widget = dtwidget
     form_fields['introduction'].custom_widget = WYSIWYGWidget
+    form_fields['teaching_misc'].custom_widget = WYSIWYGWidget
     form_fields['misc'].custom_widget = WYSIWYGWidget
