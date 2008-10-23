@@ -45,6 +45,7 @@ TEACHING
 - create StudentProjects content type, see student_projects.png image for the reference
 - create Courses Page as here: http://www9.cs.tum.edu/teaching/lehrveranstaltungen/ by reading the data from the database dump: teaching.sql
 - create Phd Talks Page as here: http://www9.cs.tum.edu/seminare/doktorandenseminar/
+- provide a sign-up form to the lecture
 
 DESIGN
 - In Navigation Portlet -> 1 Level Navigation Items to have no icons and smaller fonts than 0 Level Items
