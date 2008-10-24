@@ -100,7 +100,7 @@
         <h2>Teaching (Current Term)</h2>
         <ul tal:define="items python:text.split()" tal:repeat="item items">
             <li tal:define="teachings python:[teaching[0] for teaching in portal.teaching.items()
-                                              if teaching[1].meta_type == 'Lecture' or 'Practical Course' or 'Seminar']"
+                                              if teaching[1].meta_type in ['Lecture', 'Practical Course', 'Seminar']]"
                 tal:condition="python: item in teachings">
                 <a tal:attributes="href python: context.portal_url() + '/teaching/' + item">
                     <span tal:content="python: portal.teaching.__getitem__(item).title" />
@@ -110,7 +110,7 @@
         </ul>
     </div>
 
-    <div tal:define="text context/teaching_misc"
+    <div tal:define="text context/teaching_misc|nothing"
          tal:condition="python: text != None"
          tal:content="structure text" />
 
