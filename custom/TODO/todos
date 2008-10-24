@@ -1,6 +1,6 @@
 GENERALS
 - webdavs
-+ static portlet to render private page (tal portlet dependency added, need a dedicated sidebar page + tal code)
++ static portlet to render private page (check for a local page called sidebar (here/sidebar) and display that if found)
 - page down msg - we will use supervisord.org, Quirin and Dejan will deploy it this week
 - bilingual
 - tutorial
@@ -8,11 +8,9 @@ GENERALS
 - a script to prepare the images for the front page (apply the blue stripe)
 
 PEOPLE
-+ room number a link to the map
 - application domain list and make them url
 - alphabetical sort of ppl
 - Think on how to display classes taught in previous semesters
-- display type of the class next to the Title under "Teaching"
 
 RESEARCH
 - Application domain make url
