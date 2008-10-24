@@ -1,31 +1,23 @@
 GENERALS
-- https
+- webdavs
 + static portlet to render private page (tal portlet dependency added, need a dedicated sidebar page + tal code)
 - page down msg - we will use supervisord.org, Quirin and Dejan will deploy it this week
 - bilingual
 - tutorial
 - make all randomly displayed images on the front page uniform size
+- a script to prepare the images for the front page (apply the blue stripe)
 
 PEOPLE
 + room number a link to the map
-- research topics make comma separeted list
 - application domain list and make them url
 - alphabetical sort of ppl
-- make additional html field under Teaching to specify external courses (url to them)
-+ On the first page link only Profs to their personal pages, leave group names as plain text only
-Think on how to display classes taught in previous semesters
-display type of the class next to the Title under "Teaching"
+- Think on how to display classes taught in previous semesters
+- display type of the class next to the Title under "Teaching"
 
 RESEARCH
 - Application domain make url
 - update research map with links to application domains
-- Dejan: Enter ProbCog into the research map such that it spans:
-across "Models/Representation" and "Reasoning/Learning..."
-i.e. not only Reasoning/Learning
-- Make a navigation menu at the top of the ResearchProject CT. It should be such that allows for
-links to the current fields inside the CT (Application Domain, Research Topics, Team, etc) as well as 
-to any custom subpages like: http://atradig121.informatik.tu-muenchen.de:8080/infnine/research/aspogamo/research/aspogamo/links/technology. In the latter case the menu link shall be called "Technology".
- 
+- Make a navigation menu at the top of the ResearchProject CT. It should be such that allows for links to the current fields inside the CT (Application Domain, Research Topics, Team, etc) as well as to any custom subpages like: http://atradig121.informatik.tu-muenchen.de:8080/infnine/research/aspogamo/research/aspogamo/links/technology. In the latter case the menu link shall be called "Technology".
 
 PUBLICATIONS
 - Dejan: publication listing on author, type and project/research category
@@ -33,19 +25,10 @@ PUBLICATIONS
 - Dejan: improve bib2zope.py to parse yet unknown fields 
 - Dejan: to appear in person
 
-IMPRESSUM
-+ do Map of Offices 
-+ remove Phone Dir
-- add Secreteriat and Web responsibilities - see http://www9.cs.tum.edu/infos/ 
-
-NEWS
-- restrict adding only to News folder
-
 TEACHING
-- create StudentProjects content type, see student_projects.png image for the reference
-- create Courses Page as here: http://www9.cs.tum.edu/teaching/lehrveranstaltungen/ by reading the data from the database dump: teaching.sql
+- Dejan: on the listing page, link professor and instructor names to respective pages
+- student project listing: limit to 5 items per category (5 x 6 = 30 items total displayed) + separate full listings
 - create Phd Talks Page as here: http://www9.cs.tum.edu/seminare/doktorandenseminar/
 
 DESIGN
-- In Navigation Portlet -> 1 Level Navigation Items to have no icons and smaller fonts than 0 Level Items
-- 0 Level Items to have no icons as well
+- fix internet explorer weirdness
