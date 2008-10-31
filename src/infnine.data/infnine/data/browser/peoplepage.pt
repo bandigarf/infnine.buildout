@@ -34,12 +34,14 @@
                                     if person[1].meta_type == 'Person'
                                     and person[1].status == 'Junior Research Group Leader']"
             tal:condition="python: len(people) > 0">
+    <span tal:define="people_sorted python: context.pLS(people)">
         <h3>Junior Research Group Leaders</h3>
-        <ul tal:repeat="person people">
+        <ul tal:repeat="person people_sorted">
             <a href="" tal:attributes="href python: context.portal_url() + '/people/' + person.id">
                 <li tal:content="person/title" />
             </a>
         </ul>
+    </span>
     </div>
 
     <div tal:define="people python:[person[1] for person in context.items()
@@ -70,36 +72,42 @@
                                     if person[1].meta_type == 'Person'
                                     and person[1].status == 'Researcher']"
             tal:condition="python: len(people) > 0">
+   <span tal:define="people_sorted python: context.pLS(people)">
         <h3>Research Staff</h3>
-        <ul tal:repeat="person people">
+        <ul tal:repeat="person people_sorted">
             <a href="" tal:attributes="href python: context.portal_url() + '/people/' + person.id">
                 <li tal:content="person/title" />
             </a>
         </ul>
+    </span>
     </div>
 
     <div tal:define="people python:[person[1] for person in context.items()
                                     if person[1].meta_type == 'Person'
-                                    and person[1].status == 'Visiting Researcher']"
+                                    and person[1].status == 'Visiting Researcher'];"
             tal:condition="python: len(people) > 0">
+    <span tal:define="people_sorted python: context.pLS(people)">
         <h3>Visiting Researchers</h3>
-        <ul tal:repeat="person people">
+        <ul tal:repeat="person people_sorted">
             <a href="" tal:attributes="href python: context.portal_url() + '/people/' + person.id">
                 <li tal:content="person/title" />
             </a>
         </ul>
+    </span>
     </div>
 
     <div tal:define="people python:[person[1] for person in context.items()
                                     if person[1].meta_type == 'Person'
                                     and person[1].status == 'Student Member']"
             tal:condition="python: len(people) > 0">
+    <span tal:define="people_sorted python: context.pLS(people)">
         <h3>Student Members</h3>
-        <ul tal:repeat="person people">
+        <ul tal:repeat="person people_sorted">
             <a href="" tal:attributes="href python: context.portal_url() + '/people/' + person.id">
                 <li tal:content="person/title" />
             </a>
         </ul>
+    </span>
     </div>
 
     <div tal:define="people python:[person[1] for person in context.items()
