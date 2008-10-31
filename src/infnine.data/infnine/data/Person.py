@@ -18,7 +18,7 @@ class IPerson(Interface):
             description=u"Status of the person",
             required=True,
             default="Other",
-            values=("Professor", "Junior Research Group Leader", "Secretariat", "Researcher",
+            values=("Professor", "Guest Lecturer",  "Junior Research Group Leader", "Secretariat", "Researcher",
                     "Visiting Researcher", "Alumnus", "Administration", "Student Member",
                     "External", "Other",
                     ),
