@@ -20,7 +20,7 @@
 
     <div tal:define="studentprojects python: [item[1] for item in context.items() if item[1].meta_type == 'Student Project']">
     <div tal:repeat="status python: ['Open', 'Running', 'Completed']" tal:replace="default">
-        <h2 tal:content="python: status + ' thesis offers'">Open thesis offers</h2>
+        <h2 tal:content="python: status + ' theses'">Open theses</h2>
         <table class="grid listing">
         <thead>
             <th>Title</th>
@@ -37,7 +37,8 @@
             </tr>
         </div></tbody>
         </table>
-
+    </div>
+    <div tal:repeat="status python: ['Running']" tal:replace="default">
         <h2 tal:content="python: status + ' HiWi positions'">Open HiWi positions</h2>
         <table class="grid listing">
         <thead>
@@ -55,7 +56,7 @@
             </tr>
         </div></tbody>
         </table>
-    </div>
+    </div>  
     </div>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />
