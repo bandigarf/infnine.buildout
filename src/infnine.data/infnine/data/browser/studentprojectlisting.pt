@@ -38,7 +38,7 @@
         </div></tbody>
         </table>
     </div>
-    <div tal:repeat="status python: ['Running']" tal:replace="default">
+    <div tal:repeat="status python: ['Open']" tal:replace="default">
         <h2 tal:content="python: status + ' HiWi positions'">Open HiWi positions</h2>
         <table class="grid listing">
         <thead>
