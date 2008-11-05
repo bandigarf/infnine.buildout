@@ -25,7 +25,7 @@
           set_schema="..interfaces.IStudentProject"
           />
     </class>
-    
+
     <five:registerClass
         class=".studentproject.StudentProjectContent"
         meta_type="Student Project"
@@ -34,10 +34,16 @@
         icon="infnine_data_studentproject.png"
         />
 
-<subscriber
-    for="..interfaces.IStudentProject
-         zope.app.event.interfaces.IObjectModifiedEvent"
-    handler=".studentproject.catalog_content"
-    />
+    <subscriber
+        for="..interfaces.IStudentProject
+             zope.app.event.interfaces.IObjectModifiedEvent"
+        handler=".studentproject.publishStudentProject"
+        />
+
+    <subscriber
+        for="..interfaces.IStudentProject
+             zope.app.event.interfaces.IObjectCreatedEvent"
+        handler=".studentproject.publishStudentProject"
+        />
 
 </configure>

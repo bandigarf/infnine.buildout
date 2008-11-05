@@ -30,12 +30,11 @@ class StudentProjectContent(Container):
     start_date = FieldProperty(IStudentProject['start_date'])
     end_date = FieldProperty(IStudentProject['end_date'])
     publish_to_drehscheibe = FieldProperty(IStudentProject['publish_to_drehscheibe'])
-    if publish_to_drehscheibe == True:
-        print "\n********************************************\n***************************************************"
-       
+
 factory = Factory(
         StudentProjectContent,
         )
 
-def catalog_content(obj, event):
+def publishStudentProject(obj, event):
+    print "publish_to_drehscheibe:", obj.publish_to_drehscheibe
     obj.reindexObject()
