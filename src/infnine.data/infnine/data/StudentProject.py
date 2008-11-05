@@ -1,5 +1,5 @@
 from zope.interface import Interface
-from zope.schema import TextLine, Text, List, Choice, Int, Datetime
+from zope.schema import TextLine, Text, List, Choice, Int, Datetime, Bool
 
 from infnine.data.common import project_types, professors, authors_list
 
@@ -85,4 +85,9 @@ class IStudentProject(Interface):
             title=u"End Date",
             description=u"End date of the project",
             required=False,
+            )
+
+    publish_to_drehscheibe = Bool(
+            title=u"publishToDresheibe Selector",
+            default=False,
             )

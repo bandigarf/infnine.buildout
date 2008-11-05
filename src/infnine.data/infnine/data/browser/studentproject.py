@@ -10,6 +10,9 @@ from Acquisition import aq_inner
 from infnine.data.interfaces import IStudentProject
 from infnine.data import _
 
+#checkbox widget
+from plone.app.form.widgets import CheckBoxWidget
+
 class AddForm(base.AddForm):
     """Add form
     """
@@ -23,6 +26,7 @@ class AddForm(base.AddForm):
 #    form_fields['prerequisites'].custom_widget = WYSIWYGWidget
     form_fields['start_date'].custom_widget = dtwidget
     form_fields['end_date'].custom_widget = dtwidget
+    form_fields['publish_to_drehscheibe'].custom_widget = CheckBoxWidget
 
     def setUpWidgets(self, ignore_request=False):
         self.widgets = form.setUpWidgets(
@@ -51,3 +55,4 @@ class EditForm(base.EditForm):
 #    form_fields['prerequisites'].custom_widget = WYSIWYGWidget
     form_fields['start_date'].custom_widget = dtwidget
     form_fields['end_date'].custom_widget = dtwidget
+    form_fields['publish_to_drehscheibe'].custom_widget = CheckBoxWidget
