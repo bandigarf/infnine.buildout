@@ -11,6 +11,34 @@
         />
 
     <browser:page
+        for="..interfaces.IPublicationListing"
+        name="by_year"
+        template="publicationlisting.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.IPublicationListing"
+        name="by_author"
+        template="publicationlisting_by_author.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.IPublicationListing"
+        name="by_project"
+        template="publicationlisting_by_project.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.IPublicationListing"
+        name="by_publication_type"
+        template="publicationlisting_by_publication_type.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
         for="zope.app.container.interfaces.IAdding"
         name="infnine.data.PublicationListing"
         class=".publicationlisting.AddForm"

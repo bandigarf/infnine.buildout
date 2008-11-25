@@ -17,12 +17,12 @@
     <div class="documentDescription" tal:content="context/description" />
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
-    <!-- Sorting Publications by year-->
-    <div tal:define="yearlist python: []">
+    <!-- Sorting Publications by project-->
+    <div tal:define="projectlist python: []">
         <div tal:define="pubs python: context.getParentNode().objectValues(['Publication'])">
             <div tal:repeat="item pubs">
-                <div tal:condition="python: not(item.year in yearlist)"
-                     tal:replace="python: yearlist.append(item.year)">YEARLIST
+                <div tal:condition="python: not(item.bib2html_funding in projectlist)"
+                     tal:replace="python: projectlist.append(item.bib2html_funding)">PROJECTLIST
                 </div>
             </div>
     <h1>Publications Sorted by:</h1>
@@ -36,20 +36,21 @@
     </span>
 
     <!--Year List-->
-            <div tal:replace="python: yearlist.sort()">YEARLIST</div>
-            <div tal:replace="python: yearlist.reverse()">YEARLIST</div>
-            <span tal:repeat="year yearlist">
+            <div tal:replace="python: projectlist.sort()">PROJECTLIST</div>
+            <div tal:replace="python: projectlist.reverse()">PROJECTLIST</div>
+<!--             <div tal:replace="python: projectlist.remove(None)">PROJECTLIST</div> -->
+            <span tal:repeat="project projectlist">
                 <!--Reference to Location inside the Page-->
-                <a href="link" tal:attributes="href python: '#'+`year`" tal:content="year">YEARLIST</a>
+                <a href="link" tal:attributes="href python: '#'+project" tal:content="project">PROJECTLIST</a>
             </span>
 
     <!--Publications Display-->
             <!-- author_list defined in data/content/publicationlisting.py-->
             <div tal:define="authorlist context/author_list">
-            <ul tal:repeat="year yearlist">
-            <h2> <a name="" tal:attributes="name year" tal:content="year">YEAR</a></h2>
+            <ul tal:repeat="project projectlist">
+            <h2> <a name="" tal:attributes="name project" tal:content="project">PROJECT</a></h2>
                 <div tal:repeat="pub pubs">
-                <li tal:condition="python: pub.year == year">
+                <li tal:condition="python: pub.bib2html_funding == project">
                     <span tal:condition="pub/author | nothing">
                         <!--Display authors with bold link if members of chair, only bold if members
                         and have no page in portal.people and diplay normal if they are externals-->
