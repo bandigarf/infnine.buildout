@@ -1,4 +1,8 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts">
 
+    <javascript cacheable="True" compression="safe" cookable="True"
+        enabled="True" inline="False" expression=""
+        id="++resource++infnine.theme.javascripts/pngfix.js" />
+
 </object>

@@ -48,6 +48,7 @@ infnine/theme/browser/images/pic3.png
 infnine/theme/browser/images/pic4.png
 infnine/theme/browser/images/portlet_footer.png
 infnine/theme/browser/images/portlet_header.png
+infnine/theme/browser/javascripts/pngfix.js
 infnine/theme/browser/stylesheets/README.txt
 infnine/theme/browser/stylesheets/main.css
 infnine/theme/browser/templates/footer.pt

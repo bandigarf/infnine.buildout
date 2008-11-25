@@ -78,4 +78,11 @@
         layer=".interfaces.IThemeSpecific"
         />
 
+    <!-- Resource directory for javascripts -->
+    <browser:resourceDirectory
+        name="infnine.theme.javascripts"
+        directory="javascripts"
+        layer=".interfaces.IThemeSpecific"
+        />
+
 </configure>
