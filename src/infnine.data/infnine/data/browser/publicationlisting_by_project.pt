@@ -35,13 +35,12 @@
         </table>
     </span>
 
-    <!--Year List-->
+    <!--Project List-->
             <div tal:replace="python: projectlist.sort()">PROJECTLIST</div>
             <div tal:replace="python: projectlist.reverse()">PROJECTLIST</div>
-<!--             <div tal:replace="python: projectlist.remove(None)">PROJECTLIST</div> -->
-            <span tal:repeat="project projectlist">
+            <span tal:define="projectlist1 python: [project for project in projectlist if project != None]" tal:repeat="project projectlist1">
                 <!--Reference to Location inside the Page-->
-                <a href="link" tal:attributes="href python: '#'+project" tal:content="project">PROJECTLIST</a>
+                <a href="link" tal:attributes="href python: context.getId() + '/by_project#' + project" tal:content="project">PROJECTLIST</a>
             </span>
 
     <!--Publications Display-->

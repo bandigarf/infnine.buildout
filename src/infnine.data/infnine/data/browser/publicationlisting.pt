@@ -38,9 +38,9 @@
     <!--Year List-->
             <div tal:replace="python: yearlist.sort()">YEARLIST</div>
             <div tal:replace="python: yearlist.reverse()">YEARLIST</div>
-            <span tal:repeat="year yearlist">
+            <span tal:define="yearlist1 python: [year for year in yearlist if year != None]" tal:repeat="year yearlist1">
                 <!--Reference to Location inside the Page-->
-                <a href="link" tal:attributes="href python: '#'+`year`" tal:content="year">YEARLIST</a>
+                <a href="link" tal:attributes="href python: context.getId() + '/by_year#' + `year`" tal:content="year">YEARLIST</a>
             </span>
 
     <!--Publications Display-->
