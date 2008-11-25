@@ -17,12 +17,17 @@
     <div class="documentDescription" tal:content="context/description" />
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
-    <!-- Sorting Publications by year-->
-    <div tal:define="yearlist python: []">
+    <!-- Sorting Publications by authors-->
+    <div tal:define="authorslist python: []">
         <div tal:define="pubs python: context.getParentNode().objectValues(['Publication'])">
             <div tal:repeat="item pubs">
-                <div tal:condition="python: not(item.year in yearlist)"
-                     tal:replace="python: yearlist.append(item.year)">YEARLIST
+                <div tal:condition="python: (item.author != None) and (item.author != '')">
+                    <div tal:define="newauthors python: [author for author in item.author.split(' and ')]">
+                        <div tal:repeat="newauthor newauthors" tal:replace="default">
+                            <div tal:condition="python: not(newauthor in authorslist)" tal:replace="python: authorslist.append(newauthor)">AUTHORSLIST
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
     <h1>Publications Sorted by:</h1>
@@ -35,21 +40,20 @@
         </table>
     </span>
 
-    <!--Year List-->
-            <div tal:replace="python: yearlist.sort()">YEARLIST</div>
-            <div tal:replace="python: yearlist.reverse()">YEARLIST</div>
-            <span tal:repeat="year yearlist">
+    <!--Authors List-->
+            <div tal:replace="python: authorslist.sort()">AUTHORSLIST</div>
+            <span tal:define="authorslist1 python: [author for author in authorslist if ((author != None) and (author != ''))]" tal:repeat="author authorslist1">
                 <!--Reference to Location inside the Page-->
-                <a href="link" tal:attributes="href python: '#'+`year`" tal:content="year">YEARLIST</a>
+                <a href="link" tal:attributes="href python: context.getId() + '/by_author#' + author" tal:content="author">AUTHORSLIST</a>
             </span>
 
     <!--Publications Display-->
             <!-- author_list defined in data/content/publicationlisting.py-->
             <div tal:define="authorlist context/author_list">
-            <ul tal:repeat="year yearlist">
-            <h2> <a name="" tal:attributes="name year" tal:content="year">YEAR</a></h2>
+            <ul tal:repeat="author authorslist">
+            <h2> <a name="" tal:attributes="name author" tal:content="author">AUTHOR</a></h2>
                 <div tal:repeat="pub pubs">
-                <li tal:condition="python: pub.year == year">
+                <li tal:condition="python: (pub.author != None) and (author in pub.author)">
                     <span tal:condition="pub/author | nothing">
                         <!--Display authors with bold link if members of chair, only bold if members
                         and have no page in portal.people and diplay normal if they are externals-->
