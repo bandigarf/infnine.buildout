@@ -26,8 +26,8 @@ def filterNamesUrl(self, string):
 def filterNamesUmlaut(self, string):
     """Filter Names for {Umlaut} Strings and return corresponding unicode umlauts - to 
     represent names of ppl without the Person page(title attribute)"""
-    listUmlauts = ['{\\\\"a}', '{\\\\"o}', '{\\\\"u}', '\\\\"a', '\\\\"o', '\\\\"u']
-    listVowels = {'a': u'\xe4', 'o': u'\xf6', 'u':u'\xfc', 'o':u'\xf6'}
+    listUmlauts = ['{\\\\"a}', '{\\\\"o}', '{\\\\"u}', '\\\\"a', '\\\\"o', '\\\\"u', '{\\"a}', '{\\"o}', '{\\"u}', '\\"a', '\\"o', '\\"u']
+    listVowels = {'a': u'\xe4', 'o': u'\xf6', 'u':u'\xfc'}
     for subStr in listUmlauts:
         if string.find(subStr) != -1:
             for vowel, umlaut  in listVowels.iteritems():
