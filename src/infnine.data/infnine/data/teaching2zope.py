@@ -1,3 +1,5 @@
+#run from buildout like:
+#./bin/zope-secondary run src/infnine.data/infnine/data/teaching2zope
 from infnine.data.readdb import getEvents
 semester = semester_id = 'WS2008'
 semester = getEvents(semester_id)

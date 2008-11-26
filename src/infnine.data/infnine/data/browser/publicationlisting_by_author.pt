@@ -44,14 +44,14 @@
             <div tal:replace="python: authorslist.sort()">AUTHORSLIST</div>
             <span tal:define="authorslist1 python: [author for author in authorslist if ((author != None) and (author != ''))]" tal:repeat="author authorslist1">
                 <!--Reference to Location inside the Page-->
-                <a href="link" tal:attributes="href python: context.getId() + '/by_author#' + author" tal:content="author">AUTHORSLIST</a>
+                <a href="link" tal:attributes="href python: context.getId() + '/by_author#' + author" tal:content="python: context.fNU(author)">AUTHORSLIST</a>
             </span>
 
     <!--Publications Display-->
             <!-- author_list defined in data/content/publicationlisting.py-->
             <div tal:define="authorlist context/author_list">
             <ul tal:repeat="author authorslist">
-            <h2> <a name="" tal:attributes="name author" tal:content="author">AUTHOR</a></h2>
+            <h2> <a name="" tal:attributes="name author" tal:content="python: context.fNU(author)">AUTHOR</a></h2>
                 <div tal:repeat="pub pubs">
                 <li tal:condition="python: (pub.author != None) and (author in pub.author)">
                     <span tal:condition="pub/author | nothing">
