@@ -20,8 +20,6 @@
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
-    <div tal:define="text context/details|nothing" tal:condition="text" tal:content="structure text" />
-
     <div tal:define="text context/practicalcourse_type|nothing" tal:condition="text">
         <b>Practical course type: </b><span tal:replace="text" />
     </div>

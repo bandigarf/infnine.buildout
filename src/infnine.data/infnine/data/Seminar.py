@@ -23,12 +23,6 @@ class ISeminar(Interface):
             required=False,
             )
 
-    details = Text(
-            title=u"Detailed description",
-            description=u"A detailed description of the lecture",
-            required=False,
-            )
-
     seminar_type = TextLine(
             title=u"Type",
             description=u"",

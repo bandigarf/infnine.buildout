@@ -17,7 +17,6 @@ class AddForm(base.AddForm):
 
     label = _(u"Add Practical Course")
     form_name = _(u"Practical Course Details")
-    form_fields['details'].custom_widget = WYSIWYGWidget
     form_fields['body'].custom_widget = WYSIWYGWidget
 
     def setUpWidgets(self, ignore_request=False):
@@ -42,5 +41,4 @@ class EditForm(base.EditForm):
 
     label = _(u"Edit Practical Course")
     form_name = _(u"Practical Course Details")
-    form_fields['details'].custom_widget = WYSIWYGWidget
     form_fields['body'].custom_widget = WYSIWYGWidget

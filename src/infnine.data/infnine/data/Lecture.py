@@ -23,12 +23,6 @@ class ILecture(Interface):
             required=False,
             )
 
-    details = Text(
-            title=u"Detailed description",
-            description=u"A detailed description of the lecture",
-            required=False,
-            )
-
     lecture_type = TextLine(
             title=u"Type",
             description=u"",
