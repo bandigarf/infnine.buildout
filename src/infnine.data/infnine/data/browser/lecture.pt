@@ -55,7 +55,7 @@
     </div>
     <br>
     <div tal:define="text context/body|nothing" tal:condition="text">
-        <b>Lecture Details</b> <br> <span tal:content="context/body" ></span>
+        <b>Lecture Details</b> <br> <span tal:content="structure text" ></span>
     </div>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />
