@@ -76,3 +76,9 @@ class ILecture(Interface):
             description=u"",
             required=False,
             )
+
+    body = Text(
+            title=u"Body Info about Lecture",
+            description=u"Details, material, etc about the lecture",
+            required=False,
+            )

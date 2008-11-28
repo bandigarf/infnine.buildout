@@ -76,3 +76,8 @@ class ISeminar(Interface):
             description=u"",
             required=False,
             )
+    body = Text(
+            title=u"Body Info about Seminar",
+            description=u"Details, material, etc about the seminar",
+            required=False,
+            )

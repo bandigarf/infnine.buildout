@@ -76,3 +76,9 @@ class IPracticalCourse(Interface):
             description=u"",
             required=False,
             )
+
+    body = Text(
+            title=u"Body Info about Practical Course",
+            description=u"Details, material, etc about the practical course",
+            required=False,
+            )

@@ -53,6 +53,10 @@
     <div tal:define="text context/url|nothing" tal:condition="text">
         <b>URL: </b><a tal:attributes="href text" tal:content="text" />
     </div>
+    <br>
+    <div tal:define="text context/body|nothing" tal:condition="text">
+        <b>Practical Course Details</b> <br> <span tal:content="context/body" ></span>
+    </div>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />
 

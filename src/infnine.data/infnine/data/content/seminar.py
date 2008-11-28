@@ -27,6 +27,7 @@ class SeminarContent(Container):
     modul = FieldProperty(ISeminar['modul'])
     term = FieldProperty(ISeminar['term'])
     url = FieldProperty(ISeminar['url'])
+    body = FieldProperty(ISeminar['body'])
 
 factory = Factory(
         SeminarContent,

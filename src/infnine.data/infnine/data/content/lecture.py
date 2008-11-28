@@ -27,6 +27,7 @@ class LectureContent(Container):
     module = FieldProperty(ILecture['module'])
     term = FieldProperty(ILecture['term'])
     url = FieldProperty(ILecture['url'])
+    body = FieldProperty(ILecture['body'])
 
 factory = Factory(
         LectureContent,
