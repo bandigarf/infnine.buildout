@@ -155,7 +155,7 @@
 
     <div>
          For the full list of my Publications please see the
-        <a href="link" tal:attributes="href python: context.portal_url() + '/publications/'">
+        <a href="link" tal:attributes="href python: context.portal_url() + '/publications/publications-listing/by_author#' + context.title">
             <span tal:replace="python: portal.publications.title"/>
         </a> section. 
     </div>

@@ -21,7 +21,7 @@
     <div tal:define="pubtypelist python: []">
         <div tal:define="pubs python: context.getParentNode().objectValues(['Publication'])">
             <div tal:repeat="item pubs">
-                <div tal:condition="python: not(item.bib2html_pubtype in pubtypelist)"
+                <div tal:condition="python: not(item.bib2html_pubtype in pubtypelist) and not(item.bib2html_pubtype in ['ignore', '', None])"
                      tal:replace="python: pubtypelist.append(item.bib2html_pubtype)">PUBTYPELIST
                 </div>
             </div>
@@ -38,6 +38,7 @@
     <!--Publication Type List-->
             <div tal:replace="python: pubtypelist.sort()">PUBTYPELIST</div>
             <div tal:replace="python: pubtypelist.reverse()">PUBTYPELIST</div>
+            <div tal:replace="python: pubtypelist.append('Non-Classified')" />
             <span tal:define="pubtypelist1 python: [pubtype for pubtype in pubtypelist if pubtype != None]" tal:repeat="pubtype pubtypelist1">
                 <!--Reference to Location inside the Page-->
                 <a href="link" tal:attributes="href python: context.getId() + '/by_publication_type#' + pubtype" tal:content="pubtype">PUBTYPELIST</a>
@@ -49,7 +50,7 @@
             <ul tal:repeat="pubtype pubtypelist">
             <h2> <a name="" tal:attributes="name pubtype" tal:content="pubtype">PUBTYPE</a></h2>
                 <div tal:repeat="pub pubs">
-                <li tal:condition="python: pub.bib2html_pubtype == pubtype">
+                <li tal:condition="python: (pub.bib2html_pubtype == pubtype) or ((pubtype == 'Non-Classified') and (pub.bib2html_pubtype in ['ignore', '', None]))">
                     <span tal:condition="pub/author | nothing">
                         <!--Display authors with bold link if members of chair, only bold if members
                         and have no page in portal.people and diplay normal if they are externals-->

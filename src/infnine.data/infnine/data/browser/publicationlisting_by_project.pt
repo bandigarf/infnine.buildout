@@ -21,7 +21,7 @@
     <div tal:define="projectlist python: []">
         <div tal:define="pubs python: context.getParentNode().objectValues(['Publication'])">
             <div tal:repeat="item pubs">
-                <div tal:condition="python: not(item.bib2html_funding in projectlist)"
+                <div tal:condition="python: not(item.bib2html_funding in projectlist) and not(item.bib2html_funding in ['ignore', '', None])"
                      tal:replace="python: projectlist.append(item.bib2html_funding)">PROJECTLIST
                 </div>
             </div>
@@ -38,6 +38,7 @@
     <!--Project List-->
             <div tal:replace="python: projectlist.sort()">PROJECTLIST</div>
             <div tal:replace="python: projectlist.reverse()">PROJECTLIST</div>
+            <div tal:replace="python: projectlist.append('Non-Classified')" />
             <span tal:define="projectlist1 python: [project for project in projectlist if project != None]" tal:repeat="project projectlist1">
                 <!--Reference to Location inside the Page-->
                 <a href="link" tal:attributes="href python: context.getId() + '/by_project#' + project" tal:content="project">PROJECTLIST</a>
@@ -49,7 +50,7 @@
             <ul tal:repeat="project projectlist">
             <h2> <a name="" tal:attributes="name project" tal:content="project">PROJECT</a></h2>
                 <div tal:repeat="pub pubs">
-                <li tal:condition="python: pub.bib2html_funding == project">
+                <li tal:condition="python: (pub.bib2html_funding == project) or ((project == 'Non-Classified') and (pub.bib2html_funding in ['ignore', '', None]))">
                     <span tal:condition="pub/author | nothing">
                         <!--Display authors with bold link if members of chair, only bold if members
                         and have no page in portal.people and diplay normal if they are externals-->
