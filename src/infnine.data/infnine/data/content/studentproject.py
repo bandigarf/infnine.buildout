@@ -36,5 +36,20 @@ factory = Factory(
         )
 
 def publishStudentProject(obj, event):
-    print "publish_to_drehscheibe:", obj.publish_to_drehscheibe
-    obj.reindexObject()
+    print "bla"
+#    if not obj.publish_to_drehscheibe:
+#        if obj._published:
+            # do something to unpublish it
+            #obj._published = False
+#        return
+
+    #import pdb;pdb.set_trace()
+#    if obj._published:
+        # do something to update it
+#        return
+
+    # publish object
+#    print "publish_to_drehscheibe:", obj.publish_to_drehscheibe
+#    obj._published = True
+
+    #obj.reindexObject()
