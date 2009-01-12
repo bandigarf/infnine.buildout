@@ -8,6 +8,9 @@ import time
 from sys import argv
 import MySQLdb
 
+#some defines, change in common.py
+from infnine.data.common import templateFile, destinationFile
+
 #print "Drehscheibe/Interface by Dominik Jain"
 #print "arguments: %s" % str(argv)
 #
@@ -39,7 +42,7 @@ import os
 
 def createTexFile(thesistype, supervisor, professor, email, title, overview, tasks, prerequisites, url):#, image):
     
-    template = open("template.tex", "r")
+    template = open(templateFile, "r")
     
     output=[]
     for line in template :
@@ -56,7 +59,7 @@ def createTexFile(thesistype, supervisor, professor, email, title, overview, tas
         output.append(line)
     template.close()
         
-    outfile = open("out.tex", "w")
+    outfile = open(destinationFile+title.replace(' ', '-').lower()+ ".tex", "w")
     for line in output: 
         outfile.write(line ) 
         
@@ -117,7 +120,7 @@ def sendToDrehscheibe(thesistype, supervisor, professor, email, title, overview,
 
 
 
-def publishStudentProject(thesistype, supervisor, professor, email, title, overview, tasks, prerequisites, url):#, image):
+def publishStudentProject1(thesistype, supervisor, professor, email, title, overview, tasks, prerequisites, url):#, image):
     
     if(("SEP" in thesistype) or ("IDP" in thesistype)):
         
@@ -177,9 +180,7 @@ def publishStudentProject(thesistype, supervisor, professor, email, title, overv
         #sendToDrehscheibe("da", supervisor, professor, email, prefix +" "+ title, overview, tasks, prerequisites, url)
 
         # create tex file
-        print "before"
         createTexFile(print_title, supervisor, professor, email, title, overview, tasks, prerequisites, url)#, image)
-        print "after"
 
 
 

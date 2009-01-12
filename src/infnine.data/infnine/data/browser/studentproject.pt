@@ -55,11 +55,7 @@
     <div tal:define="text context/end_date" tal:condition="python: text != None">
         End date: <span tal:replace="text" />
     </div>
-
-    <div  tal:define="text context/publish_to_drehscheibe" >
-        Publish to Drehscheibe: <span tal:replace="text" />
-    </div>
-
+	
     <hr />
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
