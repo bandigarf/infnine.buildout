@@ -55,10 +55,11 @@ def publishStudentProject(obj, event):
      .lower())
      #context = aq_inner()
      mailhost = getToolByName(portalRoot, 'MailHost')
-     message = 'New thesis Announcement by ' + \
-     portalRoot.people.__getitem__(obj.supervisor.title().lower()).title + ' placed in: ' + destinationFile + \
-     obj.title.replace(' ', '-').lower() + '.tex'
-     mailhost.send(message, toAddr, fromAddr, 'New Thesis Announcement')
+     author = portalRoot.people.__getitem__(obj.supervisor.title().lower()).title
+     title = obj.title.replace(' ', '-').lower()
+     mMsg = """New thesis Announcement by %s placed in: %s%s.tex"""
+     message = mMsg % (author,destinationFile,title)
+     mailhost.send(utf8a(message), toAddr, fromAddr, 'New Thesis Announcement')
 
 #TODO:
 #What will happen if one wants to amend an already submitted thesis proposal?

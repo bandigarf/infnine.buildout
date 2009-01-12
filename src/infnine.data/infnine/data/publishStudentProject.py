@@ -34,9 +34,11 @@ def writef(buf):
     f.close()
     
 def utf8(s):
-    ''' converts from latin-1 to utf-8 '''
-    return unicode(s, "iso-8859-1").encode("utf-8")
+	''' converts from latin-1 to utf-8 '''
+	return unicode(s, "iso-8859-1").encode("utf-8")
 
+def utf8a(s):
+  	return s.encode( "utf-8" )
 
 import os
 
