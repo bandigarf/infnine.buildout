@@ -10,23 +10,35 @@ GENERALS
 PEOPLE
 - application domain list and make them url
 - Think on how to display classes taught in previous semesters
+- migrate ALL alumni from the old webpage
+- resolve visibility (private CT shall not appear)
 
 RESEARCH
 - Application domain make url
 - update research map with links to application domains
-- Make a navigation menu at the top of the ResearchProject CT. It should be such that allows for links to the current fields inside the CT (Application Domain, Research Topics, Team, etc) as well as to any custom subpages like: http://atradig121.informatik.tu-muenchen.de:8080/infnine/research/aspogamo/research/aspogamo/links/technology. In the latter case the menu link shall be called "Technology".
+- Make a navigation menu at the top of the ResearchProject CT. It
+should be such that allows for links to the current fields inside the
+CT (Application Domain, Research Topics, Team, etc) as well as to any
+custom subpages like:
+http://atradig121.informatik.tu-muenchen.de:8080/infnine/research/aspogamo/research/aspogamo/links/technology. In
+the latter case specifically the menu link shall be called "Technology".
 
 PUBLICATIONS
-- Dejan: publication listing on author, type and project/research category
-- Dejan: provide bibtex with standard fields and pdf
-- Dejan: improve bib2zope.py to parse yet unknown fields 
-- Dejan: to appear in person
+- complete as agreed in the email correspondence
+- provide bibtex with standard fields and pdf
+- improve bib2zope.py to parse yet unknown fields
+- selected publications on persons' pages to display the same bibtex
+entries as in the Publications section
 
 TEACHING
 - Dejan: on the listing page, link professor and instructor names to respective pages
 - student project listing: limit to 5 items per category (5 x 6 = 30 items total displayed) + separate full listings
 - create Phd Talks Page as here: http://www9.cs.tum.edu/seminare/doktorandenseminar/
 - provide a sign-up form to the lecture
+- upload document templates(Dejan)
 
 DESIGN
 - fix internet explorer weirdness
+
+NEWS
+- pointers to Student and Phd presentations, konferences, accepted papers
