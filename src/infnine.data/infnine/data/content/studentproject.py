@@ -8,7 +8,15 @@ from zope.schema.fieldproperty import FieldProperty
 
 from infnine.data.interfaces import IStudentProject
 
-#from infnine.data.publishStudentProject import *
+from infnine.data.publishStudentProject import *
+
+#needed for portal object
+from zope.component import getSiteManager
+#needed for mailhost object
+from Products.CMFCore.utils import getToolByName
+
+#some defines, change in common.py
+from infnine.data.common import toAddr, fromAddr, destinationFile
 
 class StudentProjectContent(Container):
     """Student Project Content
@@ -18,7 +26,6 @@ class StudentProjectContent(Container):
             INameFromTitle)
 
     portal_type = "Student Project"
-
     project_type = FieldProperty(IStudentProject['project_type'])
     project_overview = FieldProperty(IStudentProject['project_overview'])
     task_description = FieldProperty(IStudentProject['task_description'])
@@ -36,20 +43,24 @@ factory = Factory(
         )
 
 def publishStudentProject(obj, event):
-    print "bla"
-#    if not obj.publish_to_drehscheibe:
-#        if obj._published:
-            # do something to unpublish it
-            #obj._published = False
-#        return
+  #needed to get portal object
+  portalRoot = getSiteManager();
+  if obj.publish_to_drehscheibe:
+     publishStudentProject1(obj.project_type, portalRoot.people.__getitem__(obj.supervisor.title().lower()).title,\
+     portalRoot.people.__getitem__(obj.professor.title().lower()).title,\
+     portalRoot.people.__getitem__(obj.supervisor.title().lower()).email, obj.title, obj.project_overview,  \
+     obj.task_description, obj.prerequisites,\
+     #for some reason, absolute_url() returns '/infnine' doubled 
+     portalRoot.absolute_url().replace('/infnine', '', 1)+ '/teaching/student-projects/' + obj.title.replace(' ', '-')\
+     .lower())
+     #context = aq_inner()
+     mailhost = getToolByName(portalRoot, 'MailHost')
+     author = portalRoot.people.__getitem__(obj.supervisor.title().lower()).title
+     title = obj.title.replace(' ', '-').lower()
+     mMsg = """New thesis Announcement by %s placed in: %s%s.tex"""
+     message = mMsg % (author,destinationFile,title)
+     mailhost.send(utf8a(message), toAddr, fromAddr, 'New Thesis Announcement')
 
-    #import pdb;pdb.set_trace()
-#    if obj._published:
-        # do something to update it
-#        return
-
-    # publish object
-#    print "publish_to_drehscheibe:", obj.publish_to_drehscheibe
-#    obj._published = True
-
-    #obj.reindexObject()
+#TODO:
+#What will happen if one wants to amend an already submitted thesis proposal?
+#For now let it just get overwritten
