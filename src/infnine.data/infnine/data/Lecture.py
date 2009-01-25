@@ -6,14 +6,14 @@ class ILecture(Interface):
     """
 
     title = TextLine(
-            title=u"English Title",
-            description=u"English title of the lecture",
+            title=u"German Title",
+            description=u"German title of the lecture",
             required=True,
             )
 
-    title_german = TextLine(
-            title=u"German Title",
-            description=u"German title of the lecture",
+    title_english = TextLine(
+            title=u"English Title",
+            description=u"English title of the lecture",
             required=False,
             )
 

@@ -14,8 +14,6 @@
 
     <h1 class="documentFirstHeading" tal:content="context/title" />
 
-    <h1 class="documentFirstHeading" tal:content="context/title_german" />
-
     <div class="documentDescription" tal:content="context/description" />
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
@@ -53,7 +51,7 @@
     </div>
     <br>
     <div tal:define="text context/body|nothing" tal:condition="text">
-        <b>Lecture Details</b> <br> <span tal:content="structure text" ></span>
+        <b>Lecture details</b> <br> <span tal:content="structure text" ></span>
     </div>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />

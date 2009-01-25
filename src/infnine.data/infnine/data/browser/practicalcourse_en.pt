@@ -12,14 +12,14 @@
 
     <div tal:replace="structure provider:plone.abovecontenttitle" />
 
-    <h1 class="documentFirstHeading" tal:content="context/title" />
+    <h1 class="documentFirstHeading" tal:content="context/title_english" />
 
     <div class="documentDescription" tal:content="context/description" />
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
-    <div tal:define="text context/seminar_type|nothing" tal:condition="text">
-        <b>Seminar type: </b><span tal:replace="text" />
+    <div tal:define="text context/practicalcourse_type|nothing" tal:condition="text">
+        <b>Practical course type: </b><span tal:replace="text" />
     </div>
 
     <div tal:define="text context/professor|nothing" tal:condition="text">
@@ -34,7 +34,7 @@
         <b>Date, place: </b><span tal:replace="text" />
     </div>
 
-    <div tal:define="text context/seminar_language|nothing" tal:condition="text">
+    <div tal:define="text context/practicalcourse_language|nothing" tal:condition="text">
         <b>Language: </b><span tal:replace="text" />
     </div>
 
@@ -51,7 +51,7 @@
     </div>
     <br>
     <div tal:define="text context/body|nothing" tal:condition="text">
-        <b>Seminar details</b> <br> <span tal:content="structure text" ></span>
+        <b>Practical course details</b> <br> <span tal:content="structure text" ></span>
     </div>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />

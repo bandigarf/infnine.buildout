@@ -6,14 +6,14 @@ class IPracticalCourse(Interface):
     """
 
     title = TextLine(
-            title=u"English Title",
-            description=u"English title of the practical course",
+            title=u"German Title",
+            description=u"German title of the practical course",
             required=True,
             )
 
-    title_german = TextLine(
-            title=u"German Title",
-            description=u"German title of the practical course",
+    title_english = TextLine(
+            title=u"English Title",
+            description=u"English title of the practical course",
             required=False,
             )
 
@@ -53,8 +53,8 @@ class IPracticalCourse(Interface):
             required=False,
             )
 
-    modul = TextLine(
-            title=u"Modul",
+    module = TextLine(
+            title=u"Module",
             description=u"",
             required=False,
             )

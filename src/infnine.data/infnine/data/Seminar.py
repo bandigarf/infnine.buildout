@@ -6,14 +6,14 @@ class ISeminar(Interface):
     """
 
     title = TextLine(
-            title=u"English Title",
-            description=u"English title of the seminar",
+            title=u"German Title",
+            description=u"German title of the seminar",
             required=True,
             )
 
-    title_german = TextLine(
-            title=u"German Title",
-            description=u"German title of the seminar",
+    title_english = TextLine(
+            title=u"English Title",
+            description=u"English title of the seminar",
             required=False,
             )
 
@@ -53,8 +53,8 @@ class ISeminar(Interface):
             required=False,
             )
 
-    modul = TextLine(
-            title=u"Modul",
+    module = TextLine(
+            title=u"Module",
             description=u"",
             required=False,
             )

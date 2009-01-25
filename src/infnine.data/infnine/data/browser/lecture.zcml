@@ -11,6 +11,20 @@
         />
 
     <browser:page
+        for="..interfaces.ILecture"
+        name="view_de"
+        template="lecture.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.ILecture"
+        name="view_en"
+        template="lecture_en.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
         for="zope.app.container.interfaces.IAdding"
         name="infnine.data.Lecture"
         class=".lecture.AddForm"

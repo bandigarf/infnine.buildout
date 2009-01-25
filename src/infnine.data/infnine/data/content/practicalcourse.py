@@ -17,13 +17,13 @@ class PracticalCourseContent(Container):
 
     portal_type = "Practical Course"
 
-    title_german = FieldProperty(IPracticalCourse['title_german'])
+    title_english = FieldProperty(IPracticalCourse['title_english'])
     practicalcourse_type = FieldProperty(IPracticalCourse['practicalcourse_type'])
     professor = FieldProperty(IPracticalCourse['professor'])
     instructor = FieldProperty(IPracticalCourse['instructor'])
     date_place = FieldProperty(IPracticalCourse['date_place'])
     practicalcourse_language = FieldProperty(IPracticalCourse['practicalcourse_language'])
-    modul = FieldProperty(IPracticalCourse['modul'])
+    module = FieldProperty(IPracticalCourse['module'])
     term = FieldProperty(IPracticalCourse['term'])
     url = FieldProperty(IPracticalCourse['url'])
     body = FieldProperty(IPracticalCourse['body'])

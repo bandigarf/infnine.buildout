@@ -11,6 +11,20 @@
         />
 
     <browser:page
+        for="..interfaces.ISeminar"
+        name="view_de"
+        template="seminar.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.ISeminar"
+        name="view_еn"
+        template="seminar_en.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
         for="zope.app.container.interfaces.IAdding"
         name="infnine.data.Seminar"
         class=".seminar.AddForm"

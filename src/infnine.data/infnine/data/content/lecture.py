@@ -17,7 +17,7 @@ class LectureContent(Container):
 
     portal_type = "Lecture"
 
-    title_german = FieldProperty(ILecture['title_german'])
+    title_english = FieldProperty(ILecture['title_english'])
     lecture_type = FieldProperty(ILecture['lecture_type'])
     professor = FieldProperty(ILecture['professor'])
     instructor = FieldProperty(ILecture['instructor'])

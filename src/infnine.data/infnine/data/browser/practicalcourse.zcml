@@ -11,6 +11,20 @@
         />
 
     <browser:page
+        for="..interfaces.IPracticalCourse"
+        name="view_de"
+        template="practicalcourse.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.IPracticalCourse"
+        name="view_en"
+        template="practicalcourse_en.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
         for="zope.app.container.interfaces.IAdding"
         name="infnine.data.PracticalCourse"
         class=".practicalcourse.AddForm"

@@ -46,8 +46,8 @@ def datelist2string(datelist):
 
 def keymap(event_type, key):
     keymap_generic = {
-        'English Title': 'title',
-        'German Title': 'title_german',
+        'English Title': 'title_english',
+        'German Title': 'title',
         #description
         #details
         'Professor': 'professor',

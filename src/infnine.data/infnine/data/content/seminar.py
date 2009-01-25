@@ -17,13 +17,13 @@ class SeminarContent(Container):
 
     portal_type = "Seminar"
 
-    title_german = FieldProperty(ISeminar['title_german'])
+    title_english = FieldProperty(ISeminar['title_english'])
     seminar_type = FieldProperty(ISeminar['seminar_type'])
     professor = FieldProperty(ISeminar['professor'])
     instructor = FieldProperty(ISeminar['instructor'])
     date_place = FieldProperty(ISeminar['date_place'])
     seminar_language = FieldProperty(ISeminar['seminar_language'])
-    modul = FieldProperty(ISeminar['modul'])
+    module = FieldProperty(ISeminar['module'])
     term = FieldProperty(ISeminar['term'])
     url = FieldProperty(ISeminar['url'])
     body = FieldProperty(ISeminar['body'])
