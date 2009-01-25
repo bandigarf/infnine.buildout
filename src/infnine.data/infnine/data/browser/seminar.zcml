@@ -19,7 +19,7 @@
 
     <browser:page
         for="..interfaces.ISeminar"
-        name="view_еn"
+        name="view_en"
         template="seminar_en.pt"
         permission="zope2.View"
         />
