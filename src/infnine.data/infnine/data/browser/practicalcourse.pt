@@ -19,7 +19,7 @@
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
     <div tal:define="text context/practicalcourse_type|nothing" tal:condition="text">
-        <b>Practical course type: </b><span tal:replace="text" />
+        <b>Praktikum: </b><span tal:replace="text" />
     </div>
 
     <div tal:define="text context/professor|nothing" tal:condition="text">
@@ -27,23 +27,23 @@
     </div>
 
     <div tal:define="text context/instructor|nothing" tal:condition="text">
-        <b>Instructor: </b><span tal:replace="text" />
+        <b>Betreuer: </b><span tal:replace="text" />
     </div>
 
     <div tal:define="text context/date_place|nothing" tal:condition="text">
-        <b>Date, place: </b><span tal:replace="text" />
+        <b>Zeit, Ort: </b><span tal:replace="text" />
     </div>
 
     <div tal:define="text context/practicalcourse_language|nothing" tal:condition="text">
-        <b>Language: </b><span tal:replace="text" />
+        <b>Sprache: </b><span tal:replace="text" />
     </div>
 
     <div tal:define="text context/module|nothing" tal:condition="text">
-        <b>Module: </b><a tal:attributes="href python: 'http://www.in.tum.de/myintum/kurs_verwaltung/cm.html?id=' + text" tal:content="text" />
+        <b>Modul: </b><a tal:attributes="href python: 'http://www.in.tum.de/myintum/kurs_verwaltung/cm.html?id=' + text" tal:content="text" />
     </div>
 
     <div tal:define="text context/term|nothing" tal:condition="text">
-        <b>Term: </b><span tal:replace="text" />
+        <b>Semester: </b><span tal:replace="text" />
     </div>
 
     <div tal:define="text context/url|nothing" tal:condition="text">
@@ -51,7 +51,7 @@
     </div>
     <br>
     <div tal:define="text context/body|nothing" tal:condition="text">
-        <b>Practical course details</b> <br> <span tal:content="structure text" ></span>
+        <b>Detailinformationen</b> <br> <span tal:content="structure text" ></span>
     </div>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />
