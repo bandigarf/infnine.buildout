@@ -328,3 +328,7 @@ body {
 #portal-personaltools li a {
     color: #DEE7EC;
 }
+
+.language-switcher {
+    float: right;
+}

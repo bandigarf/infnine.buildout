@@ -11,6 +11,20 @@
         />
 
     <browser:page
+        for="..interfaces.ITeachingListing"
+        name="view_de"
+        template="teachinglisting.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.ITeachingListing"
+        name="view_en"
+        template="teachinglisting_en.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
         for="zope.app.container.interfaces.IAdding"
         name="infnine.data.TeachingListing"
         class=".teachinglisting.AddForm"
