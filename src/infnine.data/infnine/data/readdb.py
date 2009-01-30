@@ -138,8 +138,7 @@ def getEvents(sem):
 #find faculty's unique ID  
     for idkey in module:
         mod = []
-        cursor.execute ("""select ModulName,ModulKennung from lv_findet_statt_ex fs join lv_module
-        m on fs.IDModulDrehscheibe=m.IDModulDrehscheibe where fs.ID=%s""", (idkey,))   
+        cursor.execute ("""select ModulName,ModulKennung from lv_findet_statt_ex where ID=%s""", (idkey,))   
         rows = cursor.fetchall()
         event_tmp = events[idkey]
         for row in rows:
