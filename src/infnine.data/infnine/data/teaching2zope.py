@@ -92,6 +92,25 @@ if ('app' in dir()) and (app != None):
     print "Running in Zope, creating objects in ZODB..."
     teaching = app.infnine.teaching
 
+if not teaching.hasObject(semester_id.lower()):
+    print "Semester", semester_id, "not yet in ZODB, creating"
+    admin = app.acl_users.getUser('admin')
+    import AccessControl
+    AccessControl.SecurityManagement.newSecurityManager(None, admin)
+    from Testing.makerequest import makerequest
+    app = makerequest(app)
+
+    teaching.invokeFactory('Semester', semester_id.lower())
+
+    sem = teaching.__getitem__(semester_id.lower())
+    sem.title = semester_id
+    sem.reindexObject()
+    import transaction
+    transaction.commit()
+
+if not 'sem' in dir():
+    sem = teaching.__getitem__(semester_id.lower())
+
 for id in semester.keys():
     event = semester[id]
     t = semester[id]['Type']
@@ -102,7 +121,7 @@ for id in semester.keys():
     else:
         event_type = 'Seminar'
 
-    if not teaching.hasObject(`id`):
+    if not sem.hasObject(`id`):
         print "Entry", `id`, "not yet in ZODB, creating"
         admin = app.acl_users.getUser('admin')
         import AccessControl
@@ -110,9 +129,9 @@ for id in semester.keys():
         from Testing.makerequest import makerequest
         app = makerequest(app)
 
-        teaching.invokeFactory(event_type, `id`)
+        sem.invokeFactory(event_type, `id`)
 
-    event_zodb = teaching.__getitem__(`id`)
+    event_zodb = sem.__getitem__(`id`)
 
     keys = event.keys()
     print "Updating", `id`, keys

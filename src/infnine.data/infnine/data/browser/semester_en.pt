@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="infnine.data">
+<head>
+</head>
+
+<body>
+<div metal:fill-slot="main">
+
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+    <h1 class="documentFirstHeading" tal:content="context/title" />
+    <span class="language-switcher"><a tal:attributes="href python: context.id">Deutsch</a></span>
+
+    <div class="documentDescription" tal:content="context/description" />
+
+    <div tal:replace="structure provider:plone.abovecontentbody" />
+
+    <div tal:define="lectures python: [item[1] for item in context.items() if item[1].meta_type == 'Lecture']"
+         tal:condition="python: (lectures != None) and (len(lectures) > 0)">
+    <h2>Lectures</h2>
+    <ul>
+        <li tal:repeat="lecture lectures">
+            <a tal:attributes="href python: lecture.id + '/view_en'" tal:content="lecture/title_english" /> (<span tal:replace="lecture/lecture_type" />)<br />
+            (<span tal:replace="lecture/professor"/><span tal:condition="python: (len(lecture.professor) > 0) and (len(lecture.instructor) > 0)" tal:replace="python: ', '"/><span tal:replace="lecture/instructor" />)
+        </li>
+    </ul>
+    </div>
+
+    <div tal:define="seminars python: [item[1] for item in context.items() if item[1].meta_type == 'Seminar']"
+         tal:condition="python: (seminars != None) and (len(seminars) > 0)">
+    <h2>Seminars</h2>
+    <ul>
+        <li tal:repeat="seminar seminars">
+            <a tal:attributes="href python: seminar.id + '/view_en'" tal:content="seminar/title_english" /> (<span tal:replace="seminar/seminar_type" />)<br />
+            (<span tal:replace="seminar/professor"/><span tal:condition="python: (len(seminar.professor) > 0) and (len(seminar.instructor) > 0)" tal:replace="python: ', '"/><span tal:replace="seminar/instructor" />)
+        </li>
+    </ul>
+    </div>
+
+    <div tal:define="practicalcourses python: [item[1] for item in context.items() if item[1].meta_type == 'Practical Course']"
+         tal:condition="python: (practicalcourses != None) and (len(practicalcourses) > 0)">
+    <h2>Practical Courses</h2>
+    <ul>
+        <li tal:repeat="practicalcourse practicalcourses">
+            <a tal:attributes="href python: practicalcourse.id + '/view_en'" tal:content="practicalcourse/title_english" /> (<span tal:replace="practicalcourse/practicalcourse_type" />)<br />
+            (<span tal:replace="practicalcourse/professor"/><span tal:condition="python: (len(practicalcourse.professor) > 0) and (len(practicalcourse.instructor) > 0)" tal:replace="python: ', '"/><span tal:replace="practicalcourse/instructor" />)
+        </li>
+    </ul>
+    </div>
+
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+
+</div>
+</body>
+</html>

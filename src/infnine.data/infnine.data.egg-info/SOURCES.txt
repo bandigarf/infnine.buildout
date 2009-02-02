@@ -23,6 +23,7 @@ infnine/data/Publication.py
 infnine/data/PublicationListing.py
 infnine/data/ResearchPage.py
 infnine/data/ResearchProject.py
+infnine/data/Semester.py
 infnine/data/Seminar.py
 infnine/data/StudentProject.py
 infnine/data/StudentProjectListing.py
@@ -50,6 +51,7 @@ infnine/data/browser/publication.py
 infnine/data/browser/publicationlisting.py
 infnine/data/browser/researchpage.py
 infnine/data/browser/researchproject.py
+infnine/data/browser/semester.py
 infnine/data/browser/seminar.py
 infnine/data/browser/studentproject.py
 infnine/data/browser/studentprojectlisting.py
@@ -67,6 +69,7 @@ infnine/data/content/publication.py
 infnine/data/content/publicationlisting.py
 infnine/data/content/researchpage.py
 infnine/data/content/researchproject.py
+infnine/data/content/semester.py
 infnine/data/content/seminar.py
 infnine/data/content/studentproject.py
 infnine/data/content/studentprojectlisting.py

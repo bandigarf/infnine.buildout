@@ -12,5 +12,6 @@ from StudentProject import IStudentProject
 from StudentProjectListing import IStudentProjectListing
 from Lecture import ILecture
 from PracticalCourse import IPracticalCourse
+from Semester import ISemester
 from Seminar import ISeminar
 from TeachingListing import ITeachingListing

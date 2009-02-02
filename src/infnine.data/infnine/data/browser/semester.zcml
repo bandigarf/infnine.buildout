@@ -1,0 +1,53 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="infnine.data">
+
+    <browser:page
+        for="..interfaces.ISemester"
+        name="view"
+        template="semester.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.ISemester"
+        name="view_de"
+        template="semester.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="..interfaces.ISemester"
+        name="view_en"
+        template="semester_en.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
+        for="zope.app.container.interfaces.IAdding"
+        name="infnine.data.Semester"
+        class=".semester.AddForm"
+        permission="infnine.data.AddSemester"
+        />
+
+    <browser:page
+        for="..interfaces.ISemester"
+        name="edit"
+        class=".semester.EditForm"
+        permission="cmf.ModifyPortalContent"
+        />
+
+    <browser:addMenuItem
+        title="Semester"
+        factory="infnine.data.semester.factory"
+        view="infnine.data.Semester"
+        permission="infnine.data.AddSemester"
+        />
+
+    <browser:resource
+        name="infnine_data_semester.png"
+        image="semester.png"
+        />
+
+</configure>

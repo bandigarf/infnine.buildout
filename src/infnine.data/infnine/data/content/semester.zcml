@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="infnine.data">
+
+    <permission
+        id="infnine.data.AddSemester"
+        title="Infnine Data: Add Semester"
+        />
+
+    <utility
+        component=".semester.factory"
+        name="infnine.data.Semester"
+        />
+
+    <class class=".semester.SemesterContent">
+      <require
+          permission="zope2.View"
+          interface="..interfaces.ISemester"
+          />
+      <require
+          permission="cmf.ModifyPortalContent"
+          set_schema="..interfaces.ISemester"
+          />
+    </class>
+
+    <five:registerClass
+        class=".semester.SemesterContent"
+        meta_type="Semester"
+        permission="infnine.data.AddSemester"
+        addview="infnine.data.Semester"
+        icon="infnine_data_semester.png"
+        />
+
+</configure>

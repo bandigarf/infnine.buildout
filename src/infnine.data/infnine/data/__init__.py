@@ -23,6 +23,7 @@ setDefaultRoles('Infnine Data: Add Lecture', ('Manager',))
 setDefaultRoles('Infnine Data: Add Practical Course', ('Manager',))
 setDefaultRoles('Infnine Data: Add Seminar', ('Manager',))
 setDefaultRoles('Infnine Data: Add Teaching Listing', ('Manager',))
+setDefaultRoles('Infnine Data: Add Semester', ('Manager',))
 
 def initialize(context):
     """Initializer called when used as a Zope 2 product.
