@@ -13,7 +13,7 @@
     <div tal:replace="structure provider:plone.abovecontenttitle" />
 
     <h1 class="documentFirstHeading" tal:content="context/title" />
-    <span class="language-switcher"><a tal:attributes="href python: context.id">Deutsch</a></span>
+    <span class="language-switcher"><a href="view_de">Deutsch</a></span>
 
     <div class="documentDescription" tal:content="context/description" />
 
