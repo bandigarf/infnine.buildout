@@ -99,13 +99,13 @@
     <div tal:define="text context/teaching" tal:condition="python: text != None">
         <h2>Teaching (Current Term)</h2>
         <ul tal:define="items python:text.split()" tal:repeat="item items">
-            <li tal:define="teachings python:[teaching[0] for teaching in portal.teaching.items()
+            <li tal:define="teachings python:[teaching[0] for teaching in portal.teaching.__getitem__(portal.teaching.default_page).items()
                                               if teaching[1].meta_type in ['Lecture', 'Practical Course', 'Seminar']]"
                 tal:condition="python: item in teachings">
-                <a tal:attributes="href python: context.portal_url() + '/teaching/' + item">
-                    <span tal:replace="python: portal.teaching.__getitem__(item).title" />
+                <a tal:attributes="href python: context.portal_url() + '/teaching/' + portal.teaching.default_page + '/' + item">
+                    <span tal:replace="python: portal.teaching.__getitem__(portal.teaching.default_page).__getitem__(item).title" />
                 </a>
-                <span tal:define="t python: portal.teaching.__getitem__(item)" tal:replace="default">
+                <span tal:define="t python: portal.teaching.__getitem__(portal.teaching.default_page).__getitem__(item)" tal:replace="default">
                     (<span tal:define="tt t/lecture_type|t/practicalcourse_type|t/seminar_type" tal:replace="tt" />)
                 </span>
             </li>
