@@ -100,9 +100,12 @@
                             </span>
                         </span>
                     </span>
-                    <span tal:condition="pub/title | nothing">
-                        <i tal:content="pub/title">Title</i>,
-                    </span>
+                    <a tal:condition="pub/title | nothing"
+                       tal:attributes="href pub/id">
+                        <span>
+                            <em tal:content="pub/title">Title</em>,
+                        </span>
+                    </a>
                     <span tal:condition="pub/pubtype | nothing">
                         <p tal:condition="pub/pubtype" tal:replace="pub/pubtype">Pubtype</p>,
                     </span>
