@@ -2,12 +2,14 @@
 
 def bibsplit(multi_entry_file):
     mef = file(multi_entry_file, 'r').readlines()
+    sef = None
     for l in mef:
         if l[0] == '@':
-            id = l.rstrip(' \n,')[l.find('{')+1:]
+            id = l[l.find('{')+1:].strip(' \n,')
             print 'Found entry:', id
             sef = file(output_dir + id + '.bib', 'w')
-        sef.write(l)
+        if sef != None:
+            sef.write(l)
 
 print 'bibsplitter script'
 print '------------------'
@@ -27,5 +29,5 @@ bib_files = [bib_file for bib_file in all_files if (bib_file[-4:] == '.bib' and 
 print "Found .bib files:", bib_files
 
 for multi_entry_file in bib_files:
-    bibsplit(multi_entry_file)
+    bibsplit(bibpath + multi_entry_file)
 

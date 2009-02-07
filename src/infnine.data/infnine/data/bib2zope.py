@@ -74,4 +74,4 @@ if not 'app' in dir():
     app = None
 
 for file in bib_files:
-    bib2zope(file, app)
+    bib2zope(bibpath + file, app)
