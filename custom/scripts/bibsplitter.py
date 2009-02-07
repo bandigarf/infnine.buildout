@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 
+from string import whitespace
+
 def bibsplit(multi_entry_file):
     mef = file(multi_entry_file, 'r').readlines()
     sef = None
     for l in mef:
         if l[0] == '@':
-            id = l[l.find('{')+1:].strip(' \n,')
+            id = l[l.find('{')+1:].strip().strip(whitespace + ',;')
             print 'Found entry:', id
             sef = file(output_dir + id + '.bib', 'w')
         if sef != None:
