@@ -101,7 +101,7 @@ authors_list=(
     'gedikli',
     'haemmerle',
     'hanek',
-    'hoyningen-Huene',
+    'hoyningen-huene',
     'jain',
     'kirchlechner',
     'kirsch',
