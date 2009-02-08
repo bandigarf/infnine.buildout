@@ -16,7 +16,7 @@
 
     <div class="documentDescription" tal:content="context/description" />
 
-    <div tal:define="text context/pubtype | context/bib2html_pubtype" tal:condition="python: text != None">
+    <div tal:define="text context/pubtype" tal:condition="python: text != None">
         Publication type: <span tal:replace="text" />
     </div>
 
@@ -64,12 +64,20 @@
         Month: <span tal:replace="text" />
     </div>
 
-    <div tal:define="text context/keywords | context/bib2html_keywords" tal:condition="python: text != None">
+    <div tal:define="text context/keywords" tal:condition="python: text != None">
         Keywords: <span tal:replace="text" />
     </div>
 
     <div tal:define="text context/priority" tal:condition="python: text != None">
         Priority: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/bib2html_pubtype" tal:condition="python: text != None">
+        bib2html_pubtype: <span tal:replace="text" />
+    </div>
+
+    <div tal:define="text context/bib2html_keywords" tal:condition="python: text != None">
+        bib2html_keywords: <span tal:replace="text" />
     </div>
 
     <div tal:define="text context/howpublished" tal:condition="python: text != None">
