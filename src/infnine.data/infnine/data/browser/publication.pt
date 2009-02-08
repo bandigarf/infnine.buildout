@@ -116,13 +116,12 @@
         URL: <span tal:replace="text" />
     </div>
 
-    <div tal:define="text context/pdf" tal:condition="python: text != None">
-        PDF: <span tal:replace="text" />
+    <div tal:condition="python: context.id + '.pdf' in portal.publications.pdf.keys()">
+        <a tal:attributes="href python: '../pdf/' + context.id + '.pdf'">PDF</a>
     </div>
 
-    <div tal:define="text context/bibtex_entry" tal:condition="python: text != None">
-        BibTex entry:
-        <pre tal:content="text" />
+    <div tal:condition="python: context.id + '.bib' in portal.publications.bibtex.keys()">
+        <a tal:attributes="href python: '../bibtex/' + context.id + '.bib/view'">BibTeX</a>
     </div>
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
