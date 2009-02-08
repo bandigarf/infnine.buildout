@@ -100,7 +100,7 @@ body {
     /*margin-left:-5px;*/
 }
 
-.portletNavigationTree{
+.portletNavigationTree {
     width: 146px!important;
 }
 
@@ -112,9 +112,7 @@ body {
 
 .portletNavigationTree .portletItem {
     background-color: #7696c1;
-    border-top: 1px solid #d7dbe4;
-    border-left: 1px solid #d7dbe4;
-    border-right: 1px solid #d7dbe4;
+    border: none;
     padding-bottom: 30px;
 }
 
@@ -129,17 +127,6 @@ body {
     font-weight: bold;
     font-size: 10pt;
     padding-top: 28px;
-}
-
-.portletNavigationTree .portletBottomLeft {
-    background: transparent url(++resource++infnine.theme.images/portlet_footer.png) top left no-repeat;
-    position: absolute; 
-    border: 0px;
-    height: 48px;
-    width: 146px;
-    margin-top: 12px;
-    margin-left: -12px;
-    border-top: 1px solid #d7dbe4;
 }
 
 .navTreeItem a, dd.portletItem .navTreeItem a {
