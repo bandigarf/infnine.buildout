@@ -3,7 +3,7 @@
 
 def bib2zope(filename, app = None):
     import _bibtex
-    file = _bibtex.open_file(bibpath + '/' + filename, True)
+    file = _bibtex.open_file(filename, True)
     entry = _bibtex.next(file)
     while entry != None:
         keys = entry[4].keys()
@@ -67,7 +67,7 @@ if user == 'infnine':
     bibpath = '/usr/proj/infnine/infninebib/bibliography/'
 
 all_files = os.listdir(bibpath)
-bib_files = [file for file in all_files if (file[-4:] == '.bib' and file[-11:] != "private.bib" and file[-10:] != "latex8.bib" and file[0:12] != "bibliography" and file[0:12] != "aspogamo.bib")]
+bib_files = [file for file in all_files if (file[-4:] == '.bib' and (file[0:15] == 'iaspublications' or file[0:14] == 'iupublications'))]
 print "Found .bib files:", bib_files
 
 if not 'app' in dir():
