@@ -2,14 +2,12 @@ GENERALS
 - webdavs
 + static portlet to render private page (check for a local page called sidebar (here/sidebar) and display that if found)
 - page down msg - we will use supervisord.org, Quirin and Dejan will deploy it this week
-- bilingual (only teaching section, the rest stays in english-suggested by prof. Beetz)
 - tutorial
 - make all randomly displayed images on the front page uniform size
 - a script to prepare the images for the front page (apply the blue stripe)
 
 PEOPLE
 - application domain list and make them url
-- Think on how to display classes taught in previous semesters
 - migrate ALL alumni from the old webpage
 - resolve visibility (private CT shall not appear)
 
@@ -24,11 +22,7 @@ http://atradig121.informatik.tu-muenchen.de:8080/infnine/research/aspogamo/resea
 the latter case specifically the menu link shall be called "Technology".
 
 PUBLICATIONS
-- complete as agreed in the email correspondence
-- provide bibtex with standard fields and pdf
 - improve bib2zope.py to parse yet unknown fields
-- selected publications on persons' pages to display the same bibtex
-entries as in the Publications section
 
 TEACHING
 - Dejan: on the listing page, link professor and instructor names to respective pages
