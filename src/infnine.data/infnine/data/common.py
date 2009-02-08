@@ -95,6 +95,8 @@ authors_list=(
     'blodow',
     'buck',
     'dolha',
+    'esden-tempski',
+    'esser',
     'fedrizzi',
     'gedikli',
     'haemmerle',
@@ -105,8 +107,11 @@ authors_list=(
     'kirsch',
     'klank',
     'kresse',
+    'kruse',
+    'kunze',
     'maldonado',
     'marton',
+    'maier',
     'mayer',
     'moesenlechner',
     'mueller',
@@ -117,10 +122,16 @@ authors_list=(
     'ruehr',
     'ruiz',
     'rusu',
+    'sachenbacher',
     'schmitt',
+    'schumann',
     'schroeter',
     'stulp',
+    'struss',
+    'sun-li',
     'tenorth',
+    'watanabe',
+    'weikersdorfer',
     'wimmer',
 )
 
@@ -152,10 +163,10 @@ toAddr='pangerci@in.tum.de'
 #toAddr='tenorth@in.tum.de'
 fromAddr='webmaster@mail9.in.tum.de'
 
-def filterNamesUrl(self, string):
+def filterNamesUrl(self,string):
     """Filter Names for {Umlaut} Strings and return corresponding ae, oe or ue -
     needed to create people's urls"""
-    listUmlauts = ['{\\\\"a}', '{\\\\"o}', '{\\\\"u}', '\\\\"a', '\\\\"o', '\\\\"u']
+    listUmlauts = ['{\\"a}', '{\\"o}', '{\\"u}', '\\"a', '\\"o', '\\"u']
     listVowels = ['a', 'o', 'u']
     for subStr in listUmlauts:
         if string.find(subStr) != -1:
@@ -177,3 +188,22 @@ def filterNamesUmlaut(self, string):
                     return string.replace(subStr, umlaut)
     #No Umlaut found
     return string
+
+
+def authors(self, string):
+    """Processes the string coming from bibtex entry author field.
+    If author with infnine chair it returns its url identifier, 
+    if not it sorts umlauts and returns the full name - all together 
+    in a list"""
+    fullnameList = string.split(' and ')
+    nameList = []
+    nameInList = False
+    for fullname in fullnameList:
+        nameInList = False
+        for name in fullname.split(' '):
+            if filterNamesUrl(self, name) in authors_list:
+                nameList.append(filterNamesUrl(self, name))
+                nameInList = True
+        if nameInList != True:
+            nameList.append(filterNamesUmlaut(self, fullname))
+    return nameList

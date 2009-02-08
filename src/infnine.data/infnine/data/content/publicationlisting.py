@@ -8,7 +8,7 @@ from zope.schema.fieldproperty import FieldProperty
 
 from infnine.data.interfaces import IPublicationListing
 
-from infnine.data.common import authors_list, filterNamesUrl, filterNamesUmlaut
+from infnine.data.common import authors_list, filterNamesUrl, filterNamesUmlaut, authors
 
 class PublicationListingContent(Item):
     """Page to list Chair Publications
@@ -22,6 +22,7 @@ class PublicationListingContent(Item):
     author_list = authors_list
     fN = filterNamesUrl
     fNU = filterNamesUmlaut
+    auth = authors
 
 factory = Factory(
         PublicationListingContent,
