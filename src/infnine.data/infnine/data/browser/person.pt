@@ -148,52 +148,18 @@
                 tal:condition="python: item in publications">
                 <div tal:define="pub python: portal.publications.__getitem__(item);
                                  authorlist context/author_list">
-                    <span tal:condition="pub/author | nothing">
-                        <!--Display authors with bold link if members of chair, only bold if members
-                        and have no page in portal.people and diplay normal if they are externals-->
-                        <span tal:define="namelist python: `pub.author`.split(' and ')">
-                            <span tal:repeat="fullname namelist" >
-                            <span tal:define="names python: fullname.split(' ')">
-                            <!--is author external for later use-->
-                            <span tal:define="global isExt python: True">
-                            <span tal:repeat="name names">
-                            <!--is author in the list of chair members for later use-->
-                            <span tal:define="isInList python: ' '">
-                            <!-- .fN is defined in content/publicationlisting.py-->
-                                <span tal:define="namelower python: context.fN(name.rstrip('\''))">
-                                    <span   tal:condition="python: namelower in authorlist"
-                                            tal:define="isInList python: context.fN(name.rstrip('\''))">  
-                                        <!--Chair Members with Person page-->
-                                        <b  tal:condition="python: isInList">
-                                            <a tal:condition="python: 
-                                            portal.people.__contains__(isInList)"
-                                            href="link" tal:attributes="href python: context.portal_url() + '/people/' + isInList"
-                                            tal:content="python: 
-                                            portal.people.__getitem__(isInList).title" 
-                                            tal:define="global isExt python: False">
-                                            </a>
-                                        </b>
-                                        <!--Chair Members withOUT Person page-->
-                                        <b   tal:condition="python: isInList">
-                                            <!-- .fNU is defined in content/publicationlisting.py-->
-                                            <span tal:condition="python: 
-                                            not (portal.people.__contains__(isInList))"
-                                            tal:content="python: context.fNU(fullname.lstrip('u\'').rstrip('\''))">
-                                            </span>
-                                        </b>
-                                    </span> 
-                                </span>
-                            </span>
-                            </span>
-                                        <!--Externals-->
-                                <span   tal:condition="python: isExt == True" 
-                                        tal:content="python: context.fNU(fullname.lstrip('u\'').rstrip('\''))">
-                                </span>
-                            </span>,
-                            </span>
-                            </span>
-                        </span>
+                 <span tal:condition="pub/author | nothing">
+                    <span tal:define="authors python: context.auth(pub.author)">
+                      <span tal:repeat="author authors">
+                           <b> <a tal:condition="python: portal.people.__contains__(author)"
+                                   href="link" tal:attributes="href python: context.portal_url() + '/people/' + author"
+                                   tal:content="python:
+                                   portal.people.__getitem__(author).title">Int. Author</a></b>
+                            <b tal:condition="not:python: portal.people.__contains__(author)"
+                                   tal:content="author">Ex. Author></b>,
+                       </span>
                     </span>
+                  </span>  
                     <a tal:condition="pub/title | nothing"
                        tal:attributes="href python: context.portal_url() + '/publications/' + pub.id">
                         <span>
@@ -229,7 +195,7 @@
 
     <div>
          For the full list of my Publications please see the
-        <a href="link" tal:attributes="href python: context.portal_url() + '/publications/publications-listing/by_author#' + context.title">
+        <a href="link" tal:attributes="href python: context.portal_url() + '/publications/publications/by_author#' + context.id">
             <span tal:replace="python: portal.publications.title"/>
         </a> section.
     </div>
