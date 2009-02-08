@@ -112,8 +112,7 @@ body {
 
 .portletNavigationTree .portletItem {
     background-color: #7696c1;
-    border: none;
-    padding-bottom: 30px;
+    border: 1px solid white;
 }
 
 .portletNavigationTree .portletHeader {
