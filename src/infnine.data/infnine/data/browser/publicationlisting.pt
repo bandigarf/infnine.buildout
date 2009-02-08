@@ -40,7 +40,8 @@
             <div tal:replace="python: yearlist.reverse()">YEARLIST</div>
             <span tal:define="yearlist1 python: [year for year in yearlist if year != None]" tal:repeat="year yearlist1">
                 <!--Reference to Location inside the Page-->
-                <a href="link" tal:attributes="href python: context.getId() + '/by_year#' + `year`" tal:content="year">YEARLIST</a>
+                <a href="link" tal:attributes="href python: context.getId() + '/by_year#' + `year`"
+                tal:content="year">YEARLIST</a> |
             </span>
 
     <!--Publications Display-->
@@ -56,9 +57,9 @@
                                    href="link" tal:attributes="href python: context.portal_url() + '/people/' + author"
                                    tal:content="python: portal.people.__getitem__(author).title">
                             </a></b>
-                            <b> <a tal:condition="not:python: portal.people.__contains__(author)"
+                            <b tal:condition="not:python: portal.people.__contains__(author)"
                                    tal:content="author">
-                            </a></b>,
+                            ></b>,
                        </span>
                     </span>
                   </span>  
