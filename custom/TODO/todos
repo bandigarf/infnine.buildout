@@ -23,6 +23,7 @@ the latter case specifically the menu link shall be called "Technology".
 
 PUBLICATIONS
 - improve bib2zope.py to parse yet unknown fields
+- migrate pubs for Carsten Steger
 
 TEACHING
 - Dejan: on the listing page, link professor and instructor names to respective pages
@@ -33,6 +34,7 @@ TEACHING
 
 DESIGN
 - fix internet explorer weirdness
+- replace front image
 
 NEWS
 - pointers to Student and Phd presentations, konferences, accepted papers
