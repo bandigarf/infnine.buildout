@@ -29,6 +29,7 @@
             <area shape="rect" href="envmod" title="Acquisition of Environment Models" coords="260,157,489,219" />
             <area shape="rect" href="cogito" title="Cogito" coords="260,265,489,297" />
             <area shape="rect" href="cop" title="Cognitive Perception" coords="260,111,490,141" />
+            <area shape="rect" href="para" title="Para" coords="182,156,255,333" />
             <area shape="rect" href="mudis" title="Mudis" coords="182,111,253,141" />
             <area shape="rect" href="knowledge4cotesys" title="Knowledge4Cotesys" coords="260,305,489,335" />
             <area shape="rect" href="cogito" title="Cogito" coords="180,395,420,427" />
