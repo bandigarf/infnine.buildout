@@ -9,4 +9,5 @@ bin/*
 parts/*
 downloads/*
 eggs/*
+fake-eggs/*
 custom/scripts/cronBackup
