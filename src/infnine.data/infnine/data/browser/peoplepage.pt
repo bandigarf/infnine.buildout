@@ -83,8 +83,8 @@
     </div>
 
     <div tal:define="people python:[person[1] for person in context.items()
-                                    if person[1].meta_type == 'Person'
-                                    and person[1].status == 'Visiting Researcher'];"
+                                    if (person[1].meta_type == 'Person'
+                                    and person[1].status == 'Visiting Researcher') or person[1].meta_type == 'ATDocument'];"
             tal:condition="python: len(people) > 0">
     <span tal:define="people_sorted python: context.pLS(people)">
         <h3>Visiting Researchers</h3>
