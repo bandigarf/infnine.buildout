@@ -27,6 +27,11 @@ class ResearchProjectContent(Container):
     project_details = FieldProperty(IResearchProject['project_details'])
     publications = FieldProperty(IResearchProject['publications'])
 
+    author_list = authors_list
+    fN = filterNamesUrl
+    fNU = filterNamesUmlaut
+    auth = authors
+
 factory = Factory(
         ResearchProjectContent,
         )
