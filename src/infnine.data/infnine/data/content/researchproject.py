@@ -8,6 +8,8 @@ from zope.schema.fieldproperty import FieldProperty
 
 from infnine.data.interfaces import IResearchProject
 
+from infnine.data.common import authors_list, filterNamesUrl, filterNamesUmlaut,authors
+
 class ResearchProjectContent(Container):
     """Research Project Content
     """
