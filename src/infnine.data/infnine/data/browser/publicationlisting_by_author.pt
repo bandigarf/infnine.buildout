@@ -35,18 +35,16 @@
     <!--Authors List-->
             <span tal:repeat="author authorslist"> 
               <span tal:condition="python: portal.people.__contains__(author)">
-                <a href="link" tal:attributes="href python: context.getId() + '/by_author#' + author" 
-                   tal:content="python:
-                   portal.people.__getitem__(author).title
-                   ">AUTHORSLIST</a> | 
-              </span>  
+                <a href="link" tal:attributes="href python: context.getId() + '/by_author#' + author"
+                   tal:content="python: portal.people.__getitem__(author).filtered_name(portal.people.__getitem__(author))">AUTHORSLIST</a> |
+              </span>
             </span>
 
     <!--Publications Display-->
             <!--Authors-->
             <ul tal:repeat="author1 authorslist">
-            <h2 tal:condition="python: portal.people.__contains__(author1)"> 
-              <a name="" tal:attributes="name author1" tal:content="python: portal.people.__getitem__(author1).title">AUTHOR</a></h2>
+            <h2 tal:condition="python: portal.people.__contains__(author1)">
+              <a name="" tal:attributes="name author1" tal:content="python: portal.people.__getitem__(author1).filtered_name(portal.people.__getitem__(author1))">AUTHOR</a></h2>
                 <span tal:repeat="pub pubs">
                   <li tal:condition="python: (pub.author != None) and
                                      (author1 in context.auth(pub.author))">
