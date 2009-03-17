@@ -38,7 +38,7 @@
     <!--Publication Type List-->
             <div tal:replace="python: pubtypelist.sort()">PUBTYPELIST</div>
             <div tal:replace="python: pubtypelist.reverse()">PUBTYPELIST</div>
-            <div tal:replace="python: pubtypelist.append('Non-Classified')" />
+            <div tal:replace="python: pubtypelist.append('Miscelaneous')" />
             <span tal:define="pubtypelist1 python: [pubtype for pubtype in pubtypelist if pubtype != None]" tal:repeat="pubtype pubtypelist1">
                 <!--Reference to Location inside the Page-->
                 <a href="link" tal:attributes="href python: context.getId() + '/by_publication_type#' + pubtype"
@@ -51,7 +51,7 @@
             <ul tal:repeat="pubtype pubtypelist">
             <h2> <a name="" tal:attributes="name pubtype" tal:content="pubtype">PUBTYPE</a></h2>
                 <div tal:repeat="pub pubs">
-                <li tal:condition="python: (pub.bib2html_pubtype == pubtype) or ((pubtype == 'Non-Classified') and (pub.bib2html_pubtype in ['ignore', '', None]))">
+                <li tal:condition="python: (pub.bib2html_pubtype == pubtype) or ((pubtype == 'Miscelaneous') and (pub.bib2html_pubtype in ['ignore', '', None]))">
                   <!--Authors-->  
                   <span class="pubauthors" tal:condition="pub/author | nothing">
                     <span tal:define="authors python: context.auth(pub.author)">
