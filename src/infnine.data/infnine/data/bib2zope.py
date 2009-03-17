@@ -1,6 +1,19 @@
 """ A script to convert .bib files to Zope objects
 """
 
+def filtered_pubtype(string):
+    string = string.replace('Refereed', '')
+    string = string.replace('Award Winner', '')
+    string = string.strip(' ,')
+
+    if string in ['Journal', 'Workshop Paper', 'Conference Paper', 'Book', 'Book Chapter']:
+        return string + 's'
+
+    if string == 'PhD Thesis':
+        return 'PhD Theses'
+
+    return string
+
 def bib2zope(filename, app = None):
     import _bibtex
     file = _bibtex.open_file(filename, True)
@@ -39,6 +52,8 @@ def bib2zope(filename, app = None):
 
                 if key in ['year']:
                     value = int(value)
+                elif key == 'bib2html_pubtype':
+                   value = unicode(filtered_pubtype(value))
                 else:
                     value = unicode(value)
 
@@ -65,6 +80,9 @@ import os
 user = os.popen('whoami').read().strip()
 if user == 'infnine':
     bibpath = '/usr/proj/infnine/infninebib/bibliography/'
+
+if user == 'andrija':
+    bibpath = '/home/andrija/projects/tum/iasdocs/'
 
 all_files = os.listdir(bibpath)
 bib_files = [file for file in all_files if (file[-4:] == '.bib' and (file[0:15] == 'iaspublications' or file[0:14] == 'iupublications'))]
