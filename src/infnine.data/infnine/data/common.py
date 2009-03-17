@@ -207,3 +207,16 @@ def authors(self, string):
         if nameInList != True:
             nameList.append(filterNamesUmlaut(self, fullname))
     return nameList
+
+def filtered_name(self, string = None):
+    """Removes official titles from the person's name, e.g. Prof., Dr., ...)"""
+    if string:
+        ret = string
+    else:
+        ret = self.title
+    ret = ret.replace("Prof.", "")
+    ret = ret.replace("Dr.-Ing.", "")
+    ret = ret.replace("Dr.", "")
+    ret = ret.replace("Emeritus", "")
+    ret = ret.strip(" .,;")
+    return ret

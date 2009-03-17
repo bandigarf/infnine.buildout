@@ -8,7 +8,7 @@ from zope.schema.fieldproperty import FieldProperty
 
 from infnine.data.interfaces import IPerson
 
-from infnine.data.common import authors_list, filterNamesUrl, filterNamesUmlaut,authors
+from infnine.data.common import authors_list, filterNamesUrl, filterNamesUmlaut, authors, filtered_name
 
 class PersonContent(Container):
     """Person Content
@@ -41,6 +41,7 @@ class PersonContent(Container):
     fN = filterNamesUrl
     fNU = filterNamesUmlaut
     auth = authors
+    filtered_name = filtered_name
 
 factory = Factory(
         PersonContent,
