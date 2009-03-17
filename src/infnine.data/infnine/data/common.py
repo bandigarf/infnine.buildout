@@ -210,7 +210,7 @@ def authors(self, string):
 
 def filtered_name(self, string = None):
     """Removes official titles from the person's name, e.g. Prof., Dr., ...)"""
-    if string:
+    if string != None:
         ret = string
     else:
         ret = self.title
