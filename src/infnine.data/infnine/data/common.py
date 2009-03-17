@@ -218,5 +218,6 @@ def filtered_name(self, string = None):
     ret = ret.replace("Dr.-Ing.", "")
     ret = ret.replace("Dr.", "")
     ret = ret.replace("Emeritus", "")
+    ret = ret.replace("PhD", "")
     ret = ret.strip(" .,;")
     return ret
