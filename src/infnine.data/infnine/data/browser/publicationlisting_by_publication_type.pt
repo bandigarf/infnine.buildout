@@ -21,7 +21,7 @@
     <div tal:define="pubtypelist python: []">
         <div tal:define="pubs python: context.getParentNode().objectValues(['Publication'])">
             <div tal:repeat="item pubs">
-                <div tal:condition="python: not(item.bib2html_pubtype in pubtypelist) and not(item.bib2html_pubtype in ['ignore', '', None])"
+                <div tal:condition="python: not(item.bib2html_pubtype in pubtypelist) and not(item.bib2html_pubtype in ['Others', 'ignore', '', None])"
                      tal:replace="python: pubtypelist.append(item.bib2html_pubtype)">PUBTYPELIST
                 </div>
             </div>
@@ -51,7 +51,7 @@
             <ul tal:repeat="pubtype pubtypelist">
             <h2> <a name="" tal:attributes="name pubtype" tal:content="pubtype">PUBTYPE</a></h2>
                 <div tal:repeat="pub pubs">
-                <li tal:condition="python: (pub.bib2html_pubtype == pubtype) or ((pubtype == 'Miscelaneous') and (pub.bib2html_pubtype in ['ignore', '', None]))">
+                <li tal:condition="python: (pub.bib2html_pubtype == pubtype) or ((pubtype == 'Miscelaneous') and (pub.bib2html_pubtype in ['Others', 'ignore', '', None]))">
                   <!--Authors-->  
                   <span class="pubauthors" tal:condition="pub/author | nothing">
                     <span tal:define="authors python: context.auth(pub.author)">
