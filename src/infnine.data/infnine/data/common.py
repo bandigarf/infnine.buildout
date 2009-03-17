@@ -221,4 +221,10 @@ def filtered_name(self, string = None):
     ret = ret.replace("Ordinarius", "")
     ret = ret.replace("PhD", "")
     ret = ret.strip(" .,;")
+
+    # swap surname & first name around (they are comma separated if reversed)
+    l = ret.find(',')
+    if l > 0:
+        ret = ret[l+2:] + ' ' + ret[:l]
+
     return ret
