@@ -65,29 +65,25 @@
                             ></b>,
                        </span>
                     </span>
-                  </span>  
-                  <!--Title-->
-                    <a tal:condition="pub/title | nothing"
-                       tal:attributes="href pub/id">
-                        <span>
-                            <em tal:content="pub/title">Title</em>,
+                  </span>
+                    <span class="pubtitle">
+                        <span tal:condition="pub/title | nothing">
+                            <p tal:replace="pub/title">Title</p>,
                         </span>
-                    </a>
-                    <span tal:condition="pub/pubtype | nothing">
-                        <p tal:condition="pub/pubtype" tal:replace="pub/pubtype">Pubtype</p>,
-                    </span>
-                    <!--Year-->
-                    <span tal:condition="pub/year | nothing">
-                        <p tal:replace="pub/year">Year</p>,
-                    </span>
-                    <!--Pub Type-->
-                    <span tal:define="published_in pub/journal | nothing"
-                          tal:condition="published_in">
-                        <p tal:replace="published_in">Published in</p>,
-                    </span>
-                    <span tal:define="published_in pub/booktitle | nothing"
-                          tal:condition="published_in">
-                        <p tal:replace="published_in">Published in</p>,
+                        <span tal:condition="pub/pubtype | nothing">
+                            <p tal:condition="pub/pubtype" tal:replace="pub/pubtype">Pubtype</p>,
+                        </span>
+                        <span tal:condition="pub/year | nothing">
+                            <p tal:replace="pub/year">Year</p>,
+                        </span>
+                        <span tal:define="published_in pub/journal | nothing"
+                            tal:condition="published_in">
+                            <p tal:replace="published_in">Published in</p>,
+                        </span>
+                        <span tal:define="published_in pub/booktitle | nothing"
+                            tal:condition="published_in">
+                            <p tal:replace="published_in">Published in</p>,
+                        </span>
                     </span>
                     <!--bibtex,pdf-->
                     <div>
