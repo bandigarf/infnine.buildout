@@ -154,7 +154,7 @@
                            <b> <a tal:condition="python: portal.people.__contains__(author)"
                                    href="link" tal:attributes="href python: context.portal_url() + '/people/' + author"
                                    tal:content="python:
-                                   portal.people.__getitem__(author).title">Int. Author</a></b>
+                                   portal.people.__getitem__(author).filtered_name()">Int. Author</a></b>
                             <b tal:condition="not:python: portal.people.__contains__(author)"
                                    tal:content="author">Ex. Author></b>,
                        </span>
