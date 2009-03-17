@@ -35,55 +35,48 @@
     <!--Authors List-->
             <span tal:repeat="author authorslist"> 
               <span tal:condition="python: portal.people.__contains__(author)">
-                <a href="link" tal:attributes="href python: context.getId() + '/by_author#' + author" 
-                   tal:content="python:
-                   portal.people.__getitem__(author).title
-                   ">AUTHORSLIST</a> | 
-              </span>  
+                <a href="link" tal:attributes="href python: context.getId() + '/by_author#' + author"
+                   tal:content="python: portal.people.__getitem__(author).filtered_name(portal.people.__getitem__(author))">AUTHORSLIST</a> |
+              </span>
             </span>
 
     <!--Publications Display-->
             <!--Authors-->
             <ul tal:repeat="author1 authorslist">
-            <h2 tal:condition="python: portal.people.__contains__(author1)"> 
-              <a name="" tal:attributes="name author1" tal:content="python: portal.people.__getitem__(author1).title">AUTHOR</a></h2>
+            <h2 tal:condition="python: portal.people.__contains__(author1)">
+              <a name="" tal:attributes="name author1" tal:content="python: portal.people.__getitem__(author1).filtered_name(portal.people.__getitem__(author1))">AUTHOR</a></h2>
                 <span tal:repeat="pub pubs">
                   <li tal:condition="python: (pub.author != None) and
                                      (author1 in context.auth(pub.author))">
-                    <span tal:define="authors python: context.auth(pub.author)">
+                    <span class="pubauthors" tal:define="authors python: context.auth(pub.author)">
                         <span tal:repeat="author2 authors">
                           <!--Internal-->
                            <b> <a tal:condition="python: portal.people.__contains__(author2)"
                                    href="link" tal:attributes="href python: context.portal_url() + '/people/' + author2"
-                                   tal:content="python: portal.people.__getitem__(author2).title">Int. Author </a></b>
+                                   tal:content="python: portal.people.__getitem__(author2).filtered_name(portal.people.__getitem__(author2))">Int. Author </a></b>
                            <!--Externals-->
                             <b tal:condition="not:python: portal.people.__contains__(author2)"
                                    tal:content="author2">Ex. Author</b>,
                         </span>
                     </span>
-                      <!--Title-->
-                    <a tal:condition="pub/title | nothing"
-                       tal:attributes="href pub/id">
-                        <span>
-                            <em tal:content="pub/title">Title</em>,
+                    <span class="pubtitle">
+                        <span tal:condition="pub/title | nothing">
+                            <p tal:replace="pub/title">Title</p>,
                         </span>
-                    </a>
-                    <!--Type-->
-                    <span tal:condition="pub/pubtype | nothing">
-                        <p tal:condition="pub/pubtype" tal:replace="pub/pubtype">Pubtype</p>,
-                    </span>
-                    <!--Year-->
-                    <span tal:condition="pub/year | nothing">
-                        <p tal:replace="pub/year">Year</p>,
-                    </span>
-                    <!--Journal || Booktitle-->
-                    <span tal:define="published_in pub/journal | nothing"
-                          tal:condition="published_in">
-                        <p tal:replace="published_in">Published in</p>,
-                    </span>
-                    <span tal:define="published_in pub/booktitle | nothing"
-                          tal:condition="published_in">
-                        <p tal:replace="published_in">Published in</p>,
+                        <span tal:condition="pub/pubtype | nothing">
+                            <p tal:condition="pub/pubtype" tal:replace="pub/pubtype">Pubtype</p>,
+                        </span>
+                        <span tal:condition="pub/year | nothing">
+                            <p tal:replace="pub/year">Year</p>,
+                        </span>
+                        <span tal:define="published_in pub/journal | nothing"
+                            tal:condition="published_in">
+                            <p tal:replace="published_in">Published in</p>,
+                        </span>
+                        <span tal:define="published_in pub/booktitle | nothing"
+                            tal:condition="published_in">
+                            <p tal:replace="published_in">Published in</p>,
+                        </span>
                     </span>
                     <!--bibtex-->
                     <div>

@@ -210,13 +210,25 @@ def authors(self, string):
 
 def filtered_name(self, string = None):
     """Removes official titles from the person's name, e.g. Prof., Dr., ...)"""
-    if string:
-        ret = string
+    if string != None:
+        if (type(string) == type("")) or (type(string) == type(u"")):
+            ret = string
+        else:
+            ret = string.title
     else:
         ret = self.title
     ret = ret.replace("Prof.", "")
     ret = ret.replace("Dr.-Ing.", "")
     ret = ret.replace("Dr.", "")
     ret = ret.replace("Emeritus", "")
+    ret = ret.replace("Ordinarius", "")
+    ret = ret.replace("PhD", "")
     ret = ret.strip(" .,;")
+
+    # swap surname & first name around (they are comma separated if reversed)
+    l = ret.find(',')
+    if l > 0:
+        ret = ret[l+2:] + ' ' + ret[:l]
+
+    ret = ret.strip()
     return ret
