@@ -8,6 +8,10 @@ body {
     min-width: 1020px;
 }
 
+a {
+    color: #3975BD;
+}
+
 /* Header background */
 #portal-header {
     background: #7696c1 url(++resource++infnine.theme.images/header.jpg) repeat-x;
@@ -317,4 +321,10 @@ body {
 
 .language-switcher {
     float: right;
+}
+
+.pubtitle {
+    font-size: 10pt;
+    font-weight: bold;
+    font-style: italic;
 }

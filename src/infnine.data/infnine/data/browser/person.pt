@@ -159,12 +159,10 @@
                                    tal:content="author">Ex. Author></b>,
                        </span>
                     </span>
-                  </span>  
+                  </span>
                     <a tal:condition="pub/title | nothing"
                        tal:attributes="href python: context.portal_url() + '/publications/' + pub.id">
-                        <span>
-                            <em tal:content="pub/title">Title</em>,
-                        </span>
+                        <span class="pubtitle" tal:content="pub/title">Title</span>,
                     </a>
                     <span tal:condition="pub/pubtype | nothing">
                         <p tal:condition="pub/pubtype" tal:replace="pub/pubtype">Pubtype</p>,
