@@ -50,7 +50,7 @@
                 <span tal:repeat="pub pubs">
                   <li tal:condition="python: (pub.author != None) and
                                      (author1 in context.auth(pub.author))">
-                    <span tal:define="authors python: context.auth(pub.author)">
+                    <span class="pubauthors" tal:define="authors python: context.auth(pub.author)">
                         <span tal:repeat="author2 authors">
                           <!--Internal-->
                            <b> <a tal:condition="python: portal.people.__contains__(author2)"

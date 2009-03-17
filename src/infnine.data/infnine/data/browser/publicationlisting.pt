@@ -50,7 +50,7 @@
             <h2> <a name="" tal:attributes="name year" tal:content="year">YEAR</a></h2>
                 <div tal:repeat="pub pubs">
                 <li tal:condition="python: pub.year == year">
-                  <span tal:condition="pub/author | nothing">
+                  <span class="pubauthors" tal:condition="pub/author | nothing">
                     <span tal:define="authors python: context.auth(pub.author)">
                       <span tal:repeat="author authors">
                            <b> <a tal:condition="python: portal.people.__contains__(author)"

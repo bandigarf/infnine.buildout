@@ -148,7 +148,7 @@
                 tal:condition="python: item in publications">
                 <div tal:define="pub python: portal.publications.__getitem__(item);
                                  authorlist context/author_list">
-                 <span tal:condition="pub/author | nothing">
+                 <span class="pubauthors" tal:condition="pub/author | nothing">
                     <span tal:define="authors python: context.auth(pub.author)">
                       <span tal:repeat="author authors">
                            <b> <a tal:condition="python: portal.people.__contains__(author)"

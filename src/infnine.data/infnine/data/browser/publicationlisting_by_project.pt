@@ -53,7 +53,7 @@
                 <div tal:repeat="pub pubs">
                 <li tal:condition="python: (pub.bib2html_funding == project) or ((project == 'Non-Classified') and (pub.bib2html_funding in ['ignore', '', None]))">
                   <!--Authors--> 
-                  <span tal:condition="pub/author | nothing">
+                  <span class="pubauthors" tal:condition="pub/author | nothing">
                     <span tal:define="authors python: context.auth(pub.author)">
                       <span tal:repeat="author authors">
                            <b> <a tal:condition="python: portal.people.__contains__(author)"
