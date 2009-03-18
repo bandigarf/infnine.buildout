@@ -89,5 +89,6 @@ class IStudentProject(Interface):
 
     publish_to_drehscheibe = Bool(
             title=u"publishToDresheibe Selector",
+            description=u"Toggle this to:\n a)Send offer also to the Drehscheibe and \n b)automatically create .tex file in /usr/proj/infnine/theses",
             default=False,
             )

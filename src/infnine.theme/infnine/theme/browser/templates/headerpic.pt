@@ -1,4 +1,4 @@
-<div tal:define="images python: ['aerial', 'agilo', 'central', 'inside', 'kitchen']" id="portal-header-pic">
+<div tal:define="images python: ['aerial', 'central', 'inside', 'kitchen']" id="portal-header-pic">
     <img src="++resource++infnine.theme.images/header_aerial.png"
         tal:attributes="src python: '++resource++infnine.theme.images/header_' + modules['random'].choice(images) + '.png'"
         />

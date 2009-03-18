@@ -17,43 +17,44 @@
     <div class="documentDescription" tal:content="context/description" />
 
     <div tal:define="text context/project_type" tal:condition="python: text != None">
-        Project type: <span tal:repeat="pt context/project_type" tal:replace="default"><span tal:replace="pt" /><span tal:replace="default" tal:define="n repeat/pt/number" tal:condition="python: n < len(context.project_type)">, </span></span>
+        <span class="studproject">Project type: </span>
+         <span tal:repeat="pt context/project_type" tal:replace="default"><span tal:replace="pt" /><span tal:replace="default" tal:define="n repeat/pt/number" tal:condition="python: n < len(context.project_type)">, </span></span>
     </div>
 
     <div tal:define="text context/project_overview" tal:condition="python: text != None">
-        Project overview: <span tal:replace="text" />
+       <span class="studproject"> Project overview: </span> <span tal:replace="text" />
     </div>
 
     <div tal:define="text context/task_description" tal:condition="python: text != None">
-        Task description: <span tal:replace="text" />
+       <span class="studproject"> Task description: </span> <span tal:replace="text" />
     </div>
 
     <div tal:define="text context/prerequisites" tal:condition="python: text != None">
-        Prerequisites: <span tal:replace="text" />
+       <span class="studproject"> Prerequisites: </span> <span tal:replace="text" />
     </div>
 
     <div tal:define="text context/professor" tal:condition="python: text != None">
-        Professor: <a tal:attributes="href python: context.portal_url() + '/people/' + text"><span tal:replace="python: portal.people.__getitem__(text).title" /></a>
+       <span class="studproject"> Professor: </span> <a tal:attributes="href python: context.portal_url() + '/people/' + text"><span tal:replace="python: portal.people.__getitem__(text).title" /></a>
     </div>
 
     <div tal:define="text context/supervisor" tal:condition="python: text != None">
-        Supervisor: <a tal:attributes="href python: context.portal_url() + '/people/' + text"><span tal:replace="python: portal.people.__getitem__(text).title" /></a>
+       <span class="studproject"> Supervisor: </span> <a tal:attributes="href python: context.portal_url() + '/people/' + text"><span tal:replace="python: portal.people.__getitem__(text).title" /></a>
     </div>
 
     <div tal:define="text context/state" tal:condition="python: text != None">
-        State: <span tal:replace="text" />
+       <span class="studproject"> State: </span> <span tal:replace="text" />
     </div>
 
     <div tal:define="text context/student" tal:condition="python: text != None">
-        Student: <span tal:replace="text" />
+      <span class="studproject">  Student: </span> <span tal:replace="text" />
     </div>
 
     <div tal:define="text context/start_date" tal:condition="python: text != None">
-        Start date: <span tal:replace="text" />
+      <span class="studproject">  Start date: </span> <span tal:replace="text" />
     </div>
 
     <div tal:define="text context/end_date" tal:condition="python: text != None">
-        End date: <span tal:replace="text" />
+      <span class="studproject">  End date: </span> <span tal:replace="text" />
     </div>
 	
     <hr />
