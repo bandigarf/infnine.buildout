@@ -159,8 +159,8 @@ templateFile='/usr/proj/infnine/theses/template.tex'
 #templateFile='/home/pangercic/programing/inf9_webpage/infnine.buildout/src/infnine.data/infnine/data/template.tex'
 destinationFile='/usr/proj/infnine/theses/'
 #destinationFile='/home/pangercic/programing/inf9_webpage/infnine.buildout/src/infnine.data/infnine/data/'
-toAddr='pangerci@in.tum.de'
-#toAddr='tenorth@in.tum.de'
+#toAddr='pangerci@in.tum.de'
+toAddr='tenorth@in.tum.de'
 fromAddr='webmaster@mail9.in.tum.de'
 
 def filterNamesUrl(self,string):
