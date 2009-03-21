@@ -140,7 +140,7 @@ a {
 .navTreeCurrentItem {
     border: none !important;
     background-color: transparent;
-    color: #fff !important;
+    color: #0f0 !important;
 }
 
 .navTreeItem a:hover, dd.portletItem .navTreeItem a:hover {
