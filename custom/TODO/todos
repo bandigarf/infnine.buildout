@@ -1,20 +1,20 @@
 GENERALS
-- webdavs
 + static portlet to render private page (check for a local page called sidebar (here/sidebar) and display that if found)
-- page down msg - we will use supervisord.org, Quirin and Dejan will deploy it this week
-- tutorial
-- make all randomly displayed images on the front page uniform size
-- a script to prepare the images for the front page (apply the blue stripe)
+** - tutorials/howtos: from the list + sidebar explanation
+D - make all randomly displayed images on the front page uniform size
+D - a script to prepare the images for the front page (apply the blue stripe)
+- caching: memoize, varnish, reverse proxy
+- migrate buildout.cfg to plone 3.2+
+- sharing: projects, personal pages, ...
 
 PEOPLE
 - application domain list and make them url
-- migrate ALL alumni from the old webpage
-- resolve visibility (private CT shall not appear)
+*** - resolve visibility (private CT shall not appear) - check workflow state in the listing templates
 
 RESEARCH
-- Application domain make url
-- update research map with links to application domains
-- Make a navigation menu at the top of the ResearchProject CT. It
+** - Application domain make url
+** - update research map with links to application domains
+*** - Make a navigation menu at the top of the ResearchProject CT. It
 should be such that allows for links to the current fields inside the
 CT (Application Domain, Research Topics, Team, etc) as well as to any
 custom subpages like:
@@ -27,14 +27,10 @@ PUBLICATIONS
 
 TEACHING
 - Dejan: on the listing page, link professor and instructor names to respective pages
-- student project listing: limit to 5 items per category (5 x 6 = 30 items total displayed) + separate full listings
+*** - student project listing: limit to 5 items per category (5 x 6 = 30 items total displayed) + separate full listings, show the 5 newest items
 - create Phd Talks Page as here: http://www9.cs.tum.edu/seminare/doktorandenseminar/
-- provide a sign-up form to the lecture
+*** - provide a sign-up form to the lecture (ploneformgen)
 - upload document templates(Dejan)
 
-DESIGN
-- fix internet explorer weirdness
-- replace front image
-
 NEWS
-- pointers to Student and Phd presentations, konferences, accepted papers
+D - pointers to Student and Phd presentations, conferences, accepted papers
