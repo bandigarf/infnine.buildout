@@ -156,11 +156,11 @@ project_types = (
 #publishStudentProject.py
 #content/studentproject.py
 templateFile='/usr/proj/infnine/theses/template.tex'
-#templateFile='/usr/wiss/pangerci/programing/inf9_webpage/infnine.buildout/src/infnine.data/infnine/data/template.tex'
+#templateFile='/home/pangercic/programing/inf9_webpage/infnine.buildout/src/infnine.data/infnine/data/template.tex'
 destinationFile='/usr/proj/infnine/theses/'
-#destinationFile='/usr/wiss/pangerci/programing/inf9_webpage/infnine.buildout/src/infnine.data/infnine/data/'
-toAddr='pangerci@in.tum.de'
-#toAddr='tenorth@in.tum.de'
+#destinationFile='/home/pangercic/programing/inf9_webpage/infnine.buildout/src/infnine.data/infnine/data/'
+#toAddr='pangerci@in.tum.de'
+toAddr='tenorth@in.tum.de'
 fromAddr='webmaster@mail9.in.tum.de'
 
 def filterNamesUrl(self,string):

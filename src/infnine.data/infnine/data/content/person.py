@@ -36,6 +36,8 @@ class PersonContent(Container):
     students = FieldProperty(IPerson['students'])
     misc = FieldProperty(IPerson['misc'])
     publications = FieldProperty(IPerson['publications'])
+    show_link_all_publications = FieldProperty(IPerson['show_link_all_publications'])
+    show_link_teaching = FieldProperty(IPerson['show_link_teaching'])
 
     author_list = authors_list
     fN = filterNamesUrl

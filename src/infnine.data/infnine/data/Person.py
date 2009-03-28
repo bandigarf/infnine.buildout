@@ -1,5 +1,5 @@
 from zope.interface import Interface
-from zope.schema import TextLine, Text, List, Choice, Datetime
+from zope.schema import TextLine, Text, List, Choice, Datetime, Bool
 
 from infnine.data.common import research_topics_list
 
@@ -122,4 +122,14 @@ class IPerson(Interface):
             title=u"Publications",
             description=u"Only selected Publications, enter line by line bibtex citation string",
             required=False,
+            )
+    show_link_all_publications = Bool(
+            title=u"linkToPublications",
+            description=u"Toggle this to display link to all your publications",
+            default=False,
+            )
+    show_link_teaching = Bool(
+            title=u"linkTeaching",
+            description=u"Toggle this to display link to all your lectures",
+            default=False,
             )

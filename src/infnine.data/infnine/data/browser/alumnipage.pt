@@ -31,7 +31,7 @@
     </div>
 
     <h3>Prior to 2009</h3>
-    <div> <a href="http://www9.cs.tum.edu/people/alumni/">Full list of
+    <div> <a href="http://www9-old.cs.tum.edu/people/alumni/">Full list of
     Alumni prior to 2009 (redirect to old webpage)</a> </div>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />

@@ -1,4 +1,5 @@
 #!/bin/bash
-./bin/zope-primary stop
-./bin/zeo stop
+DIR=$(dirname $0)
+$DIR/bin/zope-primary stop
+$DIR/bin/zeo stop
 

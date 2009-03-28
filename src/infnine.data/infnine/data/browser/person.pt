@@ -116,12 +116,14 @@
          tal:condition="python: text != None"
          tal:content="structure text" />
 
-    <div>
-         For my previously taught courses please see
+    <span tal:define="link2teaching context/show_link_teaching | nothing"
+                            tal:condition="link2teaching">
+        <div>
+          For my previously taught courses please see
         <a href="link" tal:attributes="href python: context.portal_url() + '/teaching/all-terms/'">All Terms
-            <!--<span tal:replace="python: portal.teaching.all_terms.title"/>-->
         </a> section.
-    </div>
+        </div>
+    </span>
 
     <div tal:define="text context/students" tal:condition="python: text != None">
         <h2>Students</h2>
@@ -191,13 +193,15 @@
             </li>
         </ul>
     </div>
-
-    <div>
+    <span tal:define="link2all_publications context/show_link_all_publications | nothing"
+                            tal:condition="link2all_publications">
+        <div>
          For the full list of my Publications please see the
         <a href="link" tal:attributes="href python: context.portal_url() + '/publications/publications/by_author#' + context.id">
             <span tal:replace="python: portal.publications.title"/>
         </a> section.
-    </div>
+        </div>
+    </span>     
 
     <hr />
 
