@@ -80,6 +80,17 @@
                 : <span tal:replace="python: portal.research.__getitem__(item).summary" />
             </li>
         </ul>
+        <!--displaying research projects of mqm group -->
+        <ul tal:define="items python:text.split()" tal:repeat="item items">
+            <li tal:define="projects python:[project[0] for project in portal.research.mqmtemp.items()
+                                             if project[1].meta_type == 'Research Project']"
+                tal:condition="python: item in projects">
+                <a tal:attributes="href python: context.portal_url() + '/research/mqmtemp/' + item">
+                    <span tal:replace="python: portal.research.mqmtemp.__getitem__(item).title" />
+                </a>
+                : <span tal:replace="python: portal.research.mqmtemp.__getitem__(item).summary" />
+            </li>
+        </ul>
     </div>
 
     <div tal:define="text context/research_projects_former" tal:condition="python: text != None">
