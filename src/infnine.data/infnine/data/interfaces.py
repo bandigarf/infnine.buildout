@@ -15,3 +15,5 @@ from PracticalCourse import IPracticalCourse
 from Semester import ISemester
 from Seminar import ISeminar
 from TeachingListing import ITeachingListing
+from Contact import IContact
+from Contact import IContact2
