@@ -46,6 +46,11 @@ class PublicationContent(Container):
     url = FieldProperty(IPublication['url'])
     pdf = FieldProperty(IPublication['pdf'])
     bibtex_entry = FieldProperty(IPublication['bibtex_entry'])
+    bib2html_domain = FieldProperty(IPublication['bib2html_domain'])
+    institution = FieldProperty(IPublication['institution'])
+    organization = FieldProperty(IPublication['organization'])
+    editor = FieldProperty(IPublication['editor'])
+    series = FieldProperty(IPublication['series'])
 
 factory = Factory(
         PublicationContent,

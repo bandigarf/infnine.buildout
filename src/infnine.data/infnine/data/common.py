@@ -150,6 +150,49 @@ project_types = (
     'HiWi'
 )
 
+bib2html_groups_listing = [
+    'FIPM',
+    'EvI',
+    'IU',
+    'AGILO',
+    'Cogmash',
+    'Cop',
+    'Memoman',
+    'Cogman',
+    'Mudis',
+    'K4C',
+    'Probcog',
+    'Cogito',
+    'Aspogamo',
+    'Emp-sachenbacher',
+    'Mqm',
+    'EnvMod',
+    'Para',
+    'Other'
+    ]
+
+
+bib2html_groups_mapping = {
+    'K4C':'knowledge4cotesys',
+    'FIPM':'aspogamo',
+    'EvI':'',
+    'IU':'face-mimic',
+    'AGILO':'agilo',
+    'Cogmash':'cogmash',
+    'Cop':'cop',
+    'Memoman':'memoman',
+    'Cogman':'cogman',
+    'Mudis':'mudis',
+    'Probcog':'probcog',
+    'Cogito':'cogito',
+    'Aspogamo':'aspogamo',
+    'Emp-sachenbacher':'constraint-based-models-and-algorithms-for-self-diagnosis-and-planning',
+    'Mqm':'mqm',
+    'EnvMod':'envmod',
+    'Para':'para',
+    'Other':''
+}
+
 #for sending notification emails upon thesis 
 #announcement submition
 #Affected Files:
@@ -232,3 +275,10 @@ def filtered_name(self, string = None):
 
     ret = ret.strip()
     return ret
+
+def reversePublicationList(self, list):
+    sortedList = []
+    while (list.__len__() > 0):
+        sortedList.append(list.pop())
+
+    return sortedList

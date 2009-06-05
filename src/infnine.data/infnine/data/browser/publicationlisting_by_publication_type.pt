@@ -19,7 +19,7 @@
     <div tal:replace="structure provider:plone.abovecontentbody" />
     <!-- Sorting Publications by publication type-->
     <div tal:define="pubtypelist python: []">
-        <div tal:define="pubs python: context.getParentNode().objectValues(['Publication'])">
+        <div tal:define="pubs python: context.rList(context.getParentNode().objectValues(['Publication']))">
             <div tal:repeat="item pubs">
                 <div tal:condition="python: not(item.bib2html_pubtype in pubtypelist) and not(item.bib2html_pubtype in ['Others', 'ignore', '', None])"
                      tal:replace="python: pubtypelist.append(item.bib2html_pubtype)">PUBTYPELIST

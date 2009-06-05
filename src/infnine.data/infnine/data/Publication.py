@@ -184,3 +184,33 @@ class IPublication(Interface):
             description=u"BibTex entry of the publication",
             required=False,
             )
+
+    bib2html_domain = TextLine(
+        title=u"bib2html_domain",
+        description=u"Research Domain",
+        required=False,
+        )
+
+    institution = TextLine(
+        title=u"institution",
+        description=u"Institution",
+        required=False,
+        )
+
+    organization = TextLine(
+        title=u"organization",
+        description=u"Organization",
+        required=False,
+        )
+
+    editor = TextLine(
+        title=u"editor",
+        description=u"Editor",
+        required=False,
+        )
+
+    series = TextLine(
+        title=u"series",
+        description=u"Series",
+        required=False,
+        )

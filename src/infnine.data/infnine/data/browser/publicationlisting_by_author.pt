@@ -19,8 +19,7 @@
     <div tal:replace="structure provider:plone.abovecontentbody" />
     <!-- Sorting Publications by authors-->
     <div tal:define="authorslist context/author_list">
-      <div tal:define="pubs python: context.getParentNode().objectValues(['Publication'])">
-       
+      <div tal:define="pubs python: context.rList(context.getParentNode().objectValues(['Publication']))">
     <h1>Publications Sorted by:</h1>
     <span tal:define="tableitems python: ['Year', 'Author', 'Project', 'Publication Type'];
                       tableurls python: ['by_year', 'by_author', 'by_project', 'by_publication_type']">

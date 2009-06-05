@@ -18,85 +18,80 @@
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
     <!-- Sorting Publications by project-->
-    <div tal:define="projectlist python: []">
-        <div tal:define="pubs python: context.getParentNode().objectValues(['Publication'])">
-            <div tal:repeat="item pubs">
-                <div tal:condition="python: not(item.bib2html_funding in projectlist) and not(item.bib2html_funding in ['ignore', '', None])"
-                     tal:replace="python: projectlist.append(item.bib2html_funding)">PROJECTLIST
-                </div>
-            </div>
-    <h1>Publications Sorted by:</h1>
-    <span tal:define="tableitems python: ['Year', 'Author', 'Project', 'Publication Type'];
-                      tableurls python: ['by_year', 'by_author', 'by_project', 'by_publication_type']">
-        <table class="invisible" width=100%>
+    <div tal:define="projectlist python: context.b2hg">
+      <div tal:define="pubs python: context.rList(context.getParentNode().objectValues(['Publication']))">
+        <h1>Publications Sorted by:</h1>
+        <span tal:define="tableitems python: ['Year', 'Author', 'Project', 'Publication Type'];
+                          tableurls python: ['by_year', 'by_author', 'by_project', 'by_publication_type']">
+          <table class="invisible" width=100%>
             <tr>
-                <td tal:repeat="item tableitems"><a tal:define="n repeat/item/number" tal:attributes="href python: context.getId() + '/' + tableurls[n-1]"><h3 tal:content="item" /></a></td>
+              <td tal:repeat="item tableitems"><a tal:define="n repeat/item/number" tal:attributes="href python: context.getId() + '/' + tableurls[n-1]"><h3 tal:content="item" /></a></td>
             </tr>
-        </table>
-    </span>
+          </table>
+        </span>
 
-    <!--Project List-->
+        <!--Project List-->
             <div tal:replace="python: projectlist.sort()">PROJECTLIST</div>
-            <div tal:replace="python: projectlist.reverse()">PROJECTLIST</div>
-            <div tal:replace="python: projectlist.append('Miscelaneous')" />
-            <span tal:define="projectlist1 python: [project for project in projectlist if project != None]" tal:repeat="project projectlist1">
+            <span tal:repeat="project projectlist">
                 <!--Reference to Location inside the Page-->
                 <a href="link" tal:attributes="href python: context.getId() + '/by_project#' + project"
-                tal:content="project">PROJECTLIST</a> | 
+                tal:content="project">PROJECTLIST</a> |
             </span>
-
-    <!--Publications Display-->
-            <!-- author_list defined in data/content/publicationlisting.py-->
+            <!--Publications Display-->
+            <!--author_list defined in data/content/publicationlisting.py-->
             <div tal:define="authorlist context/author_list">
-            <ul tal:repeat="project projectlist">
-            <h2> <a name="" tal:attributes="name project" tal:content="project">PROJECT</a></h2>
+              <ul tal:repeat="project projectlist">
+                <h2> <a name="" tal:attributes="name project" tal:content="project">PROJECT</a> 
+                  (<a tal:condition="python: project != 'Other'" href="link" tal:attributes="href python:context.portal_url() + '/research/' + context.b2hm[project]" 
+                      tal:content="python:context.portal_url() + '/research/' + context.b2hm[project]"></a>)</h2>
                 <div tal:repeat="pub pubs">
-                <li tal:condition="python: (pub.bib2html_funding == project) or ((project == 'Miscelaneous') and (pub.bib2html_funding in ['ignore', '', None]))">
-                  <!--Authors--> 
-                  <span class="pubauthors" tal:condition="pub/author | nothing">
-                    <span tal:define="authors python: context.auth(pub.author)">
-                      <span tal:repeat="author authors">
-                           <b> <a tal:condition="python: portal.people.__contains__(author)"
-                                   href="link" tal:attributes="href python: context.portal_url() + '/people/' + author"
-                                   tal:content="python: portal.people.__getitem__(author).filtered_name(portal.people.__getitem__(author))">
-                            </a></b>
-                            <b tal:condition="not:python: portal.people.__contains__(author)"
-                                   tal:content="author">
+                  <li tal:condition="python: ((project == 'Other') and (pub.bib2html_groups in ['ignore', '', None]))
+                                     or ((pub.bib2html_groups != None) and ([entry for entry in pub.bib2html_groups.split(',') if entry.lower().lstrip() == project.lower()]))">
+                    <!--Authors-->
+                    <span class="pubauthors" tal:condition="pub/author | nothing">
+                      <span tal:define="authors python: context.auth(pub.author)">
+                        <span tal:repeat="author authors">
+                          <b> <a tal:condition="python: portal.people.__contains__(author)"
+                                 href="link" tal:attributes="href python: context.portal_url() + '/people/' + author"
+                                 tal:content="python: portal.people.__getitem__(author).filtered_name(portal.people.__getitem__(author))">
+                          </a></b>
+                          <b tal:condition="not:python: portal.people.__contains__(author)"
+                             tal:content="author">
                             ></b>,
-                       </span>
+                        </span>
+                      </span>
                     </span>
-                  </span>
                     <span class="pubtitle">
-                        <span tal:condition="pub/title | nothing">
-                            <p tal:replace="pub/title">Title</p>,
-                        </span>
-                        <span tal:condition="pub/pubtype | nothing">
-                            <p tal:condition="pub/pubtype" tal:replace="pub/pubtype">Pubtype</p>,
-                        </span>
-                        <span tal:condition="pub/year | nothing">
-                            <p tal:replace="pub/year">Year</p>,
-                        </span>
-                        <span tal:define="published_in pub/journal | nothing"
+                      <span tal:condition="pub/title | nothing">
+                        <p tal:replace="pub/title">Title</p>,
+                      </span>
+                      <span tal:condition="pub/pubtype | nothing">
+                        <p tal:condition="pub/pubtype" tal:replace="pub/pubtype">Pubtype</p>,
+                      </span>
+                      <span tal:condition="pub/year | nothing">
+                        <p tal:replace="pub/year">Year</p>,
+                      </span>
+                      <span tal:define="published_in pub/journal | nothing"
                             tal:condition="published_in">
-                            <p tal:replace="published_in">Published in</p>,
-                        </span>
-                        <span tal:define="published_in pub/booktitle | nothing"
+                        <p tal:replace="published_in">Published in</p>,
+                      </span>
+                      <span tal:define="published_in pub/booktitle | nothing"
                             tal:condition="published_in">
-                            <p tal:replace="published_in">Published in</p>,
-                        </span>
+                        <p tal:replace="published_in">Published in</p>,
+                      </span>
                     </span>
                     <!--bibtex,pdf-->
                     <div>
-                        <span tal:condition="python: pub.id + '.bib' in portal.publications.bibtex.keys()">
-                            (<a tal:attributes="href python: 'bibtex/' + pub.id + '.bib/view'">BibTeX</a>)
-                        </span>
-                        <span tal:condition="python: pub.id + '.pdf' in portal.publications.pdf.keys()">
-                            (<a tal:attributes="href python: 'pdf/' + pub.id + '.pdf'">PDF</a>)
-                        </span>
+                      <span tal:condition="python: pub.id + '.bib' in portal.publications.bibtex.keys()">
+                        (<a tal:attributes="href python: 'bibtex/' + pub.id + '.bib/view'">BibTeX</a>)
+                      </span>
+                      <span tal:condition="python: pub.id + '.pdf' in portal.publications.pdf.keys()">
+                        (<a tal:attributes="href python: 'pdf/' + pub.id + '.pdf'">PDF</a>)
+                      </span>
                     </div>
-                </li>
+                  </li>
                 </div>
-            </ul>
+              </ul>
             </div>
         </div>
     </div>
