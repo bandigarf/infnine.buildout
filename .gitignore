@@ -11,3 +11,5 @@ downloads/*
 eggs/*
 fake-eggs/*
 custom/scripts/cronBackup
+*.egg-info
+*~
