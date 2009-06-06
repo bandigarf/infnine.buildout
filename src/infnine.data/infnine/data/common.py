@@ -199,9 +199,9 @@ bib2html_groups_mapping = {
 #publishStudentProject.py
 #content/studentproject.py
 templateFile='/usr/proj/infnine/theses/template.tex'
-#templateFile='/home/pangercic/programing/inf9_webpage/infnine.buildout/src/infnine.data/infnine/data/template.tex'
+#templateFile='/home/pangercic/programing/inf9_webpage/infnine.buildout/custom/templates/template.tex'
 destinationFile='/usr/proj/infnine/theses/'
-#destinationFile='/home/pangercic/programing/inf9_webpage/infnine.buildout/src/infnine.data/infnine/data/'
+#destinationFile='/home/pangercic/programing/inf9_webpage/infnine.buildout/custom/templates/'
 #toAddr='pangerci@in.tum.de'
 toAddr='tenorth@in.tum.de'
 fromAddr='webmaster@mail9.in.tum.de'
