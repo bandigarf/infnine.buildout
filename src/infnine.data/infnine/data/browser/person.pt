@@ -150,10 +150,12 @@
             </li>
         </ul>
     </div>
-     <h2>Teaching General</h2>
+
     <div tal:define="text context/teaching_misc|nothing"
-         tal:condition="python: text != None"
-         tal:content="structure text" />
+         tal:condition="python: text != None">
+         <h2>Teaching General</h2>
+         <span tal:content="structure text"></span>
+    </div>
 
     <span tal:define="link2teaching context/show_link_teaching | nothing"
                             tal:condition="link2teaching">
