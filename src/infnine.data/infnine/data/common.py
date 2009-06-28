@@ -152,6 +152,17 @@ project_types = (
     'HiWi'
 )
 
+research_topics = [
+    'Perception',
+    'Models',
+    'Representation',
+    'Reasoning',
+    'Learning',
+    'Planning',
+    'Action',
+    'Human-Robot Interaction'
+]
+
 bib2html_groups_listing = [
     'FIPM',
     'EvI',

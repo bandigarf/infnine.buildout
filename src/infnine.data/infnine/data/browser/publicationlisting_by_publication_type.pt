@@ -26,11 +26,20 @@
                 </div>
             </div>
     <h1>Publications Sorted by:</h1>
-    <span tal:define="tableitems python: ['Year', 'Author', 'Project', 'Publication Type'];
-                      tableurls python: ['by_year', 'by_author', 'by_project', 'by_publication_type']">
+    <span tal:define="tableitems python: ['Year', 'Author', 'Project', 'Publication Type', 'Research Topic'];
+                      tableurls python: ['by_year', 'by_author', 'by_project', 'by_publication_type', 'by_research_topic']">
         <table class="invisible" width=100%>
             <tr>
-                <td tal:repeat="item tableitems"><a tal:define="n repeat/item/number" tal:attributes="href python: context.getId() + '/' + tableurls[n-1]"><h3 tal:content="item" /></a></td>
+                <td tal:repeat="item tableitems" width="20%">
+                  <a tal:define="n repeat/item/number" tal:attributes="href python: context.getId() + '/' + tableurls[n-1]"
+                     tal:condition="not:python: item  == 'Publication Type'">
+                    <b tal:content="item" />
+                  </a>
+                  <b tal:define="n repeat/item/number" tal:attributes="href python: context.getId() + '/' + tableurls[n-1]"
+                     tal:condition="python: item  == 'Publication Type'">
+                    <span tal:content="item" />
+                  </b>
+                </td>
             </tr>
         </table>
     </span>

@@ -39,6 +39,13 @@
         />
 
     <browser:page
+        for="..interfaces.IPublicationListing"
+        name="by_research_topic"
+        template="publicationlisting_by_research_topic.pt"
+        permission="zope2.View"
+        />
+
+    <browser:page
         for="zope.app.container.interfaces.IAdding"
         name="infnine.data.PublicationListing"
         class=".publicationlisting.AddForm"
