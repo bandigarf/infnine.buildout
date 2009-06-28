@@ -50,9 +50,9 @@
             <!--author_list defined in data/content/publicationlisting.py-->
             <div tal:define="authorlist context/author_list">
               <ul tal:repeat="project projectlist">
-                <h2> <a name="" tal:attributes="name project" tal:content="project">PROJECT</a> 
+                <h2> <a name="" tal:attributes="name project" tal:content="project">PROJECT</a></h2>
                   (<a tal:condition="python: project != 'Other'" href="link" tal:attributes="href python:context.portal_url() + '/research/' + context.b2hm[project]" 
-                      tal:content="python:context.portal_url() + '/research/' + context.b2hm[project]"></a>)</h2>
+                      tal:content="python:context.portal_url() + '/research/' + context.b2hm[project]"></a>)
                 <div tal:repeat="pub pubs">
                   <li tal:condition="python: ((project == 'Other') and (pub.bib2html_groups in ['ignore', '', None]))
                                      or ((pub.bib2html_groups != None) and ([entry for entry in pub.bib2html_groups.split(',') if entry.lower().lstrip() == project.lower()]))">
