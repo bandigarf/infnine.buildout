@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="infnine.data">
+<head>
+</head>
+
+<body>
+<div metal:fill-slot="main">
+
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+    <h1 class="documentFirstHeading" tal:content="context/title" />
+
+    <div class="documentDescription" tal:content="context/description" />
+
+    <div tal:replace="structure provider:plone.abovecontentbody" />
+    <!-- Sorting Publications by project-->
+    <div tal:define="topiclist python: context.res_top">
+      <div tal:define="pubs python: context.rList(context.getParentNode().objectValues(['Publication']))">
+        <h1>Publications Sorted by:</h1>
+        <span tal:define="tableitems python: ['Year', 'Author', 'Project', 'Publication Type', 'Research Topic'];
+                          tableurls python: ['by_year', 'by_author', 'by_project', 'by_publication_type', 'by_research_topic']">
+          <table class="invisible" width=100%>
+            <tr>
+              <td width="20%" tal:repeat="item tableitems">
+                <a tal:define="n repeat/item/number" tal:attributes="href python: context.getId() + '/' + tableurls[n-1]"
+                   tal:condition="not:python: item == 'Research Topic'">
+                  <b tal:content="item" />
+                </a>
+                <b tal:define="n repeat/item/number" tal:attributes="href python: context.getId() + '/' + tableurls[n-1]"
+                   tal:condition="python: item == 'Research Topic'">
+                  <b tal:content="item" />
+                </b>
+              </td>
+            </tr>
+          </table>
+        </span>
+
+        <!--Project List-->
+            <div tal:replace="python: topiclist.sort()">TOPICLIST</div>
+            <span tal:repeat="topic topiclist">
+                <!--Reference to Location inside the Page-->
+                <a href="link" tal:attributes="href python: context.getId() + '/by_research_topic#' + topic"
+                tal:content="topic">TOPICLIST</a> |
+            </span>
+            <!--Publications Display-->
+            <!--author_list defined in data/content/publicationlisting.py-->
+            <div tal:define="authorlist context/author_list">
+              <ul tal:repeat="topic topiclist">
+                <h2> <a name="" tal:attributes="name topic" tal:content="topic">TOPIC</a> 
+<!--                  (<a tal:condition="python: project != 'Other'" href="link" tal:attributes="href python:context.portal_url() + '/research/' + context.b2hm[project]" 
+                      tal:content="python:context.portal_url() + '/research/' + context.b2hm[project]"></a>)-->
+</h2>
+                <div tal:repeat="pub pubs">
+                  <li tal:condition="python: ((pub.bib2html_rescat != None) and 
+                                     ([entry for entry in pub.bib2html_rescat.split(',') if entry.lower().lstrip() == topic.lower()]))">
+                    <!--Authors-->
+                    <span class="pubauthors" tal:condition="pub/author | nothing">
+                      <span tal:define="authors python: context.auth(pub.author)">
+                        <span tal:repeat="author authors">
+                          <b> <a tal:condition="python: portal.people.__contains__(author)"
+                                 href="link" tal:attributes="href python: context.portal_url() + '/people/' + author"
+                                 tal:content="python: portal.people.__getitem__(author).filtered_name(portal.people.__getitem__(author))">
+                          </a></b>
+                          <b tal:condition="not:python: portal.people.__contains__(author)"
+                             tal:content="author">
+                            ></b>,
+                        </span>
+                      </span>
+                    </span>
+                    <span class="pubtitle">
+                      <span tal:condition="pub/title | nothing">
+                        <p tal:replace="pub/title">Title</p>,
+                      </span>
+                      <span tal:condition="pub/pubtype | nothing">
+                        <p tal:condition="pub/pubtype" tal:replace="pub/pubtype">Pubtype</p>,
+                      </span>
+                      <span tal:condition="pub/year | nothing">
+                        <p tal:replace="pub/year">Year</p>,
+                      </span>
+                      <span tal:define="published_in pub/journal | nothing"
+                            tal:condition="published_in">
+                        <p tal:replace="published_in">Published in</p>,
+                      </span>
+                      <span tal:define="published_in pub/booktitle | nothing"
+                            tal:condition="published_in">
+                        <p tal:replace="published_in">Published in</p>,
+                      </span>
+                      <span tal:define="note pub/note | nothing"
+                            tal:condition="note">
+                        <p tal:replace="note">note</p>
+                      </span>
+                    </span>
+                    <!--bibtex,pdf-->
+                    <div>
+                      <span tal:condition="python: pub.id + '.bib' in portal.publications.bibtex.keys()">
+                        (<a tal:attributes="href python: 'bibtex/' + pub.id + '.bib/view'">BibTeX</a>)
+                      </span>
+                      <span tal:condition="python: pub.id + '.pdf' in portal.publications.pdf.keys()">
+                        (<a tal:attributes="href python: 'pdf/' + pub.id + '.pdf'">PDF</a>)
+                      </span>
+                    </div>
+                  </li>
+                </div>
+              </ul>
+            </div>
+        </div>
+    </div>
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+
+</div>
+</body>
+</html>
