@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
+html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
@@ -61,7 +61,7 @@
     </div>
 
     <div tal:define="text context/former_personell" tal:condition="python: text != None">
-        <h2>Former Personell</h2>
+        <h2>Former Personnel</h2>
         <ul tal:define="items python:text.split()" tal:repeat="item items">
             <li tal:define="people python:[person[0] for person in portal.people.items()
                                            if person[1].meta_type == 'Person']"
