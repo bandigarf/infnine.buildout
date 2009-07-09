@@ -1,7 +1,7 @@
 #run from buildout like:
 #./bin/zope-secondary run src/infnine.data/infnine/data/teaching2zope
 from infnine.data.readdb import getEvents
-semester = semester_id = 'WS2008'
+semester = semester_id = 'WS2009'
 semester = getEvents(semester_id)
 
 def flatten(x):
@@ -116,7 +116,7 @@ for id in semester.keys():
     t = semester[id]['Type']
     if (t == 'Wahlpflichtvorlesung') or (t == 'Vertiefungsvorlesung'):
         event_type = 'Lecture'
-    elif t == 'Praktikum':
+    elif (t == 'Praktikum') or (t == 'Master-Praktikum'):
         event_type = 'Practical Course'
     else:
         event_type = 'Seminar'
