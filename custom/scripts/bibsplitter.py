@@ -27,7 +27,7 @@ if user == 'infnine':
     output_dir = '/usr/proj/infnine/infninebib/infninebib/'
 
 all_files = os.listdir(bibpath)
-bib_files = [bib_file for bib_file in all_files if (bib_file[-4:] == '.bib' and (bib_file[0:15] == 'iaspublications' or bib_file[0:14] == 'iupublications'))]
+bib_files = [bib_file for bib_file in all_files if (bib_file[-4:] == '.bib' and (bib_file[0:15] == 'iaspublications' or bib_file[0:14] == 'iupublications' or bib_file[0:3] == 'Mqm'))]
 print "Found .bib files:", bib_files
 
 for multi_entry_file in bib_files:
