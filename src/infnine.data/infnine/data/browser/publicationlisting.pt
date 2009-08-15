@@ -19,7 +19,7 @@
     <div tal:replace="structure provider:plone.abovecontentbody" />
     <!-- Sorting Publications by year-->
     <div tal:define="yearlist python: []">
-        <div tal:define="pubs python: context.getParentNode().objectValues(['Publication'])">
+        <div tal:define="pubs python: context.rList(context.getParentNode().objectValues(['Publication']))">
             <div tal:repeat="item pubs">
                 <div tal:condition="python: not(item.year in yearlist)"
                      tal:replace="python: yearlist.append(item.year)">YEARLIST
