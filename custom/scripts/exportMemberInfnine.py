@@ -29,25 +29,27 @@ def getMembersCSV(self):
     people_list = portalRoot.people.getChildNodes()
     
     properties = ['title',
-                        'status',
-                        'email',
-                        'telephone',
-                        'office',
-                        'position',
-                        'fax']
+                  'status',
+                  'email',
+                  'telephone',
+                  'office',
+                  'position',
+                  'fax']
 
     writer.writerow(properties)
 
     for person in range(people_list.__len__()):
         row = []
-        row.append(people_list._data[person].title)
-        row.append(people_list._data[person].status)
-        row.append(people_list._data[person].email)
-        row.append(people_list._data[person].telephone)
-        row.append(people_list._data[person].office)
-        row.append(people_list._data[person].position)
-        row.append(people_list._data[person].fax)
-        writer.writerow(row)
+	if people_list._data[person].meta_type == 'Person':
+		#print "bla\n", people_list._data[person].title	
+        	row.append(people_list._data[person].title)
+        	row.append(people_list._data[person].status)
+	        row.append(people_list._data[person].email)
+	        row.append(people_list._data[person].telephone)
+	        row.append(people_list._data[person].office)
+	        row.append(people_list._data[person].position)
+	        row.append(people_list._data[person].fax)
+	        writer.writerow(row)
 
 
     request.RESPONSE.setHeader('Content-Type','application/csv')
