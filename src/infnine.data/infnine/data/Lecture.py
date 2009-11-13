@@ -5,7 +5,7 @@ class ILecture(Interface):
     """A lecture
     """
 
-    title = TextLine(
+    title = Text(
             title=u"German Title",
             description=u"German title of the lecture",
             required=True,
