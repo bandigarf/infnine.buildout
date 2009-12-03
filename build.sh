@@ -8,9 +8,14 @@ echo $hostn
 elif [ "$hostn" = "lapradig39" ]
 then    
 echo $hostn
-./bin/buildout -Novc debug.cfg
+./bin/buildout -vc debug.cfg
 
 elif [ "$hostn" = "ias" ]
+then    
+echo $hostn
+./bin/buildout -Novc debug.cfg
+
+elif [ "$hostn" = "www9" ]
 then    
 echo $hostn
 ./bin/buildout -Novc debug.cfg
