@@ -8,7 +8,7 @@ echo $hostn
 elif [ "$hostn" = "lapradig39" ]
 then    
 echo $hostn
-./bin/buildout -vc debug.cfg
+./bin/buildout -vc debugUbuntu904.cfg
 
 elif [ "$hostn" = "ias" ]
 then    
