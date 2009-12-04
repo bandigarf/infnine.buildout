@@ -174,7 +174,6 @@ bib2html_groups_listing = [
     'Cogito',
     'Aspogamo',
     'Self-Diagnosis and Planning',
-    'Mqm',
     'EnvMod',
     'Para',
     'Other'
@@ -196,7 +195,6 @@ bib2html_groups_mapping = {
     'Cogito':'cogito',
     'Aspogamo':'aspogamo',
     'Self-Diagnosis and Planning':'constraint-based-models-and-algorithms-for-self-diagnosis-and-planning',
-    'Mqm':'mqm',
     'EnvMod':'envmod',
     'Para':'para',
     'Other':''

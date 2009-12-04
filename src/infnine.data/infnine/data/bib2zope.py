@@ -92,11 +92,8 @@ else:
 all_files = os.listdir(bibpath)
 bib_files_ias = [file for file in all_files if (file[-4:] == '.bib' and (file[0:15] == 'iaspublications'))]
 bib_files_iu = [file for file in all_files if (file[-4:] == '.bib' and (file[0:14] == 'iupublications'))]
-bib_files_mqm = [file for file in all_files if (file[-4:] == '.bib' and (file[0:3] == 'Mqm'))]
 bib_files_iu.sort()
-bib_files_mqm.sort()
 bib_files_ias.sort()
-bib_files_ias += bib_files_mqm
 bib_files_ias += bib_files_iu
 print "Found .bib files:", bib_files_ias
 #sys.exit(0)
