@@ -213,10 +213,17 @@ bib2html_groups_mapping = {
 #Affected Files:
 #publishStudentProject.py
 #content/studentproject.py
-templateFile='/usr/proj/infnine/theses/template.tex'
-#templateFile='/home/pangercic/programing/inf9_webpage/infnine.buildout/custom/templates/template.tex'
-destinationFile='/usr/proj/infnine/theses/'
-#destinationFile='/home/pangercic/programing/inf9_webpage/infnine.buildout/custom/templates/'
+import os
+host = os.popen('hostname').read().strip()
+if host == 'www9':
+    templateFile='/usr/local/share/infnine/theses/template.tex'
+    destinationFile='/usr/local/share/infnine/theses/'
+elif host == 'ias':
+    templateFile='/usr/local/share/iasweb/theses/template.tex'
+    destinationFile='/usr/local/share/iasweb/theses/'
+else:
+    print 'unknown hostname'
+
 #toAddr='pangerci@in.tum.de'
 toAddr='tenorth@in.tum.de'
 fromAddr='webmaster@mail9.in.tum.de'

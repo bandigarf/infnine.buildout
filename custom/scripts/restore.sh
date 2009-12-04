@@ -4,13 +4,23 @@ then
         echo "WARNING: Pass restore date as following: YYYY-MM-DD"
         exit
 fi
-username=`id -nu`
-if [ "$username" = "pangercic" ]
+hostn=`hostname`
+if [ "$hostn" = "lapradig94" ]
 then
-/home/pangercic/programing/inf9_webpage/infnine.buildout/bin/repozo -Rv -r  /home/pangercic/programing/inf9_webpage/infnine.buildout/var/filestorage/backup/ -D $1 -o /home/pangercic/programing/inf9_webpage/infnine.buildout/var/filestorage/Copy.fs
-elif [ "$username" = "infnine" ]
+/home/pangercic/programming/infnine.buildout/bin/repozo -Rv -r  /home/pangercic/programming/infnine.buildout/var/filestorage/backup/ -D $1 -o /home/pangercic/programming/infnine.buildout/var/filestorage/Copy.fs
+
+elif [ "$hostn" = "lapradig39" ]
+then
+/home/pangercic/programming/infnine.buildout/bin/repozo -Rv -r  /home/pangercic/programming/infnine.buildout/var/filestorage/backup/ -D $1 -o /home/pangercic/programming/infnine.buildout/var/filestorage/Copy.fs
+
+elif [ "$hostn" = "www9" ]
 then	
-/usr/proj/infnine/infnine.buildout/bin/repozo -Rv -r /usr/proj/infnine/infnine.buildout/var/filestorage/backup -D $1 -o /usr/proj/infnine/infnine.buildout/var/filestorage/Copy.fs
+/usr/local/share/infnine/infnine.buildout/bin/repozo -Rv -r /usr/local/share/infnine/infnine.buildout/var/filestorage/backup -D $1 -o /usr/local/share/infnine/infnine.buildout/var/filestorage/Copy.fs
+
+elif [ "$hostn" = "ias" ]
+then	
+/usr/local/share/iasweb/infnine.buildout/bin/repozo -Rv -r /usr/local/share/iasweb/infnine.buildout/var/filestorage/backup -D $1 -o /usr/local/share/iasweb/infnine.buildout/var/filestorage/Copy.fs
+
 else
     echo "I do not know YOU."
 fi

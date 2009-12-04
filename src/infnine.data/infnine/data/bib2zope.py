@@ -76,16 +76,18 @@ print '---------------'
 bibpath = './'
 
 import os
+host = os.popen('hostname').read().strip()
+if host == 'www9':
+    bibpath = '/usr/local/share/infnine/infninebib/bibliography/'
 
-user = os.popen('whoami').read().strip()
-if user == 'infnine':
-    bibpath = '/usr/proj/infnine/infninebib/bibliography/'
+elif host == 'ias':
+    bibpath = '/usr/local/share/iasweb/infninebib/bibliography/'
 
-if user == 'andrija':
-    bibpath = '/home/andrija/projects/tum/iasdocs/'
+elif host == 'lapradig94' or host == 'lapradig39':
+    bibpath = '/home/pangercic/download/iasdocs/bibliography/'
 
-if user == 'pangercic':
-    bibpath = '/home/pangercic/research/iasdoc/bibliography/'
+else:
+    print 'unknown hostname'
 
 all_files = os.listdir(bibpath)
 bib_files_ias = [file for file in all_files if (file[-4:] == '.bib' and (file[0:15] == 'iaspublications'))]
