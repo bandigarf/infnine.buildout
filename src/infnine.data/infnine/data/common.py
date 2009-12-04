@@ -213,6 +213,7 @@ bib2html_groups_mapping = {
 #Affected Files:
 #publishStudentProject.py
 #content/studentproject.py
+
 import os
 host = os.popen('hostname').read().strip()
 if host == 'www9':
@@ -221,6 +222,9 @@ if host == 'www9':
 elif host == 'ias':
     templateFile='/usr/local/share/iasweb/theses/template.tex'
     destinationFile='/usr/local/share/iasweb/theses/'
+elif host == 'lapradig94' or host == 'lapradig39':
+    templateFile='/home/pangercic/programming/infnine.buildout/custom/templates/template.tex'
+    destinationFile='/home/pangercic/programming/infnine.buildout/custom/templates'
 else:
     print 'unknown hostname'
 
