@@ -97,7 +97,6 @@ authors_list=(
     'dolha',
     'durus',
     'esden-tempski',
-    'esser',
     'eggers',
     'fedrizzi',
     'gedikli',
@@ -113,7 +112,6 @@ authors_list=(
     'kunze',
     'maldonado',
     'marton',
-    'maier',
     'mayer',
     'moesenlechner',
     'mueller',
@@ -124,13 +122,10 @@ authors_list=(
     'ruehr',
     'ruiz',
     'rusu',
-    'sachenbacher',
     'schmitt',
-    'schumann',
     'schroeter',
     'siles',
     'stulp',
-    'struss',
     'sun-li',
     'tenorth',
     'vazquez',
@@ -142,7 +137,6 @@ authors_list=(
 professors = (
     'beetz',
     'radig',
-    'struss',
 )
 
 project_types = (
