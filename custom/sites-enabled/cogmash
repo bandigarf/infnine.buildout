@@ -1,0 +1,58 @@
+#Virtual Host für http
+<VirtualHost 131.159.19.28:80> 
+	#":%s/cogmash/hostname/g" (vim, ohne ")
+	ServerName cogmash
+	ServerAlias cogmash.in.tum.de cogmash.cs.tum.edu cogmash.informatik.tu-muenchen.de
+	
+	##DocumentRoot: Virtual Host besitzt ein eigenes Verzeichnis
+	#DocumentRoot /usr/www/html-data/projects/cogmash
+
+	##Redirect: Anfragen an Virtual Host werden an diese URL weitergeleitet
+	Redirect / http://www9.in.tum.de/research/cogmash
+
+	#Optionen
+	#Beginnend ab DocumentRoot
+	<Location />
+		Options IncludesNoExec -Indexes
+	</Location>
+
+	#Beginnend ab einem bestimmten Verzeichnis
+	#<Directory /usr/www/html-data>
+	#	AllowOverride All
+	#</Directory>
+	
+	##Aliase
+	#Alias /foo /usr/www/html-data/bar
+	Alias /www9new /usr/www/html-data/www9new
+</VirtualHost>
+
+#:.+1,$s/^#//g (vim, aus dieser Zeile heraus
+##Virtual Host für https
+#<VirtualHost 131.159.19.28:443> 
+#	ServerName cogmash
+#	ServerAlias cogmash.in.tum.de cogmash.cs.tum.edu cogmash.informatik.tu-muenchen.de
+#
+#	SSLEngine On
+#	SSLCertificateFile /etc/apache-ssl/mailradig.pem
+#	
+#	##DocumentRoot: Virtual Host besitzt ein eigenes Verzeichnis
+#	#DocumentRoot /usr/www/html-data
+#
+#	##Redirect: Anfragen an Virtual Host werden an diese URL weitergeleitet
+#	#Redirect / http://www9.in.tum.de
+#
+#	#Optionen
+#	#Beginnend ab DocumentRoot
+#	<Location />
+#		Options IncludesNoExec -Indexes
+#	</Location>
+#
+#	#Beginnend ab einem bestimmten Verzeichnis
+#	#<Directory /usr/www/html-data>
+#	#	AllowOverride All
+#	#</Directory>
+#	
+#
+#	##Aliase
+#	#Alias /foo /usr/www/html-data/bar
+#</VirtualHost>

@@ -1,0 +1,57 @@
+#Virtual Host für http
+<VirtualHost 131.159.19.87:80> 
+	#":%s/semantic-3d/hostname/g" (vim, ohne ")
+	ServerName semantic-3d
+	ServerAlias semantic-3d.in.tum.de semantic-3d.cs.tum.edu semantic-3d.informatik.tu-muenchen.de
+	
+	##DocumentRoot: Virtual Host besitzt ein eigenes Verzeichnis
+	#DocumentRoot /usr/www/html-data
+
+	##Redirect: Anfragen an Virtual Host werden an diese URL weitergeleitet
+	Redirect / http://www9.in.tum.de/download/semantic-3d
+
+	#Optionen
+	#Beginnend ab DocumentRoot
+	<Location />
+		Options IncludesNoExec -Indexes
+	</Location>
+
+	#Beginnend ab einem bestimmten Verzeichnis
+	#<Directory /usr/www/html-data>
+	#	AllowOverride All
+	#</Directory>
+	
+	##Aliase
+	#Alias /foo /usr/www/html-data/bar
+</VirtualHost>
+
+#:.+1,$s/^#//g (vim, aus dieser Zeile heraus
+##Virtual Host für https
+#<VirtualHost 131.159.19.87:443> 
+#	ServerName semantic-3d
+#	ServerAlias semantic-3d.in.tum.de semantic-3d.cs.tum.edu semantic-3d.informatik.tu-muenchen.de
+#
+#	SSLEngine On
+#	SSLCertificateFile /etc/apache-ssl/mailradig.pem
+#	
+#	##DocumentRoot: Virtual Host besitzt ein eigenes Verzeichnis
+#	#DocumentRoot /usr/www/html-data
+#
+#	##Redirect: Anfragen an Virtual Host werden an diese URL weitergeleitet
+#	#Redirect / http://www9.in.tum.de
+#
+#	#Optionen
+#	#Beginnend ab DocumentRoot
+#	<Location />
+#		Options IncludesNoExec -Indexes
+#	</Location>
+#
+#	#Beginnend ab einem bestimmten Verzeichnis
+#	#<Directory /usr/www/html-data>
+#	#	AllowOverride All
+#	#</Directory>
+#	
+#
+#	##Aliase
+#	#Alias /foo /usr/www/html-data/bar
+#</VirtualHost>

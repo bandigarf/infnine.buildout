@@ -1,0 +1,61 @@
+#Virtual Host für http
+<VirtualHost 131.159.19.28:80> 
+	#":%s/inf9pedia/hostname/g" (vim, ohne ")
+	ServerName inf9pedia
+	ServerAlias inf9pedia.in.tum.de inf9pedia.cs.tum.edu inf9pedia.informatik.tu-muenchen.de
+	
+	##DocumentRoot: Virtual Host besitzt ein eigenes Verzeichnis
+	#DocumentRoot /usr/www/html-data
+
+	##Redirect: Anfragen an Virtual Host werden an diese URL weitergeleitet
+	#Redirect / http://www9.in.tum.de
+	Redirect / http://wwwradig.in.tum.de/intern/inf9pedia/index.php/
+
+	#Optionen
+	#Beginnend ab DocumentRoot
+	<Location />
+		Options IncludesNoExec -Indexes
+		#Per default kein AllowOverride
+		#AllowOverride None
+	</Location>
+
+	#Beginnend ab einem bestimmten Verzeichnis
+	#<Directory /usr/www/html-data>
+	#	AllowOverride All
+	#</Directory>
+	
+	##Aliase
+	#Alias /foo /usr/www/html-data/bar
+</VirtualHost>
+
+#:.+1,$s/^#//g (vim, aus dieser Zeile heraus
+##Virtual Host für https
+#<VirtualHost 131.159.19.28:443> 
+#	ServerName inf9pedia
+#	ServerAlias inf9pedia.in.tum.de inf9pedia.cs.tum.edu inf9pedia.informatik.tu-muenchen.de
+#
+#	SSLEngine On
+#	SSLCertificateFile /etc/apache-ssl/mailradig.pem
+#	
+#	##DocumentRoot: Virtual Host besitzt ein eigenes Verzeichnis
+#	#DocumentRoot /usr/www/html-data
+#
+#	##Redirect: Anfragen an Virtual Host werden an diese URL weitergeleitet
+#	#Redirect / http://www9.in.tum.de
+#
+#	#Optionen
+#	#Beginnend ab DocumentRoot
+#	<Location />
+#		Options IncludesNoExec -Indexes
+#		AllowOverride None
+#	</Location>
+#
+#	#Beginnend ab einem bestimmten Verzeichnis
+#	#<Directory /usr/www/html-data>
+#	#	AllowOverride All
+#	#</Directory>
+#	
+#
+#	##Aliase
+#	#Alias /foo /usr/www/html-data/bar
+#</VirtualHost>

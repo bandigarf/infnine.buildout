@@ -1,0 +1,374 @@
+<VirtualHost 131.159.19.83:80>
+	ServerAdmin www-radig@mailradig.in.tum.de
+	ServerAlias wwwradig2.in.tum.de
+	ServerAlias wwwradig2.informatik.tu-muenchen.de
+	ServerAlias www9-old.informatik.tu-muenchen.de
+	ServerAlias www9-old.in.tum.de
+	ServerAlias www9-old.cs.tum.edu
+	ServerAlias www9-old wwwradig2 wwwradig2.cs.tum.edu
+
+	Alias /joomla /usr/local/share/joomla1.5.2
+	Include /etc/egroupware/apache.conf
+
+	
+	Redirect  /reports	http://atradig121.informatik.tu-muenchen.de:8080/infnine/private/progress-reports/
+
+
+	
+
+	#Redirect /egroupware \
+	#      https://wwwradig.informatik.tu-muenchen.de/egroupware/
+	<Location /ontology>
+		Options Indexes
+	</Location>
+	<Location /debian>
+		Options Indexes
+		Order deny,allow
+		Allow from all
+	</Location>
+	<Location /debian-unofficial>
+		Options Indexes
+		Order deny,allow
+		Deny from all
+		Allow from all
+	</Location>
+	<Location /debian-multimedia>
+		Options Indexes
+		Order deny,allow
+		Allow from all
+	</Location>
+	<Location /praktika/awbs_datamining.WS06/material>
+		AuthName "Datamining"
+		AuthType Basic
+		<Limit GET>
+			Require user kdprakt
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location /people/muellear/cotesys>
+		AuthName "CoTeSys"
+		AuthType Basic
+		<Limit GET>
+			Require user cotesys
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location /intern>
+		AuthName "inf9 internal area"
+		AuthType Basic
+		<Limit GET>
+			Require user artus
+			#Allow from 131.159.18.108
+			#Satisfy Any
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Directory /var/lib/mediawiki-inf9syspedia>
+		AllowOverride All
+	</Directory>
+	<Location /~atoudemk/netzgraph>
+		AuthName "NetzGraph"
+		AuthType Basic
+		<Limit GET>
+			Require user netzgraph
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location /mednav>
+		AuthName "mednav internals"
+		AuthType Basic
+		<Limit GET>
+			Require user mednav
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+        <Location ~ "/seminare/doktorandenseminar/slides">
+                AuthName "Doktorandenseminar Bildverstehen und Wissensbasierte Systeme"
+                AuthType Basic
+                <Limit GET>
+                        Require user artus
+                </Limit>
+                AuthUserFile /usr/www/etc/.intern-passwd
+        </Location>
+	<Location ~ "/skripten/SS03-AuswBildFolgen/ss03(html|pdf)">
+		AuthName "Vorlesung Auswertung von Bildfolgen"
+		AuthType Basic
+		<Limit GET>
+			Require user AuswBildFolgen
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location ~ "/skripten/WS0203BV/WS0203Bv(HTML|PDF)">
+		AuthName "Vorlesung Bildverstehen"
+		AuthType Basic
+		<Limit GET>
+			Require user Bildverstehen
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location ~ "/skripten/WS0304BV/WS0304Bv(HTM|PDF)">
+		AuthName "Vorlesung Bildverstehen"
+		AuthType Basic
+		<Limit GET>
+			Require user Bildverstehen0304
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location ~ "/skripten/SS04BV/SS04Bv(PDF|PPT)">
+		AuthName "Vorlesung Modellbasierte Interpretation von Bildern"
+		AuthType Basic
+		<Limit GET>
+			Require user Bildverstehen04
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location ~ "/skripten/SS04BV/SS04Bv">
+		AuthName "Vorlesung Modellbasierte Interpretation von Bildern"
+		AuthType Basic
+		<Limit GET>
+			Require user Bildverstehen04
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location ~ "/skripten/WS0405BV/Folien">
+		AuthName "Vorlesung Bildverstehen"
+		AuthType Basic
+		<Limit GET>
+			Require user Bildverstehen0405
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location ~ "/skripten/SS05-AuswBildFolgen/Folien">
+		AuthName "Vorlesung Auswertung von Bildfolgen"
+		AuthType Basic
+		<Limit GET>
+			Require user AuswBildFolgen
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location ~ "/skripten/WS0506BV/Folien">
+		AuthName "Vorlesung Bildverstehen"
+		AuthType Basic
+		<Limit GET>
+			Require user Bildverstehen0506
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location ~ "/skripten/SS06-Bildinterpretation/Folien">
+		AuthName "Vorlesung Bildinterpretation"
+		AuthType Basic
+		<Limit GET>
+			Require user Bildinterpretation
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location ~ "/skripten/WS0607BV/Folien">
+		AuthName "Vorlesung Bildverstehen"
+		AuthType Basic
+		<Limit GET>
+			Require user Bildverstehen0607
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location ~ "/skripten/SS07-Bildinterpretation/Folien">
+		AuthName "Vorlesung Bildinterpretation"
+		AuthType Basic
+		<Limit GET>
+			Require user Bildinterpretation07
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location ~ "/skripten/WS0708BV/Folien">
+		AuthName "Vorlesung Bildverstehen"
+		AuthType Basic
+		<Limit GET>
+			Require user Bildverstehen0708
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location ~ "/skripten/WS0809BV/Folien">
+		AuthName "Vorlesung Bildverstehen"
+		AuthType Basic
+		<Limit GET>
+			Require user Bildverstehen0809
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location ~ "/skripten/SS08-ISU/Folien">
+		AuthName "Vorlesung Bildverstehen"
+		AuthType Basic
+		<Limit GET>
+			Require user Bildfolgen08
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location /vorlesungen/wibas2.SS04/material>
+		AuthName "Vorlesung Wissensbasierte Systeme II"
+		AuthType Basic
+		<Limit GET>
+			Require user wibas2
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location /vorlesungen/as.SS05/material>
+		AuthName "Vorlesung Autonome Systeme"
+		AuthType Basic
+		<Limit GET>
+			Require user autsys
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location /vorlesungen/wibas2.SS06/documents>
+		AuthName "Vorlesung Wissensbasierte Systeme"
+		AuthType Basic
+		<Limit GET>
+			Require user wibas2
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location /vorlesungen/wibas.WS06/documents>
+		AuthName "Vorlesung Grundlagen der KI"
+		AuthType Basic
+		<Limit GET>
+			Require user ki
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+		<Location /vorlesungen/wibas.WS07/documents>
+		AuthName "Vorlesung Grundlagen der KI"
+		AuthType Basic
+		<Limit GET>
+			Require user ki
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location /vorlesungen/embIntSys.SS07/documents>
+		AuthName "Vorlesung Integrierte Intelligente Systeme"
+		AuthType Basic
+		<Limit GET>
+			Require user as
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	Redirect /hosts http://www9-old.in.tum.de/intern/sysadm/host2/
+	Redirect /intern/sysadm/host2.php http://www9-old.in.tum.de/intern/sysadm/host2/
+	<Location /intern/sysadm/host2>
+		DirectoryIndex host2.php
+		php_value register_globals on
+	</Location>
+	<Location /intern/sysadm/host2/host2_edit.php>
+		AuthName "Datenbankzugriff"
+		#LDAPServer "ldaps://ldapradig.informatik.tu-muenchen.de/"
+		#LDAPSearchMode "subtree"
+
+
+		AuthType Basic
+		<Limit GET POST>
+			Require user lohr boeslo kittel weissm
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location /intern/sysadm/itemdb/action.php>
+		AuthName "Datenbankzugriff"
+		AuthType Basic
+		<Limit GET POST>
+			Require user lohr boeslo kittel weissm
+		</Limit>
+		AuthUserFile /usr/www/etc/.intern-passwd
+	</Location>
+	<Location /server-status>
+	    SetHandler server-status
+	    Order deny,allow
+	    Deny from all
+	    Allow from atradig100.informatik.tu-muenchen.de \
+	               atradig88.informatik.tu-muenchen.de
+	</Location>
+	<Location /server-info>
+	    SetHandler server-info
+	    Order deny,allow
+	    Deny from all
+	    Allow from atradig100.informatik.tu-muenchen.de \
+	               atradig88.informatik.tu-muenchen.de
+	</Location>
+	#
+	# Aliases for web archive
+	#
+	Alias /archive/agilo/AircraftAutolanding.gif \
+	      /usr/www/html-data/archive/Dissertationen/Buck/AircraftAutolanding.gif
+	Alias /archive/agilo/AircraftAutolandingSimulation.tar \
+	      /usr/www/html-data/archive/Dissertationen/Buck/AircraftAutolandingSimulation.tar
+	Alias /archive/agilo/DribbleTask.gif \
+	      /usr/www/html-data/archive/Dissertationen/Buck/DribbleTask.gif
+	Alias /archive/agilo/ObstacleAvoidance.gif \
+	      /usr/www/html-data/archive/Dissertationen/Buck/ObstacleAvoidance.gif
+	Alias /archive/agilo/RBF++_1.2.tgz \
+	      /usr/www/html-data/archive/Dissertationen/Buck/RBF++_1.2.tgz
+	Alias /archive/agilo/RoboCup2001_20.mpg \
+	      /usr/www/html-data/archive/Dissertationen/Buck/RoboCup2001_20.mpg
+	
+	#
+	# Alias for Matthias Wimmer, created 26 April 2004 by Quirin Lohr
+	#
+	
+	Alias /ontology \
+	      "/usr/wiss/wimmerm/homepages/ontology"
+	
+	
+	Alias /debian \
+	      "/usr/wiss/sysadm/files/debian/"
+	Alias /debian-multimedia \
+	      "/usr/wiss/sysadm/files/www.debian-multimedia.org/"
+	Alias /debian-unofficial \
+	      "/usr/wiss/sysadm/files/www.debian-unofficial.org/"
+	Alias /debian-security \
+	      "/usr/wiss/sysadm/files/security.debian.org/"
+	Alias /analog/ \
+	      "/var/log/analog/"
+	
+	Redirect /robocup.html \
+	      http://wwwradig.informatik.tu-muenchen.de/research/mobile_robots/robocup/
+	Redirect /research/mobile_robots/robocup.html \
+	      http://wwwradig.informatik.tu-muenchen.de/research/mobile_robots/robocup/robocup.html
+	Redirect /forschung/mobile_robots/robocup.html \
+	      http://wwwradig.informatik.tu-muenchen.de/research/mobile_robots/robocup/robocup.html
+	Redirect /research/ias/agilo/ \
+	      http://wwwradig.informatik.tu-muenchen.de/research/mobile_robots/robocup/
+	Redirect /MQM/ \
+	      http://wwwradig.informatik.tu-muenchen.de/research/MQM/
+	Redirect /mqm/ \
+	      http://wwwradig.informatik.tu-muenchen.de/research/MQM/
+	Redirect /search/ \
+	      http://www9-old.in.tum.de/sitemap/
+	
+	Alias /htdig/ /var/www/htdig/
+	
+	Alias /phpmyadmin /usr/share/phpmyadmin
+
+
+	# Mediawiki
+	Alias /intern/inf9pedia /var/lib/mediawiki-inf9
+	Alias /intern/inf9syspedia /var/lib/mediawiki-inf9syspedia
+	#Alias /inf9pedia /var/lib/mediawiki-inf9
+	#Alias /intern/mqmwiki /var/lib/mediawiki-mqm
+	Alias /mqmwiki /var/lib/mediawiki-mqm
+	
+	#OTRS
+	Redirect /otrs https://www9-old.in.tum.de/otrs
+	RewriteEngine On
+	
+</VirtualHost>
+<VirtualHost 131.159.19.83:443>
+	SSLEngine On
+        SSLCertificateFile /etc/ssl/certs/www9.pem
+	ServerAdmin www-radig@mailradig.in.tum.de
+	ServerName localhost
+	ServerAlias wwwradig.in.tum.de
+	ServerAlias wwwradig.informatik.tu-muenchen.de
+	ServerAlias www9-old.informatik.tu-muenchen.de
+	ServerAlias www9-old.in.tum.de
+	ServerAlias www9-old.cs.tum.edu
+	ServerAlias srvradig2.informatik.tu-muenchen.de
+	ServerAlias www9-old
+	DocumentRoot /usr/www/html-data
+	Alias /phpmyadmin /usr/share/phpmyadmin
+</VirtualHost>
