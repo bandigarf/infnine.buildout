@@ -239,9 +239,11 @@ a {
 #aspogamo3 { background: transparent url(++resource++infnine.data.images/aspogamo3.png) top left no-repeat; }
 #aspogamo4 { background: transparent url(++resource++infnine.data.images/aspogamo4.png) top left no-repeat; }
 
-#factory1 { background: transparent url(++resource++infnine.data.images/factory1.png) top left no-repeat; }
-#factory2 { background: transparent url(++resource++infnine.data.images/factory2.png) top left no-repeat; }
-#factory3 { background: transparent url(++resource++infnine.data.images/factory3.png) top left no-repeat; }
+#robot1 { background: transparent url(++resource++infnine.data.images/robot1.png) top left no-repeat; }
+#robot2 { background: transparent url(++resource++infnine.data.images/robot2.png) top left no-repeat; }
+#robot3 { background: transparent url(++resource++infnine.data.images/robot3.png) top left no-repeat; }
+#robot4 { background: transparent url(++resource++infnine.data.images/robot4.png) top left no-repeat; }
+#robot5 { background: transparent url(++resource++infnine.data.images/robot5.png) top left no-repeat; }
 
 #kitchen1 { background: transparent url(++resource++infnine.data.images/kitchen1.png) top left no-repeat; }
 #kitchen2 { background: transparent url(++resource++infnine.data.images/kitchen2.png) top left no-repeat; }
