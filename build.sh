@@ -3,7 +3,7 @@ hostn=`hostname`
 if [ "$hostn" = "lapradig94" ]
 then
 echo $hostn
-./bin/buildout -vc debugUbuntu904.cfg
+./bin/buildout -Nvvvc debugUbuntu904.cfg
 
 elif [ "$hostn" = "lapradig39" ]
 then    
