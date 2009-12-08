@@ -1,12 +1,22 @@
 #!/bin/bash
 #run the script from bibliography folder
-username=`id -nu`
-if [ "$username" = "pangercic" ]
+hostn=`hostname`
+if [ "$hostn" = "lapradig94" ]
 then
-/home/pangercic/programing/inf9_webpage/infnine.buildout/bin/repozo -B -f /home/pangercic/programing/inf9_webpage/infnine.buildout/var/filestorage/Data.fs -z -v -r /home/pangercic/programing/inf9_webpage/infnine.buildout/var/filestorage/backup/
-elif [ "$username" = "infnine" ]
+/home/pangercic/programming/infnine.buildout/bin/repozo -B -f /home/pangercic/programming/infnine.buildout/var/filestorage/Data.fs -z -v -r /home/pangercic/programming/infnine.buildout/var/filestorage/backup/
+
+elif [ "$hostn" = "lapradig39" ]
+then
+/home/pangercic/programming/infnine.buildout/bin/repozo -B -f /home/pangercic/programming/infnine.buildout/var/filestorage/Data.fs -z -v -r /home/pangercic/programming/infnine.buildout/var/filestorage/backup/
+
+elif [ "$hostn" = "www9" ]
 then	
-/usr/proj/infnine/infnine.buildout/bin/repozo -B -f /usr/proj/infnine/infnine.buildout/var/filestorage/Data.fs -z -v -r /usr/proj/infnine/infnine.buildout/var/filestorage/backup/
+/usr/local/share/infnine/infnine.buildout/bin/repozo -B -f /usr/local/share/infnine/infnine.buildout/var/filestorage/Data.fs -z -v -r /usr/local/share/infnine/infnine.buildout/var/filestorage/backup/
+
+elif [ "$hostn" = "ias" ]
+then	
+/usr/local/share/iasweb/infnine.buildout/bin/repozo -B -f /usr/local/share/iasweb/infnine.buildout/var/filestorage/Data.fs -z -v -r /usr/local/share/iasweb/infnine.buildout/var/filestorage/backup/
+
 else
     echo "I do not know YOU."
 fi

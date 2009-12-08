@@ -1,0 +1,64 @@
+#Virtual Host für http
+<VirtualHost 131.159.19.28:80> 
+	#":%s/psscr07/hostname/g" (vim, ohne ")
+	RewriteEngine On
+	ServerName psscr07
+	ServerAlias psscr07.in.tum.de psscr07.cs.tum.edu psscr07.informatik.tu-muenchen.de
+	
+	##DocumentRoot: Virtual Host besitzt ein eigenes Verzeichnis
+	#DocumentRoot /usr/www/html-data
+        RewriteEngine On
+        RewriteCond %{SERVER_NAME} ^[^\.]*$ [NC]
+        RewriteRule ^(/.*)? http://%{SERVER_NAME}.in.tum.de$1 [L,R]
+	#DocumentRoot /usr/www/html-data/research/ias/events/psscr07
+
+	##Redirect: Anfragen an Virtual Host werden an diese URL weitergeleitet
+	#Redirect / http://www9.in.tum.de
+	#Redirect / http://www9.cs.tum.edu/events/psscr07
+
+	#Optionen
+	#Beginnend ab DocumentRoot
+	<Location />
+		Options IncludesNoExec -Indexes FollowSymLinks
+	</Location>
+
+	#Beginnend ab einem bestimmten Verzeichnis
+	<Directory /usr/www/html-data/research/ias/events/psscr07/>
+		AllowOverride All
+	</Directory>
+	
+	##Aliase
+	#Alias /foo /usr/www/html-data/bar
+</VirtualHost>
+
+#:.+1,$s/^#//g (vim, aus dieser Zeile heraus
+##Virtual Host für https
+#<VirtualHost 131.159.19.28:443> 
+#	ServerName psscr07
+#	ServerAlias psscr07.in.tum.de psscr07.cs.tum.edu psscr07.informatik.tu-muenchen.de
+#
+#	SSLEngine On
+#	SSLCertificateFile /etc/apache-ssl/mailradig.pem
+#	
+#	##DocumentRoot: Virtual Host besitzt ein eigenes Verzeichnis
+#	#DocumentRoot /usr/www/html-data
+#
+#	##Redirect: Anfragen an Virtual Host werden an diese URL weitergeleitet
+#	#Redirect / http://www9.in.tum.de
+#
+#	#Optionen
+#	#Beginnend ab DocumentRoot
+#	<Location />
+#		Options IncludesNoExec -Indexes
+#		AllowOverride None
+#	</Location>
+#
+#	#Beginnend ab einem bestimmten Verzeichnis
+#	#<Directory /usr/www/html-data>
+#	#	AllowOverride All
+#	#</Directory>
+#	
+#
+#	##Aliase
+#	#Alias /foo /usr/www/html-data/bar
+#</VirtualHost>

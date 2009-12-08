@@ -1,0 +1,3 @@
+MAILTO=dejan.pangercic@in.tum.de
+
+30 5 * * * /usr/local/share/iasweb/infnine.buildout/custom/scripts/backup.sh

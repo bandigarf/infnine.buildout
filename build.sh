@@ -1,11 +1,25 @@
 #!/bin/bash
-username=`id -nu`
-if [ "$username" = "pangercic" ]
+hostn=`hostname`
+if [ "$hostn" = "lapradig94" ]
 then
-./bin/buildout -vc debugUbuntu904.cfg
-elif [ "$username" = "infnine" ]
+echo $hostn
+./bin/buildout -Nvvvc debugUbuntu904.cfg
+
+elif [ "$hostn" = "lapradig39" ]
 then    
-./bin/buildout -vc debug.cfg
+echo $hostn
+./bin/buildout -vc debugUbuntu904.cfg
+
+elif [ "$hostn" = "ias" ]
+then    
+echo $hostn
+./bin/buildout -Nvvvc debug.cfg
+
+elif [ "$hostn" = "www9" ]
+then    
+echo $hostn
+./bin/buildout -Novc debug.cfg
+
 else
     echo "I do not know YOU."
 fi

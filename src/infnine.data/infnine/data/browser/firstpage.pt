@@ -22,7 +22,7 @@
                 (Intelligent Autonomous Systems)
             </td>
         </tr>
-        <tr>
+<!--        <tr>
             <td><a href="people/sachenba"><img src="++resource++infnine.theme.images/pic3.png" /></a></td>
             <td><a href="people/sachenba">Dr. Martin Sachenbacher</a><br/>
                 (Emmy Noether Research Group)
@@ -31,14 +31,14 @@
             <td><a href="people/struss">Prof. Peter Struss</a><br/>
                 (Model-Based Systems & Qualitative Reasoning)
             </td>
-        </tr>
+        </tr> -->
     </table>
 
     <hr />
 
     <table border="0" cellspacing="0" cellpadding="0"
         tal:define="aspogamo_id python: 'aspogamo' + `modules['random'].choice(range(1, 5))`;
-                    factory_id python: 'factory' + `modules['random'].choice(range(1, 4))`;
+                    factory_id python: 'robot' + `modules['random'].choice(range(1, 6))`;
                     kitchen_id python: 'kitchen' + `modules['random'].choice(range(1, 8))`;
                     multijoint_id python: 'multijoint' + `modules['random'].choice(range(1, 5))`">
         <tr>
@@ -51,7 +51,7 @@
          </tr>
          <tr>
              <td>
-                 <div class="first-page-projects" id="project_name3" tal:attributes="id factory_id"><div id="proj2"> Cognitive Factory </div></div>
+                 <div class="first-page-projects" id="project_name3" tal:attributes="id factory_id"><div id="proj2"> Robots </div></div>
              </td>
              <td>
                 <div class="first-page-projects" id="project_name4" tal:attributes="id multijoint_id"><div id="proj2"> Image Understanding </div></div>

@@ -1,0 +1,62 @@
+#Virtual Host für http
+<VirtualHost adm-radig:80> 
+	#":%s/adm-radig/hostname/g" (vim, ohne ")
+	ServerName adm-radig
+	ServerAlias adm-radig.in.tum.de adm-radig.cs.tum.edu adm-radig.informatik.tu-muenchen.de
+	
+	##DocumentRoot: Virtual Host besitzt ein eigenes Verzeichnis
+	#DocumentRoot /usr/www/adm-radig
+
+	##Redirect: Anfragen an Virtual Host werden an diese URL weitergeleitet
+	Redirect / https://adm-radig.informatik.tu-muenchen.de/
+
+	#Optionen
+	#Beginnend ab DocumentRoot
+	<Location />
+		Options IncludesNoExec -Indexes FollowSymLinks
+	</Location>
+
+	#Beginnend ab einem bestimmten Verzeichnis
+	<Directory /usr/www/adm-radig>
+		AllowOverride All
+	</Directory>
+	
+	##Aliase
+	#Alias /foo /usr/www/html-data/bar
+</VirtualHost>
+
+#:.+1,$s/^#//g (vim, aus dieser Zeile heraus
+#Virtual Host für https
+<VirtualHost adm-radig:443> 
+	ServerName adm-radig.informatik.tu-muenchen.de
+	ServerAlias adm-radig.in.tum.de adm-radig.cs.tum.edu adm-radig
+
+	SSLEngine On
+	SSLCertificateFile /etc/ssl/private/adm-radig.pem
+	
+	##DocumentRoot: Virtual Host besitzt ein eigenes Verzeichnis
+	DocumentRoot /usr/www/adm-radig
+
+	##Redirect: Anfragen an Virtual Host werden an diese URL weitergeleitet
+	#Redirect / http://www9.in.tum.de
+
+	#Optionen
+	#Beginnend ab DocumentRoot
+	<Location />
+		Options IncludesNoExec -Indexes FollowSymlinks
+	</Location>
+	
+	<Directory /usr/www/adm-radig>
+		AllowOverride All
+	</Directory>
+
+	#Beginnend ab einem bestimmten Verzeichnis
+	#<Directory /usr/www/html-data>
+	#	AllowOverride All
+	#</Directory>
+	
+
+	##Aliase
+	#Alias /foo /usr/www/html-data/bar
+	Alias /www9new /usr/www/html-data/www9new
+</VirtualHost>
