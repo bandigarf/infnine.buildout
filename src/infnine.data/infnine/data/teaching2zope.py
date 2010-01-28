@@ -90,7 +90,7 @@ def setvalue(zodb_object, key, value):
 
 if ('app' in dir()) and (app != None):
     print "Running in Zope, creating objects in ZODB..."
-    teaching = app.ias.teaching
+    teaching = app.infnine.teaching
 
 if not teaching.hasObject(semester_id.lower()):
     print "Semester", semester_id, "not yet in ZODB, creating"
