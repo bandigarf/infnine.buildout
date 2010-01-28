@@ -27,7 +27,7 @@ if host == 'www9':
     output_dir = '/usr/local/share/infnine/infninebib/infninebib/'
 elif host == 'ias':
     bibpath = '/usr/local/share/iasweb/infninebib/bibliography/'
-    output_dir = '/usr/local/share/infnine/infninebib/infninebib/'
+    output_dir = '/usr/local/share/iasweb/infninebib/infninebib/'
 elif host == 'lapradig94':
     bibpath = '/home/pangercic/download/iasdocs/bibliography/'
     output_dir = '/home/pangercic/programming/infnine.buildout/custom/bibtex/'
