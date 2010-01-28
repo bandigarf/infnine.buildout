@@ -1,7 +1,7 @@
 #run from buildout like:
 #./bin/zope-secondary run src/infnine.data/infnine/data/teaching2zope
 from infnine.data.readdb import getEvents
-semester = semester_id = 'WS2009'
+semester = semester_id = 'SS2010'
 semester = getEvents(semester_id)
 
 def flatten(x):
@@ -90,7 +90,7 @@ def setvalue(zodb_object, key, value):
 
 if ('app' in dir()) and (app != None):
     print "Running in Zope, creating objects in ZODB..."
-    teaching = app.infnine.teaching
+    teaching = app.ias.teaching
 
 if not teaching.hasObject(semester_id.lower()):
     print "Semester", semester_id, "not yet in ZODB, creating"

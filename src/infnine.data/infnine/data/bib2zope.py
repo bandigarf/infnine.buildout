@@ -30,7 +30,7 @@ def bib2zope(filename, app = None):
             print key, ':', _bibtex.get_native(entry[4][key]).strip('{} ')
 
         if app != None:
-            publications = app.infnine.publications
+            publications = app.ias.publications
             print "Running in Zope, creating objects in ZODB..."
             if not publications.hasObject(id):
                 print "Entry", id, "not yet in ZODB, creating"
