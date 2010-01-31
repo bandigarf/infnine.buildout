@@ -54,10 +54,10 @@
             <td>
               <!--Table of Contents-->
               <h1>Table of Contents</h1>
-              <span tal:condition="python: context.research_topics != None">
-                <a href="#research_topics" >Research Topics</a> 
-                 <br>
-              </span>
+	      <div tal:define="items context/research_topics" tal:condition="python: (items != None) and (len(items) > 0)">
+                <a href="#research_topics" >Research Topics</a>
+                <br>
+	      </div>
              
               <span tal:condition="python: context.research_projects_current != None">
                 <a href="#research_projects" >Current Research Projects</a> 
