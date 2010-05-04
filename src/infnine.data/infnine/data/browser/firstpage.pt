@@ -12,22 +12,33 @@
     <div tal:replace="structure provider:plone.abovecontenttitle" />
 
     <table style="width=622px;" cellpadding="7">
-        <tr>
-            <td><a href="people/radig"><img src="++resource++infnine.theme.images/pic1.png" /></a></td>
-            <td><a href="people/radig">Prof. Bernd Radig</a><br/>
-                (Computer Vision and Image Understanding)
-            </td>
-            <td><a href="people/beetz"><img src="++resource++infnine.theme.images/pic2.png" /></a></td>
-            <td><a href="people/beetz">Prof. Michael Beetz</a><br/>
-                (Intelligent Autonomous Systems)
-            </td>
-        </tr>
+      <tr>
+        <td>
+	  <a href="people/beetz"><img src="++resource++infnine.theme.images/pic2.png" /></a>
+	</td>
+        <td>
+	  <a href="people/beetz">Prof. Michael Beetz</a><br/>
+        </td>
+        <td>
+	  <a href="people/radig"><img src="++resource++infnine.theme.images/pic1.png" /></a>
+	</td>
+        <td>
+	  <a href="people/radig">Prof. Bernd Radig</a><br/>
+        </td>
+	<td>
+	  <a href="people/kirsch"><img src="++resource++infnine.theme.images/pic5.png" /></a>
+	</td>
+        <td>
+	  <a href="people/kirsch">Dr. Alexandra Kirsch</a><br/>
+        </td>
+	
+      </tr>
 <!--        <tr>
             <td><a href="people/sachenba"><img src="++resource++infnine.theme.images/pic3.png" /></a></td>
             <td><a href="people/sachenba">Dr. Martin Sachenbacher</a><br/>
                 (Emmy Noether Research Group)
             </td>
-            <td><a href="people/struss"><img src="++resource++infnine.theme.images/pic4.png" /></a></td>
+            <td><a href="people/struss"><img src="++resource++infnine.theme.images/pic4.png" /> </a></td>
             <td><a href="people/struss">Prof. Peter Struss</a><br/>
                 (Model-Based Systems & Qualitative Reasoning)
             </td>
@@ -36,27 +47,10 @@
 
     <hr />
 
-    <table border="0" cellspacing="0" cellpadding="0"
-        tal:define="aspogamo_id python: 'aspogamo' + `modules['random'].choice(range(1, 5))`;
-                    factory_id python: 'robot' + `modules['random'].choice(range(1, 6))`;
-                    kitchen_id python: 'kitchen' + `modules['random'].choice(range(1, 8))`;
-                    multijoint_id python: 'multijoint' + `modules['random'].choice(range(1, 5))`">
-        <tr>
-             <td>
-                 <div class="first-page-projects" id="project_name1" tal:attributes="id aspogamo_id"><div id="proj1"> Aspogamo </div></div>
-             </td>
-             <td>
-                <div class="first-page-projects" id="project_name2" tal:attributes="id kitchen_id"><div id="proj1"> Assistive Household </div></div>
-            </td>
-         </tr>
-         <tr>
-             <td>
-                 <div class="first-page-projects" id="project_name3" tal:attributes="id factory_id"><div id="proj2"> Robots </div></div>
-             </td>
-             <td>
-                <div class="first-page-projects" id="project_name4" tal:attributes="id multijoint_id"><div id="proj2"> Image Understanding </div></div>
-             </td>
-         </tr>
+    <table border="0" cellspacing="0" cellpadding="0" >
+      <tr>
+	<img src="++resource++infnine.theme.images/robots.png" /> 
+      </tr>
     </table>
 
     <div tal:replace="structure provider:plone.belowcontentbody" />
