@@ -46,7 +46,7 @@
 
     <!--Publication Type List-->
     <div tal:replace="python: pubtypelist.sort()">PUBTYPELIST</div>
-    <div tal:replace="pubtypelist python: []">PUBTYPELIST</div>
+    <div tal:replace="python: []">PUBTYPELIST</div>
     <div tal:replace="python: pubtypelist.append('Journals')">PUBTYPELIST</div>
 <!--             <div tal:replace="python: pubtypelist.reverse()">PUBTYPELIST</div> -->
             <div tal:replace="python: pubtypelist.append('Miscelaneous')" />
