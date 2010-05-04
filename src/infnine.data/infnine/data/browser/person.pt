@@ -51,6 +51,11 @@
                     </tbody>
                 </table>
             </td>
+	    <td>
+	      <a href="http://ias.cs.tum.edu">
+		<img src="++resource++infnine.theme.images/logo-ias.png" /> 
+	      </a>
+	    </td>
             <td>
               <!--Table of Contents-->
               <h1>Table of Contents</h1>
