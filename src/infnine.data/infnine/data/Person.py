@@ -49,10 +49,15 @@ class IPerson(Interface):
             )
 
     telephone = TextLine(
-            title=u"Telephone",
-            description=u"Telephone number",
+            title=u"Telephone FMI",
+            description=u"Telephone number at FMI",
             required=False,
             )
+    telephone1 = TextLine(
+        title=u"Telephone CCRL II",
+        description=u"Telephone number at CCRL II",
+        required=False,
+        )
 
     fax = TextLine(
             title=u"Fax",
@@ -61,10 +66,16 @@ class IPerson(Interface):
             )
 
     office = TextLine(
-            title=u"Office",
-            description=u"Office number",
+            title=u"Office FMI",
+            description=u"Office number at FMI",
             required=False,
             )
+
+    office1 = TextLine(
+        title=u"Office CCRL II",
+        description=u"Office number at CCRL II",
+        required=False,
+        )
 
     introduction = Text(
             title=u"Introduction",

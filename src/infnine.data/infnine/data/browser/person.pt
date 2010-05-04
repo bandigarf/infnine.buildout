@@ -38,7 +38,10 @@
                         </tr>
 
                         <tr tal:condition="python: context.telephone != None">
-                            <td>Telephone:</td><td tal:content="context/telephone" />
+                            <td>Telephone FMI:</td><td tal:content="context/telephone" />
+                        </tr>
+			<tr tal:condition="python: context.telephone1 != None">
+                          <td>Telephone CCRL II:</td><td tal:content="context/telephone1" />
                         </tr>
 
                         <tr tal:condition="python: context.fax != None">
@@ -46,7 +49,10 @@
                         </tr>
 
                         <tr tal:condition="python: context.office != None">
-                            <td>Office:</td><td><a href="" tal:attributes="href python: context.portal_url() + '/offices'"><span tal:replace="context/office" /></a></td>
+                            <td>Office FMI:</td><td><a href="" tal:attributes="href python: context.portal_url() + '/offices'"><span tal:replace="context/office" /></a></td>
+                        </tr>
+			<tr tal:condition="python: context.office1 != None">
+                          <td>Office CCRL II:</td><td><a href="" tal:attributes="href python: context.portal_url() + '/offices-ccrl'"><span tal:replace="context/office1" /></a></td>
                         </tr>
                     </tbody>
                 </table>
