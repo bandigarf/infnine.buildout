@@ -6,7 +6,7 @@
     <browser:page
         for="..interfaces.IPublicationListing"
         name="view"
-        template="publicationlisting.pt"
+        template="publicationlisting_by_publication_type.pt"
         permission="zope2.View"
         />
 
