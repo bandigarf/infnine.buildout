@@ -46,6 +46,8 @@
 
     <!--Publication Type List-->
     <div tal:replace="python: pubtypelist.sort()">PUBTYPELIST</div>
+    <div tal:replace="python: del pubtypelist[:]">PUBTYPELIST</div>
+    <div tal:replace="python: pubtypelist.append('Journals')">PUBTYPELIST</div>
 <!--             <div tal:replace="python: pubtypelist.reverse()">PUBTYPELIST</div> -->
             <div tal:replace="python: pubtypelist.append('Miscelaneous')" />
             <span tal:define="pubtypelist1 python: [pubtype for pubtype in pubtypelist if pubtype != None]" tal:repeat="pubtype pubtypelist1">
