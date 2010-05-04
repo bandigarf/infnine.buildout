@@ -130,12 +130,6 @@
         </ul>
     </div>
 
-    <div tal:define="media context/media|nothing" tal:condition="media">
-        <h2>Media</h2>
-        <!-- TODO: should list contents of media/ subfolder -->
-        <div metal:use-macro="context/media/folder_listing/macros/listing" />
-    </div>
-
     <hr />
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
