@@ -20,11 +20,11 @@
     <!-- Sorting Publications by publication type-->
     <div tal:define="pubtypelist python: []">
         <div tal:define="pubs python: context.rList(context.getParentNode().objectValues(['Publication']))">
-            <div tal:repeat="item pubs">
-                <div tal:condition="python: not(item.bib2html_pubtype in pubtypelist) and not(item.bib2html_pubtype in ['Others', 'ignore', '', None])"
-                     tal:replace="python: pubtypelist.append(item.bib2html_pubtype)">PUBTYPELIST
-                </div>
-            </div>
+           <!--  <div tal:repeat="item pubs"> -->
+<!--                 <div tal:condition="python: not(item.bib2html_pubtype in pubtypelist) and not(item.bib2html_pubtype in ['Others', 'ignore', '', None])" -->
+<!--                      tal:replace="python: pubtypelist.append(item.bib2html_pubtype)">PUBTYPELIST -->
+<!--                 </div> -->
+<!--             </div> -->
     <h1>Publications Sorted by:</h1>
     <span tal:define="tableitems python: ['Year', 'Author', 'Project', 'Publication Type', 'Research Topic'];
                       tableurls python: ['by_year', 'by_author', 'by_project', 'by_publication_type', 'by_research_topic']">
@@ -46,7 +46,6 @@
 
     <!--Publication Type List-->
     <div tal:replace="python: pubtypelist.sort()">PUBTYPELIST</div>
-    <div tal:replace="python: []">PUBTYPELIST</div>
     <div tal:replace="python: pubtypelist.append('Journals')">PUBTYPELIST</div>
 <!--             <div tal:replace="python: pubtypelist.reverse()">PUBTYPELIST</div> -->
             <div tal:replace="python: pubtypelist.append('Miscelaneous')" />
