@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div>
-                <h2>Projects details:</h2>
+                <h2>Research Topics:</h2>
                 <table class="invisible">
                 <tbody tal:define="items python: [item[1] for item in context.items() if item[1].meta_type == 'Research Project']"
                        tal:repeat="item items">
