@@ -17,11 +17,18 @@
     <div class="documentDescription" tal:content="context/description" />
 
     <div tal:replace="structure provider:plone.abovecontentbody" />
-
-    <div tal:define="people python:[person[1] for person in context.items()
+    <div class="center_aligned_people_page">
+    <table border="0" cellspacing="0" cellpadding="0" >
+      <tr>
+	<img src="++resource++infnine.theme.images/ias_group_resized.JPG" /> 
+      </tr>
+    </table>
+    </div>
+   <div tal:define="people python:[person[1] for person in context.items()
                                     if person[1].meta_type == 'Person'
                                     and person[1].status == 'Professor']"
             tal:condition="python: len(people) > 0">
+  
         <h3>Professors</h3>
         <ul tal:repeat="person people">
             <a href="" tal:attributes="href python: context.portal_url() + '/people/' + person.id">

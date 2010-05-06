@@ -51,7 +51,13 @@ a {
 }
 
 .center_aligned {
-/*     text-align: center; */
+   /*  text-align: center;*/
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.center_aligned_people_page {
+    text-align: center;
     padding-left: auto;
     padding-right: auto;
 }

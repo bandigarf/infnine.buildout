@@ -87,6 +87,8 @@ research_topics_list=(
     'Ubiquitous Robotics',
     'Visual SLAM',
     'Applied Probabilistic Theory',
+    'Object Models',
+    'Action Language',
 )
 
 authors_list=(
