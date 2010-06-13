@@ -13,7 +13,7 @@ echo $hostn
 elif [ "$hostn" = "ias" ]
 then    
 echo $hostn
-./bin/buildout -Nvvvc debug.cfg
+./bin/buildout -Novvvc debug.cfg
 
 elif [ "$hostn" = "www9" ]
 then    
