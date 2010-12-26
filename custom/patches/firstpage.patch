@@ -1,0 +1,32 @@
+diff --git a/src/infnine.data/infnine/data/browser/firstpage.pt b/src/infnine.data/infnine/data/browser/firstpage.pt
+index f91701e..48cf9b9 100644
+--- a/src/infnine.data/infnine/data/browser/firstpage.pt
++++ b/src/infnine.data/infnine/data/browser/firstpage.pt
+@@ -50,9 +50,24 @@
+ 
+     <table border="0" cellspacing="0" cellpadding="0" >
+       <tr>
+-	 <a href="research-areas/robots">
+-	   <img src="++resource++infnine.theme.images/robots.png" /> 
+-	 </a>
++	 <!-- <a href="research-areas/robots"> -->
++	 <!--   <img src="++resource++infnine.theme.images/robots.png" />  -->
++	 <!-- </a> -->
++            <td colspan="2"><img src="++resource++infnine.theme.images/robots_top.png" /></td>
++      </tr>
++      <tr>
++	<td>
++	  <img src="++resource++infnine.theme.images/robots_bottom_left.png" />
++	</td>
++        <td width="360" height="108">
++          <object width="360" height="108">
++            <param name="movie" value="http://www.youtube.com/v/4usoE981e7I?fs=1&amp;hl=en_US"/>
++            <param name="allowFullScreen" value="true"/>
++            <param name="allowscriptaccess" value="always"/>
++            <embed src="http://www.youtube.com/v/4usoE981e7I?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="360" height="108">
++	    </embed>
++	  </object>
++        </td>
+       </tr>
+     </table>
+ 
