@@ -53,7 +53,7 @@
 	 <!-- <a href="research-areas/robots"> -->
 	 <!--   <img src="++resource++infnine.theme.images/robots.png" />  -->
 	 <!-- </a> -->
-            <td colspan="2"><img src="++resource++infnine.theme.images/robots_top.png" /></td>
+            <td colspan="4"><img src="++resource++infnine.theme.images/robots_top.png" /></td>
       </tr>
       <tr>
 	<td>
@@ -70,9 +70,33 @@
         </td>
       </tr>
     </table>
-
+    <br>
+    <table border="0" cellspacing="0" cellpadding="0" >
+      <tr>
+	<td width="155">
+	  <a href="research-areas/aspogamo">
+	    <img src="++resource++infnine.theme.images/aspogamo.jpg" />
+	  </a>
+	</td>
+	<td width="155">
+	  <a href="research-areas/facial-expression-recognition"> 
+	    <img src="++resource++infnine.theme.images/face_mimic.jpg" />
+	  </a>
+	</td>
+	<td width="155">
+	  <a href="research-areas/perception-of-human-activities/humacto"> 
+	    <img src="++resource++infnine.theme.images/hand_tracking.jpg" />
+	  </a>
+	</td>
+	<td width="155">
+	  <a href="research-areas/robots/icub">
+	    <img src="++resource++infnine.theme.images/icub.jpg" />
+	  </a>
+	</td>
+      </tr>
+    </table>
     <div tal:replace="structure provider:plone.belowcontentbody" />
-
+    
 </div>
 </body>
 </html>
